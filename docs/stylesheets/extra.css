@@ -1,0 +1,12 @@
+td {
+  vertical-align: middle !important;
+}
+
+img[src*="#comunication-logo"] {
+  width: 100px !important;
+}
+
+h5 {
+  text-transform: none !important;
+  font-size: medium !important;
+}
