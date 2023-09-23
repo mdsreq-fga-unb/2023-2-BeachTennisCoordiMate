@@ -5,6 +5,7 @@
 | **Data**   | **Versão** | **Descrição**                                              | **Autor**                                                                                                                                                                                                        |
 | ---------- | ---------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 14/9/2023 | 0.1 | Criação do documento | [Victório Lázaro](https://github.com/Victor-oss)  |
+| 23/9/2023 | 0.2 | Corrigindo duplicidade no item 1.3  | [Weslley Barros](https://github.com/weslley17w)  |
 
 ## 1 VISÃO GERAL DO PRODUTO
 
@@ -39,19 +40,7 @@
 - Garantir a conformidade nas marcações de aulas de reposição, dando maior liberdade e controle para o usuário;
 - Gerenciar eficientemente o fluxo de pessoas durante o "day-use", proporcionando uma experiência mais organizada e segura.
 
-
-
-### 1.3 Objetivos do Produto
-
-- Facilitar o gerenciamento dos dados dos seus clientes
-- Permite o acesso rápido das informações relevantes sobre cada cliente e venda.
-- Deve integrar todas as informações de clientes em um único local e permitir que você pesquise por informações de venda, estoque e ordem de serviço.
-- Ao adotar essa abordagem, é possível reduzir erros e aumentar a produtividade da equipe
-- Tarefas antes feitas por uma planilha são substituídas por um sistema mais produtivo e organizado.
-- Isso economiza tempo e dinheiro, além de proporcionar maior precisão nas informações gerenciadas
-- reduzindo retrabalho e melhorando a tomada de decisões.
-
-### 1.4 Tecnologias a Serem Utilizadas
+### 1.3 Tecnologias a Serem Utilizadas
 
 ## 2 VISÃO GERAL DO PROJETO
 
