@@ -21,16 +21,37 @@
 
 *Outro desafio ocorre no gerenciamento do fluxo de pessoas durante o "day-use" - o período em que as quadras não estão sendo usadas para aulas e podem ser utilizadas para jogos por alunos e público externo. Atualmente, não existe um sistema de gestão eficiente para controlar esse processo. Isso inclui o controle de presença dos alunos durante o "day-use" e a falta de um registro claro sobre quais alunos ou pessoas externas estão usando as quadras. Além disso, o agendamento para o uso das quadras é realizado por meio de conversas via chat ou atendimento presencial, o que pode ser ineficiente e suscetível a erros.*
 
+*Para se entender a causa principal, que causa todos os problemas citados, foi utilizada a técnica do Diagrama de Ishikawa (Espinha de Peixe). O problema se sustenta sobre a falta de um sistema de gestão eficiente e interativo que planeje os drills, controle a presença nos treinos e administre as quadras para day use. Através do Diagrama de Ishikawa, foram encontradas 4 causas raízes: Falta de ferramenta específica de planejamento dos drills, falta de padronização e legenda nos planos dos drills, sistema de controle de presença ineficiente e ineficiência no gerenciamento do uso das quadras no day use .*
+
+![Problema](assets/ishikawa.jpg)
 
 ### 1.2 Declaração de Posição do Produto
-|    |    |
-| ----- | ---- |
-| Para          | Organizadores do Beach Tennis |
-| Quem          | Necessita de mais eficiência no gerenciamento de clientes |
-| O Beach Tennis CoordiMate | É um aplicativo de planejamento e controle de presença de aulas de Beach Tennis, além de gerenciar o uso de quadras e também serve de ferramenta de comunicação entre o aluno e a empresa. |
-| Que           | Oferece uma maneira eficiente e conveniente de planejar e coordenar todas as atividades relacionadas às aulas de Beach Tennis, desde o planejamento dos drills até o controle de presença dos alunos. Com isso, você economiza tempo valioso, reduz erros administrativos e melhora a experiência de seus alunos, tornando o processo mais organizado e eficaz. |
-| Ao contrário  | Do Microsoft Word, para planejar aulas, e também o sistema de controle de presença em aulas de crossfit Sistema Pacto para controlar presença e que marca aulas sem permissão do usuário. |
-| Nosso produto | Automatiza e integra várias tarefas em uma única plataforma. Ele oferece recursos avançados de criação de drills, padronização das comunicações com os professores, garantia de conformidade nas marcações de aulas de reposição e uma gestão eficiente do "day-use". Nenhuma outra solução oferece essa combinação de recursos em um único aplicativo.|
+<table>
+  <tr>
+    <td>Para</td>
+    <td>Organizadores do Beach Tennis</td>
+  </tr>
+  <tr>
+    <td>Quem</td>
+    <td>Necessita de mais eficiência no gerenciamento de clientes</td>
+  </tr>
+  <tr>
+    <td>O Beach Tennis CoordiMate</td>
+    <td>É um aplicativo de planejamento e controle de presença de aulas de Beach Tennis, além de gerenciar o uso de quadras e também serve de ferramenta de comunicação entre o aluno e a empresa.</td>
+  </tr>
+  <tr>
+    <td>Que</td>
+    <td>Oferece uma maneira eficiente e conveniente de planejar e coordenar todas as atividades relacionadas às aulas de Beach Tennis, desde o planejamento dos drills até o controle de presença dos alunos. Com isso, você economiza tempo valioso, reduz erros administrativos e melhora a experiência de seus alunos, tornando o processo mais organizado e eficaz.</td>
+  </tr>
+  <tr>
+    <td>Ao contrário</td>
+    <td>Do Microsoft Word, para planejar aulas, e também o sistema de controle de presença em aulas de crossfit Sistema Pacto para controlar presença e que marca aulas sem permissão do usuário.</td>
+  </tr>
+  <tr>
+    <td>Nosso produto</td>
+    <td>Automatiza e integra várias tarefas em uma única plataforma. Ele oferece recursos avançados de criação de drills, padronização das comunicações com os professores, garantia de conformidade nas marcações de aulas de reposição e uma gestão eficiente do "day-use". Nenhuma outra solução oferece essa combinação de recursos em um único aplicativo.</td>
+  </tr>
+</table>
 
 ### 1.2 Objetivos do Produto
 
@@ -41,6 +62,12 @@
 - Gerenciar eficientemente o fluxo de pessoas durante o "day-use", proporcionando uma experiência mais organizada e segura.
 
 ### 1.3 Tecnologias a Serem Utilizadas
+
+| Categoria | Tecnologia |
+| ----- | ---- |
+| Linguagem de programação | TypeScript, JavaScript |
+| Framework de frontend | React |
+| Banco de dados | PostgreSQL |
 
 ## 2 VISÃO GERAL DO PROJETO
 
