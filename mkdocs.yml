@@ -25,7 +25,7 @@ nav:
   - Documentação:
     - Visão do produto e projeto:
       - Visão do Produto: doc-visao/1.visao-produto.md
-      - Visão do Projeto: doc-visao/2.visao-projeto.md
+      - Visão Geral do Projeto: doc-visao/2.visao-projeto.md
       - Processo de Desenvolvimento: doc-visao/3.processo-dev.md
       - Processo de Engenharia de Requisitos: doc-visao/4.processo-requisitos.md
       - Lições Aprendidas: doc-visao/5.licoes-aprendidas.md
