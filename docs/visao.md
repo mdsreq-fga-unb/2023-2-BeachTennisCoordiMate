@@ -12,7 +12,8 @@
 | 14/9/2023 | 0.1 | Criação do documento | [Victório Lázaro](https://github.com/Victor-oss) |
 | 23/9/2023 | 0.2 | Corrigindo duplicidade no item 1.3  | [Weslley Barros](https://github.com/weslley17w) |
 | 24/9/2023 | 0.3 | Inserção das tecnologias e do diagrama de Ishikawa na Visão Geral do Produto | [Victório Lázaro](https://github.com/Victor-oss) |
-| 25/9/2023 | 0.4 | Inserção dos itens do tópico 2 - Visão Geral do Projeto. | [Victório Lázaro](https://github.com/Victor-oss) e [Weslley Barros](https://github.com/weslley17w) |
+| 25/9/2023 | 0.4 | Inserção dos itens do tópico 2 - Visão Geral do Projeto | [Victório Lázaro](https://github.com/Victor-oss) e [Weslley Barros](https://github.com/weslley17w) |
+| 26/9/2023 | 0.5 | Realização das alterações pedidas no tópico 2 - Visão Geral do Projeto | [Victório Lázaro](https://github.com/Victor-oss) |
 
 
 ## 1 VISÃO GERAL DO PRODUTO
@@ -29,7 +30,7 @@
 
 *Outro desafio ocorre no gerenciamento do fluxo de pessoas durante o "day-use" - o período em que as quadras não estão sendo usadas para aulas e podem ser utilizadas para jogos por alunos e público externo. Atualmente, não existe um sistema de gestão eficiente para controlar esse processo. Isso inclui o controle de presença dos alunos durante o "day-use" e a falta de um registro claro sobre quais alunos ou pessoas externas estão usando as quadras. Além disso, o agendamento para o uso das quadras é realizado por meio de conversas via chat ou atendimento presencial, o que pode ser ineficiente e suscetível a erros.*
 
-*Para se entender a causa principal, que causa todos os problemas citados, foi utilizada a técnica do Diagrama de Ishikawa (Espinha de Peixe). O problema se sustenta sobre a falta de um sistema de gestão eficiente e interativo que planeje os drills, controle a presença nos treinos e administre as quadras para day use. Através do Diagrama de Ishikawa, foram encontradas 4 causas raízes: Falta de ferramenta específica de planejamento dos drills, falta de padronização e legenda nos planos dos drills, sistema de controle de presença ineficiente e ineficiência no gerenciamento do uso das quadras no day use .*
+*Para se entender a causa principal, que causa todos os problemas citados, foi utilizada a técnica do Diagrama de Ishikawa (Espinha de Peixe). O problema se sustenta sobre a falta de um sistema de gestão eficiente e interativo que planeje os drills, controle a presença nos treinos e administre as quadras para day use. Através do Diagrama de Ishikawa, foram encontradas 4 causas raízes: Falta de ferramenta específica de planejamento dos drills, falta de padronização e legenda nos planos dos drills, sistema de controle de presença ineficiente e ineficiência no gerenciamento do uso das quadras no day use. O diagrama feito pela equipe pode ser visualizado na figura 1.*
 
 <p style="display: flex; justify-content: center; font-size: 0.8em">Figura 1 - Diagrama de Ishikawa do Problema</p>
 ![Problema](assets/ishikawa.jpg)
@@ -81,6 +82,8 @@
 - Gerenciar eficientemente o fluxo de pessoas durante o "day-use", proporcionando uma experiência mais organizada e segura.
 
 ### 1.3 Tecnologias a Serem Utilizadas
+*Para o desenvolvimento do produto de software apresentado, a equipe utilizará as tecnologias listadas na tabela 2.*
+
 <p style="display: flex; justify-content: center; font-size: 0.8em">Tabela 2 - Tecnologias a Serem Utilizadas</p>
 <div style="display: flex; justify-content: center; margin-top: 0;">
   <table>
