@@ -1,3 +1,8 @@
+<style>
+  #my_table{
+    margin-bottom: 0;
+  }
+</style>
 <h1 align="center"><b>VISÃO DO PRODUTO E PROJETO</b></h1>
 
 ## Histórico de Revisão
@@ -26,9 +31,19 @@
 
 *Para se entender a causa principal, que causa todos os problemas citados, foi utilizada a técnica do Diagrama de Ishikawa (Espinha de Peixe). O problema se sustenta sobre a falta de um sistema de gestão eficiente e interativo que planeje os drills, controle a presença nos treinos e administre as quadras para day use. Através do Diagrama de Ishikawa, foram encontradas 4 causas raízes: Falta de ferramenta específica de planejamento dos drills, falta de padronização e legenda nos planos dos drills, sistema de controle de presença ineficiente e ineficiência no gerenciamento do uso das quadras no day use .*
 
+<p style="display: flex; justify-content: center; font-size: 0.8em">Figura 1 - Diagrama de Ishikawa do Problema</p>
 ![Problema](assets/ishikawa.jpg)
+<p style="display: flex; justify-content: center; font-size: 0.8em">Fonte: Autores (2023)</p>
 
 ### 1.2 Declaração de Posição do Produto
+
+*O Beach Tennis CoordiMate é uma ferramenta completa para planejamento, controle de presença e controle de uso de quadras esportivas para atender a gestão de uma arena de Beach Tennis.*
+
+*Ao contrário de outras ferramentas, como o Microsoft Word para o planejamento de aulas e sistemas de controle de presença como o Sistema Pacto, o Beach Tennis CoordiMate foi desenvolvido especificamente para atender às necessidades únicas dos instrutores e organizadores de Beach Tennis. Ele não apenas automatiza tarefas, mas também oferece recursos avançados, como criação de drills, padronização de comunicações com professores, respeito às regras de negócio da empresa nas marcações de aulas de reposição e uma gestão eficiente do uso da quadras fora do período de aula. Nossa plataforma se destaca por integrar todas essas funcionalidades em uma única plataforma, proporcionando a você uma solução completa e eficaz.*
+
+*Com o Beach Tennis CoordiMate, você economiza tempo valioso, reduz erros administrativos e, o mais importante, melhora a experiência de seus alunos. Isso torna todo o processo de organização mais organizado e eficaz, resultando em clientes satisfeitos e aulas bem-sucedidas. Toda essa descrição da aplicação está resumida na tabela 1.*
+
+<p style="display: flex; justify-content: center; font-size: 0.8em">Tabela 1 - Declaração de Posição do Produto</p>
 <table>
   <tr>
     <td>Para</td>
@@ -40,7 +55,7 @@
   </tr>
   <tr>
     <td>O Beach Tennis CoordiMate</td>
-    <td>É um aplicativo de planejamento e controle de presença de aulas de Beach Tennis, além de gerenciar o uso de quadras e também serve de ferramenta de comunicação entre o aluno e a empresa.</td>
+    <td>É um aplicação web de planejamento e controle de presença de aulas de Beach Tennis, além de gerenciar o uso de quadras e também serve de ferramenta de comunicação entre o aluno e a empresa.</td>
   </tr>
   <tr>
     <td>Que</td>
@@ -52,9 +67,10 @@
   </tr>
   <tr>
     <td>Nosso produto</td>
-    <td>Automatiza e integra várias tarefas em uma única plataforma. Ele oferece recursos avançados de criação de drills, padronização das comunicações com os professores, garantia de conformidade nas marcações de aulas de reposição e uma gestão eficiente do "day-use". Nenhuma outra solução oferece essa combinação de recursos em um único aplicativo.</td>
+    <td>Automatiza e integra várias tarefas em uma única plataforma. Ele oferece recursos avançados de criação de drills, padronização das comunicações com os professores, garantia de conformidade nas marcações de aulas de reposição e uma gestão eficiente do "day-use". Nenhuma outra solução oferece essa combinação de recursos em uma única plataforma.</td>
   </tr>
 </table>
+<p style="display: flex; justify-content: center; font-size: 0.8em">Fonte: Autores (2023)</p>
 
 ### 1.2 Objetivos do Produto
 
@@ -65,20 +81,42 @@
 - Gerenciar eficientemente o fluxo de pessoas durante o "day-use", proporcionando uma experiência mais organizada e segura.
 
 ### 1.3 Tecnologias a Serem Utilizadas
-
-| Categoria | Tecnologia |
-| ----- | ---- |
-| Linguagem de programação | TypeScript, JavaScript |
-| Framework de frontend | React |
-| Framework de backend | PrismaORM, NodeJS |
-| Banco de dados | PostgreSQL |
+<p style="display: flex; justify-content: center; font-size: 0.8em">Tabela 2 - Tecnologias a Serem Utilizadas</p>
+<div style="display: flex; justify-content: center; margin-top: 0;">
+  <table>
+    <thead> 
+      <tr>
+        <th>Categoria</th>
+        <th>Tecnologia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Linguagem de programação</td> 
+        <td>TypeScript, JavaScript</td>
+      </tr>
+        <td>Framework de frontend</td>
+        <td>React</td>
+      <tr>
+        <td>Framework de backend </td>
+        <td>PrismaORM, NodeJS</td>
+      </tr>
+      <tr>
+        <td>Banco de dados</td>
+        <td>PostgreSQL</td>
+      </tr>
+    </tbody> 
+  </table>
+</div>
+<p style="display: flex; justify-content: center; font-size: 0.8em">Fonte: Autores (2023)</p>
 
 ## 2 VISÃO GERAL DO PROJETO
 
 ### 2.1 Organização do Projeto
 
-*A tabela abaixo apresenta uma visão geral da estrutura organizacional com foco em papéis e responsabilidades dentro da equipe. Ela detalha os principais perfis, suas atribuições e as pessoas responsáveis por cada um desses papéis, bem como os participantes associados.*
+*A tabela 3 apresenta uma visão geral da estrutura organizacional com foco em papéis e responsabilidades dentro da equipe. Ela detalha os principais perfis, suas atribuições e as pessoas responsáveis por cada um desses papéis, bem como os participantes associados.*
 
+<p style="display: flex; justify-content: center; font-size: 0.8em">Tabela 3 - Organização do Projeto</p>
 | Perfil | Atribuições | Responsável | Participantes |
 |---|---|---|---|
 | Líder/Scrum Master | Assegurar que a equipe siga os princípios e métodos do Scrum. | [Luciano Freitas](https://github.com/luciano-freitas-melo) | [Artur Rodrigues](https://github.com/ArturRSA19), [João Barreto](https://github.com/JoaoBarreto03), [Pablo Santos](https://github.com/pabloheika), [Victorio Lazaro](https://github.com/Victor-oss) e [Weslley Barros](https://github.com/weslley17w) |
@@ -86,36 +124,41 @@
 | Desenvolvedores | Responsável por projetar, codificar e testar funcionalidades, trabalhando juntos para alcançar metas da equipe Scrum. | [Weslley Barros](https://github.com/weslley17w) | [Artur Rodrigues](https://github.com/ArturRSA19), [João Barreto](https://github.com/JoaoBarreto03), [Luciano Freitas](https://github.com/luciano-freitas-melo), [Pablo Santos](https://github.com/pabloheika) e [Victorio Lazaro](https://github.com/Victor-oss) |
 | Cliente | Responsável por fornece informações sobre requisitos e expectativas, garantindo que o produto atenda às suas necessidades. | Mateus | Mateus |
 | Monitor | Responsável por retirar dúvidas, oferecer opiniões, acompanhar e, se necessário, ajudar a equipe para garantir a entrega de um bom trabalho. | João Matheus | João Matheus |
+<p style="display: flex; justify-content: center; font-size: 0.8em">Fonte: Autores (2023)</p>
 
 ### 2.2 Planejamento das Fases e/ou Iterações do Projeto
 
-*A tabela abaixo apresenta um resumo das sprints e entregas relacionadas ao nosso projeto. As informações incluem o número da sprint, o nome da entrega associada, a data de início da sprint e a data de conclusão da sprint. Utilize esta tabela para acompanhar o progresso do projeto e garantir que todas as tarefas sejam concluídas dentro do prazo estabelecido.*
+*A tabela 4 apresenta um resumo das sprints e entregas relacionadas ao nosso projeto. As informações incluem o número da sprint, o nome da entrega associada, a data de início da sprint e a data de conclusão da sprint. Utilize esta tabela para acompanhar o progresso do projeto e garantir que todas as tarefas sejam concluídas dentro do prazo estabelecido.*
 
+<p style="display: flex; justify-content: center; font-size: 0.8em">Tabela 4 - Cronograma do Projeto</p>
 | Sprint | Entrega | Data de início | Data de fim |
 |---|---|---|---|
 | Sprint 0 | Definição do produto e entrega da Visão do Produto e Projeto | 15/09/2023 | 27/09/2023 |
 | Sprint 1 | Configuração do ambiente de desenvolvimento, nivelamento da equipe, definição do backlog, definição de user stories, definição de arquitetura, definição de MVP | 30/09/2023 | 11/10/2023 |
 | Sprint 2 | Sistema de autenticação do sistema (Login e Registro), definição de Backlog SAFe e entrega da Missão 2 (26/10) | 14/10/2023 | 25/10/2023 |
 | Sprint 3 | Funcionalidade de criação dos drills | 28/10/2023 | 08/11/2023 |
-| Sprint 4 | Ponto de Controle 1 (14/11) e funcionalidade de criação dos drills | 11/11/2023 | 22/11/2023 |
-| Sprint 5 | Definição de Backlog com PBB, definição situações de comportamento para cada User Story com o BDD, Entrega Missão 3 (23/11), Ponto de controle 2 (05/12), funcionalidade de gestão das quadras e testes | 25/11/2023 | 06/12/2023 |
+| Sprint 4 | Funcionalidade de criação dos drills | 11/11/2023 | 22/11/2023 |
+| Sprint 5 | Definição de Backlog com PBB, definição situações de comportamento para cada User Story com o BDD, Entrega Missão 3 (23/11), funcionalidade de gestão das quadras e testes | 25/11/2023 | 06/12/2023 |
 | Sprint 6 | Diagrama e especificação de casos de uso, Entrega Missão 4 (14/12) | 09/12/2023 | 20/12/2023 |
+<p style="display: flex; justify-content: center; font-size: 0.8em">Fonte: Autores (2023)</p>
 
 ### 2.3 Matriz de Comunicação
 
-*Esta seção descreve a estratégia de comunicação adotada para monitoramento do progresso do projeto. Identificar a periodicidade de reuniões e o envio dos relatórios exigidos pelo processo e opcionalmente outros relatórios exigidos pelo cliente.*
+*Esta seção descreve a estratégia de comunicação adotada para monitoramento do progresso do projeto como mostrado na tabela 5. Identificar a periodicidade de reuniões e o envio dos relatórios exigidos pelo processo e opcionalmente outros relatórios exigidos pelo cliente.*
 
+<p style="display: flex; justify-content: center; font-size: 0.8em">Tabela 5 - Matriz de Comunicação</p>
 | **Descrição**                 | **Área/Envolvidos**          | **Periodicidade** | **Produtos Gerados**                                                                                                |
 |-------------------------------|------------------------------|-------------------|---------------------------------------------------------------------------------------------------------------------|
 | Planejamento das atividades   | Equipe do projeto             | Quinzenal         | Planejamento do que será feito no ciclo da sprint                                                                   |
 | Acompanhamento das atividades | Equipe do projeto            | Diário            | Relato por parte dos membros da equipe no whatsapp ou no discord sobre o andamento individual das partes do projeto |
 | Revisão das atividades        | Equipe do projeto, cliente   | Quinzenal         | Validação do produto                                                                                                |
 | Retrospectiva das atividades  | Equipe do projeto            | Quinzenal         | Identificação de oportunidades de melhoria                                                                          |
-| Comunicar situação do projeto | Equipe do projeto, professor | Mensal            | Artefatos solicitados e relação de feedbacks do professor                                                           |
+| Comunicar situação do projeto | Equipe do projeto, professor | Quinzenal            | Artefatos solicitados e relação de feedbacks do professor                                                           |
+<p style="display: flex; justify-content: center; font-size: 0.8em; margin-top: 0">Fonte: Autores (2023)</p>
 
 ### 2.4 Gerenciamento de Riscos
 
-*De acordo com o PMBOK (2017)¹, risco é um evento ou condição que pode ter impacto positivo ou negativo em um projeto de software, podendo levar a atrasos ou prejuízos. Portanto, o gerenciamento de risco é crucial para garantir o sucesso do projeto, a tabela 4 traz informações sobre os principais riscos do projeto e as ações para mitigá-las.*
+*De acordo com o PMBOK (2017)¹, risco é um evento ou condição que pode ter impacto positivo ou negativo em um projeto de software, podendo levar a atrasos ou prejuízos. Portanto, o gerenciamento de risco é crucial para garantir o sucesso do projeto, os tópicos abaixo trazem informações sobre os principais riscos do projeto e as ações para mitigá-los.*
 
 - **Atraso nas entregas**: Baixa produtividade dos membros da equipe e/ou dimensionamento incorreto do escopo da iteração e dos MVPs.
 - **Abandono do projeto**: A equipe pode tomar medidas para minimizar as chances de abandono do projeto, como a realocação de responsabilidades e a diminuição no escopo.
@@ -132,6 +175,8 @@
 - **Alteração nos requisitos**: Pode ser que ao longo do projeto surjam novas necessidades, diante disso, é importante que a equipe esteja preparada para lidar com essas alterações, avaliando seus impactos e definindo um plano adequado.
 - **Riscos não previstos**: Mesmo com um planejamento bem feito, sempre existe a possibilidade de que riscos não previstos ocorram durante o projeto. A equipe deve estar preparada para identificar esses riscos e definir um plano de ação para amenizá-los.
 - **Atrasos**: É importante que o planejamento do projeto seja realista e que a equipe trabalhe dentro dos prazo e metas estabelecidos, trabalhando de forma colaborativa visando maximizar a produtividade.
+- **Alteração no cronograma**: Pode ser que com a saída de algum membro da equipe seja necessário revisar o cronograma e redistribuir a carga de trabalho entre os outros membros para efetuar a entrega no prazo estabelecido
+- **Alteração no backlog**: Caso a comunicação com o cliente seja ineficiente e o cliente se sinta insatisfeito com os entregáveis apresentados pela equipe, é necessário marcar reuniões com o cliente para que a equipe alinhe sua visão do projeto com a do cliente e altere o backlog caso necessário
 
 ## 3 PROCESSO DE DESENVOLVIMENTO DE SOFTWARE
 
@@ -148,3 +193,4 @@
 ## 5 REFERÊNCIAS BIBLIOGRÁFICAS
 
 - Material da disciplina disponivel no aprender
+- PROJECT MANAGEMENT INSTITUTE. Guia PMBOK: um guia para o conjunto de conhecimentos em gerenciamento de projetos. 6. ed. Newtown Square, PA: Project Management Institute, 2017.
