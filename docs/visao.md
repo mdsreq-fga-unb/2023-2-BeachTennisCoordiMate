@@ -86,7 +86,11 @@
 ## 4 LIÇÕES APRENDIDAS
 
 ## 4.1 Unidade 1
+Nesta primeira unidade, com base nos feedbacks recebidos e atividades propostas, podemos extrair algumas lições aprendidas importantes no projeto. A equipe foi capaz de desenvolver o início do projeto de software, com a criação do documento do produto, que abrange a visão geral do produto. Além disso, foi possível realizar a primeira iteração do projeto, com a criação da página de documentação e a definição das tecnologias a serem utilizadas. A equipe também foi capaz de realizar a primeira reunião com o cliente, onde foram discutidos os problemas e requisitos do sistema. Por fim, a equipe foi capaz de realizar a primeira retrospectiva, onde foram discutidos os pontos positivos e negativos da primeira missão. 
 
+Em relação a comunicação e interação entre os membros, é notável que, por parte da maioria dos participantes do projeto, o feedback é positivo e a comunicação está sendo efetiva. Porém, alguns ajustes ainda devem ser feitos para que o projeto possa ser desenvolvido da forma mais eficiente possível. Além disso, o grupo vem se mostrando proativo nas entregas e as tarefas estão bem divididas, o que demonstra organização e alinhamento nesse início de produção.
+
+Sendo assim, a equipe teve uma primeira missão de bastante aprendizado e de grande importância para o desenvolvimento do projeto. A equipe conseguiu realizar as atividades propostas e, com isso, foi possível ter uma visão mais clara do que será o projeto e quais serão os próximos passos a serem tomados.
 ## 4.1 Unidade 2
 
 ## 4.2 Unidade 3
