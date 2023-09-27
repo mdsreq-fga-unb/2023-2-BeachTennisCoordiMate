@@ -33,3 +33,4 @@ nav:
     - template:
       - Planning: sprints/template/planning.md
       - Review: sprints/template/review.md
+      - Retrospective: sprints/template/retrospective.md
