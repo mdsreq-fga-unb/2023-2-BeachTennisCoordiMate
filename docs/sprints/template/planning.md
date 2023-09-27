@@ -1,5 +1,5 @@
 # Sprint [Número da Sprint]
-**Período: 15/09/2023 - 27/09/2023**
+**Período: xx/xx/2023 - xx/xx/2023**
 
 ## Planning
 
