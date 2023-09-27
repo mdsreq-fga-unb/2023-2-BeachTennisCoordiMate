@@ -29,7 +29,6 @@ Marque o tipo de mudança realizada:
 - [ ] _Bug fix_ (alteração que corrige uma _issue_ e não altera funcionalidades existentes)
 - [ ] Nova _feature_ (alteração que adiciona uma funcionalidade e não altera funcionalidades já existentes)
 - [ ] Alteração disruptiva (_Breaking change_) (Correção ou funcionalidade que causa alteração nas funcionalidades existentes)
-- [ ] Documentação
 - [ ] Outro (especifique)
 
 ## Detalhes Adicionais
