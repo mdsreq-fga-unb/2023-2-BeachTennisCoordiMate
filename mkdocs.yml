@@ -30,7 +30,9 @@ nav:
       - Processo de Engenharia de Requisitos: doc-visao/4.processo-requisitos.md
       - Lições Aprendidas: doc-visao/5.licoes-aprendidas.md
   - Sprints:
-    - template:
-      - Planning: sprints/template/planning.md
-      - Review: sprints/template/review.md
-      - Retrospective: sprints/template/retrospective.md
+    - Sprint 0:
+      - Planning: sprints/sprint0/planning.md
+      - Review: sprints/sprint0/review.md
+
+      
+      
