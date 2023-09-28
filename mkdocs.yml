@@ -29,6 +29,10 @@ nav:
       - Processo de Desenvolvimento: doc-visao/3.processo-dev.md
       - Processo de Engenharia de Requisitos: doc-visao/4.processo-requisitos.md
       - Lições Aprendidas: doc-visao/5.licoes-aprendidas.md
+  - Sprints:
+    - Sprint 0:
+      - Planning: sprints/sprint0/planning.md
+      - Review: sprints/sprint0/review.md
 
       
       
