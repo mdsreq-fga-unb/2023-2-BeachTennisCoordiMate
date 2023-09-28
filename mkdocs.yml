@@ -32,7 +32,7 @@ nav:
   - Sprints:
     - Sprint 0:
       - Planning: sprints/sprint0/planning.md
-      #- Review: sprints/sprint0/review.md
+      - Review: sprints/sprint0/review.md
       #- Retrospective: sprints/sprint0/retrospective.md
 
       
