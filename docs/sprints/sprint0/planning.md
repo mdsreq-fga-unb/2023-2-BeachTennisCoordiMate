@@ -51,9 +51,9 @@
 ### Planejamento de Tarefas
 
  1. Divisão de Tarefas
-      - Artur Rodrigues: [Processo de Engenharia de Requisitos](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/5)
-      - Joao Barreto: [Processo de Engenharia de Requisitos](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/5)
-      - Luciano Freitas: [Matriz de comunicação e Gerenciamento de Riscos](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/3) e [Separar Documento de Visão em Tópicos no Pages](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/9)
+      - Artur Rodrigues: [Processo de Engenharia de Requisitos](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/5) e [lições aprendidas](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/6)
+      - Joao Barreto: [Processo de Engenharia de Requisitos](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/5) e [Matriz de comunicação e Gerenciamento de Riscos](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/3)
+      - Luciano Freitas: [Processo de desenvolvimento de software](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/4) e [Separar Documento de Visão em Tópicos no Pages](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/9)
       - Pablo Santos: [Matriz de comunicação e Gerenciamento de Riscos](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/3)
       - Victorio Lazaro: [Finalizar Visão do Produto](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/1) e [Organização e Planejamento do Projeto](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/2)
       - Weslley Barros: [Organização e Planejamento do Projeto](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/2) e [Criar Template das Sprints](https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate/issues/7)
