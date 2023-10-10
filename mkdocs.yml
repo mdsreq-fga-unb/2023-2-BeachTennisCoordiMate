@@ -26,6 +26,7 @@ nav:
   - Documentação:
     - Visão do produto e projeto:
       - Visão do Produto: doc-visao/1.visao-produto.md
+      - Requisitos Funcionais e Não Funcionais: doc-visao/2.requisitos.md
       - Visão do Projeto: doc-visao/2.visao-projeto.md
       - Processo de Desenvolvimento: doc-visao/3.processo-dev.md
       - Processo de Engenharia de Requisitos: doc-visao/4.processo-requisitos.md
