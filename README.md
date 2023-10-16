@@ -7,7 +7,7 @@ Repositório de projeto da disciplina de REQ-T3.
 - Docker
 - Node
 - npm
-- Prisma ORM
+- Yarn
 
 ## 🛞 Como executar/rodar
 
