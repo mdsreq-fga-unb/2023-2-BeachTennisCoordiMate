@@ -85,31 +85,31 @@ O SAFe 6.0 é uma base de conhecimento de princípios, práticas e competências
 |         F1         |  US06   |                      Eu, como usuário-coordenador, desejo desativar a conta de um aluno                      |
 |         F2         |  US07   |                        Eu, como usuário-professor, desejo fazer login na minha conta                         |
 |         F3         |  US08   |                          Eu, como usuário-aluno, desejo fazer login na minha conta                           |
-|        F4         | US23 |                          Eu, como usuário-coordenador, desejo adicionar uma quadra                           |
-|        F4         | US24 |                           Eu, como usuário-coordenador, desejo excluir uma quadra   |
-|        F4         | US25 |                     Eu, como usuário-coordenador, desejo definir o status de uma quadra                      |
-|        F4         | US26 |         Eu, para qualquer usuário, desejo visualizar o status de uma quadra para determinado horário         |
-|        F5         | US22 |                            Eu, como usuário-coordenador, desejo remarcar uma aula                            |
-|        F5         | US27 |             Eu, como usuário-coordenador, desejo associar turmas, alunos e horários a uma quadra             |
-|        F5         | US28 |              Eu, como usuário-professor, desejo visualizar em qual quadra será realizada a aula              |
-|        F5         | US29 |          Eu, como usuário-coordenador, desejo baixar o atestado de um aluno para remarcar uma aula           |
-|        F5         | US30 |       Eu, como usuário-coordenador, desejo liberar a remarcação de horários disponíveis para os alunos       |
-|        F5         | US31 |              Eu, como usuário-aluno, desejo remarcar um horário com base nas opções disponíveis              |
-|        F5        | US32 |                              Eu, como usuário-aluno ou visitante, desejo agendar um day use                               |
-|        F5         | US33 |          Eu, como visitante do site, desejo visualizar quais os horários disponíveis para o day use          |
-|         F6         | US09  |                    Eu, como usuário-coordenador, desejo adicionar equipamentos a um drill                    |
-|         F6         | US10 |                     Eu, como usuário-coordenador, desejo adicionar personagens ao drill                      |
-|         F6         | US11 |                     Eu, como usuário-coordenador, desejo adicionar observações ao drill                      |
-|         F7         | US12 |                        Eu, como usuário-coordenador, desejo atualizar um drill errado                        |
-|         F8         | US13 |                        Eu, como usuário-coordenador, desejo deletar um drill obsoleto                        |
-|         F9         | US14 |     Eu, como usuário-coordenador, desejo definir os objetivos que desejo alcançar com meu plano de aula      |
-|         F10         | US15 | Eu, como usuário-coordenador, desejo definir qual será o perfil dos alunos, como faixa etária e qualificação |
-|         F11         | US16 |  Eu, como usuário-coordenador, desejo listar em meu plano os materiais que serão utilizados em minhas aulas  |
-|        F12         | US17 |                  Eu, como usuário-coordenador, desejo poder atualizar meus planos de aulas                   |
-|        F13         | US18 |                   Eu, como usuário-coordenador, desejo poder visualizar os planos de aulas                   |
-|        F13         | US19 |                    Eu, como usuário-professor, desejo poder visualizar os planos de aulas                    |
-|        F14         | US20 |             Eu, como usuário-coordenador, desejo compartilhar planos de aulas com os professores             |
-|        F15         | US21 |             Eu, como usuário-coordenador, desejo baixar os planos de aulas para serem aprovados              |
+|        F4         | US09 |                          Eu, como usuário-coordenador, desejo adicionar uma quadra                           |
+|        F4         | US10 |                           Eu, como usuário-coordenador, desejo excluir uma quadra   |
+|        F4         | US11 |                     Eu, como usuário-coordenador, desejo definir o status de uma quadra                      |
+|        F4         | US12 |         Eu, para qualquer usuário, desejo visualizar o status de uma quadra para determinado horário         |
+|        F5         | US13 |                            Eu, como usuário-coordenador, desejo remarcar uma aula                            |
+|        F5         | US14 |             Eu, como usuário-coordenador, desejo associar turmas, alunos e horários a uma quadra             |
+|        F5         | US15 |              Eu, como usuário-professor, desejo visualizar em qual quadra será realizada a aula              |
+|        F5         | US16 |          Eu, como usuário-coordenador, desejo baixar o atestado de um aluno para remarcar uma aula           |
+|        F5         | US17 |       Eu, como usuário-coordenador, desejo liberar a remarcação de horários disponíveis para os alunos       |
+|        F5         | US18 |              Eu, como usuário-aluno, desejo remarcar um horário com base nas opções disponíveis              |
+|        F5        | US19 |                              Eu, como usuário-aluno ou visitante, desejo agendar um day use                               |
+|        F5         | US20 |          Eu, como visitante do site, desejo visualizar quais os horários disponíveis para o day use          |
+|         F6         | US21  |                    Eu, como usuário-coordenador, desejo adicionar equipamentos a um drill                    |
+|         F6         | US22 |                     Eu, como usuário-coordenador, desejo adicionar personagens ao drill                      |
+|         F6         | US23 |                     Eu, como usuário-coordenador, desejo adicionar observações ao drill                      |
+|         F7         | US24 |                        Eu, como usuário-coordenador, desejo atualizar um drill errado                        |
+|         F8         | US25 |                        Eu, como usuário-coordenador, desejo deletar um drill obsoleto                        |
+|         F9         | US26 |     Eu, como usuário-coordenador, desejo definir os objetivos que desejo alcançar com meu plano de aula      |
+|         F10         | US27 | Eu, como usuário-coordenador, desejo definir qual será o perfil dos alunos, como faixa etária e qualificação |
+|         F11         | US28 |  Eu, como usuário-coordenador, desejo listar em meu plano os materiais que serão utilizados em minhas aulas  |
+|        F12         | US29 |                  Eu, como usuário-coordenador, desejo poder atualizar meus planos de aulas                   |
+|        F13         | US30 |                   Eu, como usuário-coordenador, desejo poder visualizar os planos de aulas                   |
+|        F13         | US31 |                    Eu, como usuário-professor, desejo poder visualizar os planos de aulas                    |
+|        F14         | US32 |             Eu, como usuário-coordenador, desejo compartilhar planos de aulas com os professores             |
+|        F15         | US33 |             Eu, como usuário-coordenador, desejo baixar os planos de aulas para serem aprovados              |
 
 
 
