@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  beachtenniscoordimate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./src:/home/node/app/src
+    container_name: beach-tennis-coordi-mate
+    env_file: .env
+    expose:
+      - "3000"
+    ports:
+      - "3000"
+    command: bash -c "npm run start:dev"
+  db:
+    container_name: db-beach-tennis-coordi-mate
+    image: "postgres:latest"
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_persdata:/var/lib/db
+    command: postgres -c port=5432
+    env_file: .env
+    networks:
+      - default
+
+networks:
+  default:
+volumes:
+  db_persdata: {}
