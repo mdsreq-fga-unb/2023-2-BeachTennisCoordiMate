@@ -1,15 +1,24 @@
 site_name: "Beach Tennis CoordiMate"
-
+repo_url: https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate
+repo_name: BeachTennisCoordiMate
+features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.tabs.sticky
 theme:
+  palette: 
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Mudar para o modo claro
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Mudar para o modo escuro
   #logo: assets/logo/logo.png
   #favicon: assets/logo/logo.png
   name: material
   language: pt-BR
-  features:
-    - navigation.tabs
-    - navigation.top
-    - navigation.tabs.sticky
-    
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
