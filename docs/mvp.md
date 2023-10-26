@@ -15,9 +15,9 @@ A metodologia utilizada para a escolha do nosso MPV foi a Matriz de Priorizaçã
 
 Na dimensão de perspectiva de negócio foi utilizada a técnica MoSCoW, em que as funcionalidades foram divididas em 4 quadrantes, que são MUST, SHOULD, COULD e WON'T.
 
-O entendimento técnico foi o entendimento do que deveria ser feito. Para isso, foi utilizado 3 classificações que estão relacionadas ao nível de entendimento e pode ser BAIXO, MEDIANO e ALTO.
+O entendimento técnico foi a avaliação da visão da equipe da facilidade de implementação da funcionalidade e da capacidade da equipe para o desenvolvimento da mesma. Para isso, foi utilizado 3 classificações que estão relacionadas ao nível de entendimento e pode ser BAIXO, MEDIANO e ALTO.
 
-Outro critério para estruturar as Features foi as dependências entre as Features. As dependências entre funcionalidades foram avaliadas caso a caso para cada uma das funcionalidades do produto, levando em consideração o entendimento da equipe das relações entre cada feature e do escopo do projeto. Para referenciar as dependências, foi usada uma seta, por exemplo uma seta cuja extremidade reta está em uma funcionalidade A e a ponta da seta aponta para uma funcionalidade B significa que A depende de B.
+Outro critério para estruturar as funcionalidades foi as dependências entre as funcionalidades. As dependências entre funcionalidades foram avaliadas caso a caso para cada uma das funcionalidades do produto, levando em consideração o entendimento da equipe das relações entre cada funcionalidade e do escopo do projeto. Para referenciar as dependências , foram usadas setas na figura 1 em que, por exemplo, uma seta cuja extremidade reta está em uma funcionalidade A e a ponta da seta aponta para uma funcionalidade B significa que A depende de B.
 
 **Pontuações** 
 
