@@ -5,7 +5,7 @@
 
 | **Data** | **Versão** | **Descrição** | **Autor** |
 | -------- | ---------- | ------------- | --------- |
-|     25/10/2023      |      0.1      | Criação do documento              |  Artur, João, Luciano, Victório e Weslley        |
+|     25/10/2023      |      0.1      | Criação do documento              |  Artur, João, Luciano, Pablo, Victório e Weslley        |
 
 </center>
 
