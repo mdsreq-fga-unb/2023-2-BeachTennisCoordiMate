@@ -41,6 +41,7 @@ nav:
       - Processo de Engenharia de Requisitos: doc-visao/4.processo-requisitos.md
       - Lições Aprendidas: doc-visao/5.licoes-aprendidas.md
     - Backlog SAFE: backlog.md
+    - MPV: mvp.md
   - Sprints:
     - Sprint 0:
       - Planning: sprints/sprint0/planning.md
