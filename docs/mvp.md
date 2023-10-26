@@ -1,3 +1,14 @@
+
+## Histórico de Revisão
+
+<center>
+
+| **Data** | **Versão** | **Descrição** | **Autor** |
+| -------- | ---------- | ------------- | --------- |
+|     25/10/2023      |      0.1      | Criação do documento              |  Artur, João, Luciano, Victório e Weslley        |
+
+</center>
+
 ## Mínimo Produto Viável
 
 A metodologia utilizada para a escolha do nosso MPV foi a Matriz de Priorização. Essa técnica permite classificar os requisitos do produto com base em critérios específicos. Na matriz apresentada, foram utilizadas três dimensões para avaliar cada Feature: a perspectiva de negócios, o entendimento técnico e as dependências. 
@@ -72,7 +83,7 @@ Outro critério para estruturar as Features foi as dependências entre as Featur
 
 ## Alinhamento do MPV aos objetivos do projeto
 
-Dado os objetivos do projeto estabelecidos no [documento de visão do produto](/docs/doc-visao/1.visao-produto.md), é possível visualizar como o MPV se alinha a esses objetivos:
+Dado os objetivos do projeto estabelecidos no [documento de visão do produto](https://mdsreq-fga-unb.github.io/2023-2-BeachTennisCoordiMate/doc-visao/1.visao-produto/), é possível visualizar como o MPV se alinha a esses objetivos:
 
 * As funcionalidades F1 e F8 estão diretamente relacionadas ao objetivo de planejamento das aulas de beach tennis, que buscam resolver o problema da falta de uma ferramenta para criação dos drills e padronização dos planos de aulas.
 * Além disso, a funcionalidade F6 está relacionada ao objetivo de administração das quadras de beach tennis, que busca iniciar a resolução do problema de fluxo de pessoas durante o day-use com a estruturação do funcionamento das quadras físicas por meio do produto.
@@ -118,8 +129,3 @@ A partir das funcionalidades priorizadas com o MoSCoW, foram definidas, conseque
 
 </center>
 
-
-## Histórico de versões
-| **Data** | **Versão** | **Descrição** | **Autor** |
-| -------- | ---------- | ------------- | --------- |
-|     25/10/2023      |      0.1      | Criação do documento              |  Artur, João, Luciano, Victório e Weslley        |

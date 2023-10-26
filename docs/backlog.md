@@ -1,5 +1,17 @@
 # Scale Agile Framework - SAFe
 
+## Histórico de Revisão
+
+<center>
+ 
+|  **Data**  | **Versão** |                   **Descrição**                   |          **Editores**          |
+| :--------: | :--------: | :-----------------------------------------------: | :----------------------------: |
+| 16/10/2023 |   0.1    |               Criação do documento                | João, Luciano, Pablo, Victório |
+| 24/10/2023 |    0.2     | Refatoração do backlog e adição do link do Canvas |            Victório            |
+
+</center>
+
+
 <p align="justify"> &emsp;&emsp;
 O SAFe 6.0 é uma base de conhecimento de princípios, práticas e competências integradas comprovadas para alcançar agilidade empresarial usando Lean, Agile e DevOps. Ele é construído em torno da "Seven Core Competencies of Business Agility", que são fundamentais para alcançar e sustentar uma vantagem competitiva em uma era digital cada vez mais presente. O Modelo de requisitos utilizado pelo SAFe fornece uma estrutura de requisitos escalável que demonstra uma maneira de expressar comportamentos do sistema:</p>
 
@@ -143,13 +155,3 @@ Confira no <a href="https://www.canva.com/design/DAFxzN0DjF4/hdM3-9VXQJwhiSZRybY
 
 
 
-## Histórico de Versões
-
-<center>
- 
-|  **Data**  | **Versão** |                   **Descrição**                   |          **Editores**          |
-| :--------: | :--------: | :-----------------------------------------------: | :----------------------------: |
-| 16/10/2023 |   0.1    |               Criação do documento                | João, Luciano, Pablo, Victório |
-| 24/10/2023 |    0.2     | Refatoração do backlog e adição do link do Canvas |            Victório            |
-
-</center>
