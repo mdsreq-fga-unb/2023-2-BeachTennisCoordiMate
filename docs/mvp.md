@@ -31,16 +31,16 @@ Outro critério para estruturar as funcionalidades foi as dependências entre as
 
 **Entendimento Técnico:**
 
-- BAIXO
-- MEDIANO
-- ALTO 
+- BAIXO: A equipe tem baixo entendimento ténicnico sobre a feature.
+- MEDIANO: A equipe tem entendimento técnico médio. Podem haver algumas questões desconhecidas ou de difícil entendimento.
+- ALTO: A equipe possui alto entendimento técnico sobre a feature.
 
 **Dependência**
 - Número da Feature do qual ela depende
 - '-' caso ela não dependa de nenhuma feature
 <center>
 
-| **FEATURE** | **Perspectiva de Negócio** | **Entendimento Técnico** | **Dependência** |
+| **FEATURE** | **Perspectiva de Negócio** | **Entendimento Técnico** | **Dependência** | 
 | :---------: | :------------------------: | :----------------------: | :-------------: |
 |     F1      |            MUST            |         MEDIANO          |        -        |
 |     F2      |           COULD            |           ALTO           |        -        |
@@ -76,7 +76,6 @@ Outro critério para estruturar as funcionalidades foi as dependências entre as
 |                 **MPV**                 |
 | :---------------------------------------: |
 | F1 - Gerenciamento de usuário-coordenador |
-|       F6 - Administração de quadras       |
 |    F8 - Gerenciamento de plano de aula    |
 
 </center>
@@ -90,7 +89,19 @@ Dado os objetivos do projeto estabelecidos no [documento de visão do produto](h
 
 ## User Stories do MPV
 
-A partir das funcionalidades priorizadas com o MoSCoW, foram definidas, consequentemente, as User Stories que estarão contidas no MVP. A tabela abaixo apresenta essas User Stories:
+A partir das funcionalidades priorizadas com o MoSCoW, foram definidas, consequentemente, as User Stories que estarão contidas no MVP. Essas US foram avaliadas de 1 a 5 de acordo com seu valor de negócio, viabilidade e complexidade técnica. A tabela abaixo mostra a relação dos números com os critérios de avaliação:
+
+<center>
+
+| **Critérios de Avaliação** | **Nota mínima** | **Nota máxima** |
+| :----------------: | :----: | :-----------------------------------------------------------------------------: |
+| Valor de negócio | 1 _(User Story sem valor)_ | 5 _(User Story valorosa e importante para o projeto)_ |
+| Viabilidade | 1 _(Baixa viabilidade de implementação)_ | 5 _(Alta viabilidade de implementação)_ |
+| Complexidade técnica | 1 _(Baixa complexidade técnica)_ | 5 _(Alta complexidade técnica)_ |
+
+</center>
+
+Abaixo, seguem as User Stories e sua descrição:
 
 <center>
 
@@ -98,18 +109,8 @@ A partir das funcionalidades priorizadas com o MoSCoW, foram definidas, conseque
  | :----------------: | :----: | :-----------------------------------------------------------------------------: |
 |         F1         |  US01  |                                                        Eu, como usuário-coordenador, desejo criar minha conta para administrar a arena                                                        |
 |         F1         |  US02  |                                   Eu, como usuário-coordenador, desejo fazer login na minha conta para acessar as funcionalidades exclusivas de coordenador   
-|         F6         |  US34  |                                     Eu, como usuário-coordenador, desejo criar uma quadra com uma identificação para gerenciar as quadras do meu negócio                                      |
-|         F6         |  US35  |                                                 Eu, como usuário-coordenador, desejo excluir uma quadra para caso essa quadra seja desativada                                                 |
-|         F6         |  US36  |                                                 Eu, como usuário-coordenador, desejo editar as informações de uma quadra para corrigir erros                                                  |
-|         F6         |  US37  |                                         Eu, como usuário-coordenador, desejo visualizar uma quadra, para procurar por erros nas informações da quadra                                         |
-|         F6         |  US38  |               Eu, como usuário-coordenador, desejo definir o status de uma quadra em determinado dia e horário, para notificar quando ela está livre ou quando ela será limpa.                |
-|         F6         |  US39  |           Eu, como usuário-coordenador, desejo visualizar os status de uma quadra em um mês na forma de agenda, para observar quando ela está livre, está tendo aula ou será limpa.           |
-|         F6         |  US40  |                      Eu, como usuário-coordenador, desejo editar o status de uma quadra em determinado dia e horário, para quando ocorrer mudanças no uso dessas quadras                      |
-|         F6         |  US41  |                                Eu, como usuário-coordenador, desejo visualizar uma lista com todas as quadras, para saber a quantidade de quadras cadastradas                                 |
 |         F8         |  US50  |                            Eu, como usuário-coordenador, desejo criar um plano de aula com título e os objetivos da aula, para poder administrar as aulas da arena                            |
-|         F8         |  US51  |                                           Eu, como usuário-coordenador, desejo poder visualizar um plano de aula, para procurar por possíveis erros                                           |
 |         F8         |  US52  |                                    Eu, como usuário-coordenador, desejo poder excluir um plano de aula, para apagar planos de aula que estiverem obsoletos                                    |
-|         F8         |  US53  |                          Eu, como usuário-coordenador, desejo poder editar um plano de aula, para alterar planos de aula que estiverem com alguma informação errada                           |
 |         F8         |  US54  |                Eu, como usuário-coordenador, desejo baixar os planos de aulas, para conseguir enviá-los aos responsáveis pela verificação dos planos, que são externos a arena                |
 |         F8         |  US55  |                     Eu, como usuário-coordenador, desejo adicionar um ou mais drills a um plano de aula para declarar os diferentes drills presentes em um plano de aula                      |
 |         F8         |  US56  |                                                  Eu, como usuário-coordenador, desejo criar um drill para representar e registrar um treino                                                   |
@@ -117,9 +118,6 @@ A partir das funcionalidades priorizadas com o MoSCoW, foram definidas, conseque
 |         F8         |  US58  |                               Eu, como usuário-coordenador, desejo adicionar equipamentos a um drill para representar os equipamentos de um exercício/circuito                                |
 |         F8         |  US59  |                                  Eu, como usuário-coordenador, desejo deletar equipamentos de um drill para deletar um equipamento adicionado  erroneamente                                   |
 |         F8         |  US60  |                                  Eu, como usuário-coordenador, desejo deletar personagens de um drill para deletar um personagem adicionado um  erroneamente                                  |
-|         F8         |  US61  |                                   Eu, como usuário-coordenador, desejo adicionar observações ao drill para detalhar mais um exercício/circuito de uma aula                                    |
-|         F8         |  US62  |                                 Eu, como usuário-coordenador, desejo deletar observações de um drill para deletar uma observação  adicionado uma erroneamente                                 |
-|         F8         |  US63  |                                                  Eu, como usuário-coordenador, desejo editar as observações de um drill para corrigir erros                                                   |
 |         F8         |  US64  |                                      Eu, como usuário-coordenador, desejo deletar um drill obsoleto para não deixar drills obsoletos em um plano de aula                                      |
 |         F8         |  US65  |                                                 Eu, como usuário-coordenador, desejo editar as informações de um drill para corrigir um erro                                                  |
 |         F8         |  US66  |                                 Eu, como usuário-coordenador, desejo atribuir planos de aula a professores para informar a eles sobre como as aulas devem ser                                 |
@@ -128,4 +126,27 @@ A partir das funcionalidades priorizadas com o MoSCoW, foram definidas, conseque
 |         F8         |  US69  |                        Eu, como usuário-professor, desejo visualizar os planos de aula que me forem atribuídos para ter uma orientação de como devem ser minhas aulas                         |
 
 </center>
+
+
+A partir desses critérios, as US foram avaliadas e os resultados obtidos indicam a importância. Dessa forma, quanto maior o número, mais importante é a US. Abaixo estão as US avaliadas:
+
+| **Funcionalidade** | **US** | **Valor de Negócio** | **Viabilidade** | **Complexidade Técnica** | **Total**
+ | :----------------: | :----: | :-------------------    | :-----------  | :----------  | :--------- |
+ |        F1         |  US01  |   |   |  |  |
+|         F1         |  US02  |   |   |  |  |
+|         F8         |  US50  |   |   |  |  |
+|         F8         |  US52  |   |   |  |  |
+|         F8         |  US54  |   |   |  |  |
+|         F8         |  US55  |   |   |  |  |
+|         F8         |  US56  |   |   |  |  |
+|         F8         |  US57  |   |   |  |  |
+|         F8         |  US58  |   |   |  |  |
+|         F8         |  US59  |   |   |  |  |
+|         F8         |  US60  |   |   |  |  |
+|         F8         |  US64  |   |   |  |  |
+|         F8         |  US65  |   |   |  |  |
+|         F8         |  US66  |   |   |  |  |
+|         F8         |  US67  |   |   |  |  |
+|         F8         |  US68  |   |   |  |  |
+|         F8         |  US69  |   |   |  |  |
 
