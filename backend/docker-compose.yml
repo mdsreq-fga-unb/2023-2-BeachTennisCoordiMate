@@ -9,10 +9,8 @@ services:
       - ./src:/home/node/app/src
     container_name: beach-tennis-coordi-mate
     env_file: .env
-    expose:
-      - "3000"
     ports:
-      - "3000"
+      - "3000:3000"
     command: bash -c "npm run start:dev"
   db:
     container_name: db-beach-tennis-coordi-mate
