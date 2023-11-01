@@ -1,11 +1,11 @@
 site_name: "Beach Tennis CoordiMate"
 repo_url: https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate
 repo_name: BeachTennisCoordiMate
-features:
+theme:
+  features:
     - navigation.tabs
     - navigation.top
     - navigation.tabs.sticky
-theme:
   palette: 
     - scheme: default
       toggle:
