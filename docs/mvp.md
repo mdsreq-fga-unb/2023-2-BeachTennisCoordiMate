@@ -7,6 +7,7 @@
 | -------- | ---------- | ------------- | --------- |
 |     25/10/2023      |      0.1      | Criação do documento              |  Artur, João, Luciano, Pablo, Victório e Weslley        |
 |     07/11/2023      |      0.2      | Adição de pontuação das US's             |  Victório        |
+|     08/11/2023      |      0.3      | Reordenamento das US'S do MVP pelas pontuações mais altas             |  Victório        |
 
 </center>
 
@@ -131,29 +132,25 @@ A partir desses critérios, as US foram avaliadas e os resultados obtidos indica
 | :----------------: | :----: |  :-----------  | :----------  | :--------- | :--------- |
 |         F1         |  US01  | 4 | 3 | 7 | Presente |
 |         F1         |  US02  | 4 | 3 | 7 | Presente |
+|         F8         |  US49  | 4 | 3 | 7 | Presente |
+|         F8         |  US50  | 4 | 3 | 7 | Presente |
+|         F8         |  US51  | 4 | 3 | 7 | Presente |
+|         F8         |  US52  | 4 | 3 | 7 | Presente |
+|         F8         |  US54  | 4 | 3 | 7 | Presente |
+|         F8         |  US57  | 4 | 3 | 7 | Presente |
+|         F8         |  US58  | 4 | 3 | 7 | Presente |
+|         F8         |  US59  | 4 | 3 | 7 | Presente |
+|         F8         |  US61  | 4 | 3 | 7 | Presente |
+|         F8         |  US62  | 4 | 3 | 7 | Presente |
+|         F8         |  US53  | 4 | 2 | 6 | Presente |
+|         F8         |  US55  | 4 | 2 | 6 | Presente |
+|         F8         |  US56  | 4 | 2 | 6 | Presente |
 |         F2         |  US03  | 2 | 3 | 5 |
 |         F2         |  US04  | 2 | 3 | 5 |
-|         F2         |  US05  | 2 | 2 | 4 |
 |         F2         |  US06  | 2 | 3 | 5 |
-|         F3         |  US07  | 1 | 3 | 4 |
-|         F3         |  US08  | 1 | 3 | 4 |
-|         F3         |  US09  | 1 | 2 | 3 |
-|         F3         |  US10  | 1 | 3 | 4 |
-|         F4         |  US11  | 1 | 3 | 4 |
-|         F4         |  US12  | 1 | 3 | 4 |
-|         F4         |  US13  | 1 | 3 | 4 |
-|         F4         |  US14  | 1 | 3 | 4 |
-|         F4         |  US15  | 1 | 3 | 4 |
-|         F4         |  US16  | 1 | 3 | 4 |
-|         F4         |  US17  | 1 | 3 | 4 |
-|         F4         |  US18  | 1 | 3 | 4 |
-|         F4         |  US19  | 1 | 3 | 4 |
-|         F4         |  US20  | 1 | 3 | 4 |
 |         F5         |  US21  | 3 | 2 | 5 |
 |         F5         |  US22  | 3 | 2 | 5 |
 |         F5         |  US23  | 3 | 2 | 5 |
-|         F5         |  US24  | 3 | 1 | 4 |
-|         F5         |  US25  | 3 | 1 | 4 |
 |         F5         |  US26  | 3 | 2 | 5 |
 |         F5         |  US27  | 3 | 2 | 5 |
 |         F5         |  US28  | 3 | 2 | 5 |
@@ -173,27 +170,32 @@ A partir desses critérios, as US foram avaliadas e os resultados obtidos indica
 |         F7         |  US42  | 3 | 2 | 5 |
 |         F7         |  US43  | 3 | 2 | 5 |
 |         F7         |  US44  | 3 | 2 | 5 |
+|         F8         |  US60  | 3 | 2 | 5 | 
+|         F8         |  US63  | 3 | 2 | 5 |
+|         F9         |  US65  | 2 | 3 | 5 |
+|         F9         |  US67  | 2 | 3 | 5 |
+|         F2         |  US05  | 2 | 2 | 4 |
+|         F3         |  US07  | 1 | 3 | 4 |
+|         F3         |  US08  | 1 | 3 | 4 |
+|         F3         |  US10  | 1 | 3 | 4 |
+|         F4         |  US11  | 1 | 3 | 4 |
+|         F4         |  US12  | 1 | 3 | 4 |
+|         F4         |  US13  | 1 | 3 | 4 |
+|         F4         |  US14  | 1 | 3 | 4 |
+|         F4         |  US15  | 1 | 3 | 4 |
+|         F4         |  US16  | 1 | 3 | 4 |
+|         F4         |  US17  | 1 | 3 | 4 |
+|         F4         |  US18  | 1 | 3 | 4 |
+|         F4         |  US19  | 1 | 3 | 4 |
+|         F4         |  US20  | 1 | 3 | 4 |
+|         F5         |  US24  | 3 | 1 | 4 |
+|         F5         |  US25  | 3 | 1 | 4 |
 |         F7         |  US45  | 3 | 1 | 4 |
 |         F7         |  US46  | 3 | 1 | 4 |
 |         F7         |  US47  | 3 | 1 | 4 |
 |         F7         |  US48  | 3 | 1 | 4 |
-|         F8         |  US49  | 4 | 3 | 7 | Presente |
-|         F8         |  US50  | 4 | 3 | 7 | Presente |
-|         F8         |  US51  | 4 | 3 | 7 | Presente |
-|         F8         |  US52  | 4 | 3 | 7 | Presente |
-|         F8         |  US53  | 4 | 2 | 6 | Presente |
-|         F8         |  US54  | 4 | 3 | 7 | Presente |
-|         F8         |  US55  | 4 | 2 | 6 | Presente |
-|         F8         |  US56  | 4 | 2 | 6 | Presente |
-|         F8         |  US57  | 4 | 3 | 7 | Presente |
-|         F8         |  US58  | 4 | 3 | 7 | Presente |
-|         F8         |  US59  | 4 | 3 | 7 | Presente |
-|         F8         |  US60  | 3 | 2 | 5 | 
-|         F8         |  US61  | 4 | 3 | 7 | Presente |
-|         F8         |  US62  | 4 | 3 | 7 | Presente |
-|         F8         |  US63  | 3 | 2 | 5 |
 |         F9         |  US64  | 2 | 1 | 4 |
-|         F9         |  US65  | 2 | 3 | 5 |
 |         F9         |  US66  | 2 | 2 | 4 |
-|         F9         |  US67  | 2 | 3 | 5 |
+|         F3         |  US09  | 1 | 2 | 3 |
+
 
