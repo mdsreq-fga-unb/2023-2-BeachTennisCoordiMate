@@ -8,6 +8,7 @@
 |     25/10/2023      |      0.1      | Criação do documento              |  Artur, João, Luciano, Pablo, Victório e Weslley        |
 |     07/11/2023      |      0.2      | Adição de pontuação das US's             |  Victório        |
 |     08/11/2023      |      0.3      | Reordenamento das US'S do MVP pelas pontuações mais altas             |  Victório        |
+| 11/11/2023 |    0.4     | Exclusão da US 59 para resolver duplicação das US's 57 e 59 |            Victório            |
 
 </center>
 
@@ -53,7 +54,7 @@ Abaixo, seguem as User Stories e sua descrição:
 
 <center>
 
- | **Funcionalidade** | **US** |                                                                                         **Descrição**                                                                                         |
+| **Funcionalidade** | **US** |                                                                                         **Descrição**                                                                                         |
 | :----------------: | :----: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 |         F1         |  US01  |                                                        Eu, como usuário-coordenador, desejo criar minha conta para administrar a arena                                                        |
 |         F1         |  US02  |                   Eu, como usuário-coordenador, desejo fazer login na minha conta para acessar as funcionalidades exclusivas de coordenador                                 |
@@ -113,15 +114,14 @@ Abaixo, seguem as User Stories e sua descrição:
 |         F8         |  US56  |    Eu, como usuário-coordenador, desejo deletar elementos gráficos de um drill para deletar um elemento adicionado erroneamente                         |
 |         F8         |  US57  |     Eu, como usuário-coordenador, desejo editar as informações de um drill para corrigir erros                 |
 |         F8         |  US58  |     Eu, como usuário-coordenador, desejo deletar um drill obsoleto para não deixar drills obsoletos em um plano de aula                        |
-|         F8         |  US59  |     Eu, como usuário-coordenador, desejo editar as informações de um drill para corrigir um erro               |
-|         F8         |  US60  |     Eu, como usuário-coordenador, desejo atribuir planos de aula a professores para informar a eles sobre como as aulas devem ser                        |
-|         F8         |  US61  |      Eu, como usuário-coordenador, desejo visualizar uma lista com todos os planos de aula para ter uma noção da quantidade de planos feitos                        |
-|         F8         |  US62  |      Eu, como usuário-coordenador, desejo visualizar uma lista com todos os drills de um plano de aula para ter uma noção da quantidade de drills nesse plano                       |
-|         F8         |  US63  |      Eu, como usuário-professor, desejo visualizar os planos de aula que me forem atribuídos para ter uma orientação de como devem ser minhas aulas                       |
-|         F9         |  US64  |      Eu, como usuário-professor, desejo visualizar o horário e quadra das minhas aulas no formato de agenda para que eu possa organizar meu trabalho                       |
-|         F9         |  US65  |    Eu, como usuário-professor, desejo visualizar a lista de alunos das minhas aulas para que eu possa ver as informações das pessoas a quem darei aula                         |
-|         F9         |  US66  |   Eu, como usuário-professor, desejo visualizar quais alunos notificaram que vão faltar a aula para que eu possa reorganizar meu tempo caso todos alunos de uma aula tenham avisado que não vão                          |
-|         F9         |  US67  |  Eu, como usuário-professor, desejo visualizar os planos de aula compartilhados comigo para saber como será minha aula                           |
+|         F8         |  US59  |     Eu, como usuário-coordenador, desejo atribuir planos de aula a professores para informar a eles sobre como as aulas devem ser                        |
+|         F8         |  US60  |      Eu, como usuário-coordenador, desejo visualizar uma lista com todos os planos de aula para ter uma noção da quantidade de planos feitos                        |
+|         F8         |  US61  |      Eu, como usuário-coordenador, desejo visualizar uma lista com todos os drills de um plano de aula para ter uma noção da quantidade de drills nesse plano                       |
+|         F8         |  US62  |      Eu, como usuário-professor, desejo visualizar os planos de aula que me forem atribuídos para ter uma orientação de como devem ser minhas aulas                       |
+|         F9         |  US63  |      Eu, como usuário-professor, desejo visualizar o horário e quadra das minhas aulas no formato de agenda para que eu possa organizar meu trabalho                       |
+|         F9         |  US64  |    Eu, como usuário-professor, desejo visualizar a lista de alunos das minhas aulas para que eu possa ver as informações das pessoas a quem darei aula                         |
+|         F9         |  US65  |   Eu, como usuário-professor, desejo visualizar quais alunos notificaram que vão faltar a aula para que eu possa reorganizar meu tempo caso todos alunos de uma aula tenham avisado que não vão                          |
+|         F9         |  US66  |  Eu, como usuário-professor, desejo visualizar os planos de aula compartilhados comigo para saber como será minha aula                           |
 
 </center>
 
@@ -139,9 +139,8 @@ A partir desses critérios, as US foram avaliadas e os resultados obtidos indica
 |         F8         |  US54  | 4 | 3 | 7 | Presente |
 |         F8         |  US57  | 4 | 3 | 7 | Presente |
 |         F8         |  US58  | 4 | 3 | 7 | Presente |
-|         F8         |  US59  | 4 | 3 | 7 | Presente |
+|         F8         |  US60  | 4 | 3 | 7 | Presente |
 |         F8         |  US61  | 4 | 3 | 7 | Presente |
-|         F8         |  US62  | 4 | 3 | 7 | Presente |
 |         F8         |  US53  | 4 | 2 | 6 | Presente |
 |         F8         |  US55  | 4 | 2 | 6 | Presente |
 |         F8         |  US56  | 4 | 2 | 6 | Presente |
@@ -170,10 +169,10 @@ A partir desses critérios, as US foram avaliadas e os resultados obtidos indica
 |         F7         |  US42  | 3 | 2 | 5 |
 |         F7         |  US43  | 3 | 2 | 5 |
 |         F7         |  US44  | 3 | 2 | 5 |
-|         F8         |  US60  | 3 | 2 | 5 | 
-|         F8         |  US63  | 3 | 2 | 5 |
-|         F9         |  US65  | 2 | 3 | 5 |
-|         F9         |  US67  | 2 | 3 | 5 |
+|         F8         |  US59  | 3 | 2 | 5 | 
+|         F8         |  US62  | 3 | 2 | 5 |
+|         F9         |  US64  | 2 | 3 | 5 |
+|         F9         |  US66  | 2 | 3 | 5 |
 |         F2         |  US05  | 2 | 2 | 4 |
 |         F3         |  US07  | 1 | 3 | 4 |
 |         F3         |  US08  | 1 | 3 | 4 |
@@ -194,8 +193,8 @@ A partir desses critérios, as US foram avaliadas e os resultados obtidos indica
 |         F7         |  US46  | 3 | 1 | 4 |
 |         F7         |  US47  | 3 | 1 | 4 |
 |         F7         |  US48  | 3 | 1 | 4 |
-|         F9         |  US64  | 2 | 1 | 4 |
-|         F9         |  US66  | 2 | 2 | 4 |
+|         F9         |  US63  | 2 | 1 | 4 |
+|         F9         |  US65  | 2 | 2 | 4 |
 |         F3         |  US09  | 1 | 2 | 3 |
 
 
