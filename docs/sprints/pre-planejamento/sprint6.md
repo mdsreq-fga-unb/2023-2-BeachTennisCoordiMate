@@ -1,5 +1,5 @@
-# Reunião 06 - Priorização dos requisitos e MPV
-**Período: 21/10/2023 - 29/10/2023**
+# Sprint 06 - Priorização dos requisitos e MPV
+**Período: 15/10/2023 - 21/10/2023**
 
 ## Objetivos da reunião
 * Arrumar questões do documento de visão e projeto apontados pelo professor.
@@ -51,11 +51,7 @@
 
 - A equipe teve alguns problemas de organização, com muitas entregas sendo feitas de último prazo e com atraso. Isso se deve a problemas de comunicação e organização da equipe, que serão resolvidos na próxima semana.
 
-Mais coisas podem ser adicionadas até o final do dia 29/10/2023
   
-## Atividades pendentes para próxima semana
-
-Será colocado ao final do dia 29/10/2023
 
 
 
