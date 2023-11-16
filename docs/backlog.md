@@ -9,6 +9,7 @@
 | 16/10/2023 |   0.1    |               Criação do documento                | João, Luciano, Pablo, Victório |
 | 24/10/2023 |    0.2     | Refatoração do backlog e adição do link do Canvas |            Victório            |
 | 07/11/2023 |    0.3     | Correção do Backlog |            Victório            |
+| 11/11/2023 |    0.4     | Exclusão da US 59 para resolver duplicação das US's 57 e 59 |            Victório            |
 
 </center>
 
@@ -137,12 +138,11 @@ Confira no <a href="https://www.canva.com/design/DAFxzN0DjF4/hdM3-9VXQJwhiSZRybY
 |         F8         |  US56  |    Eu, como usuário-coordenador, desejo deletar elementos gráficos de um drill para deletar um elemento adicionado erroneamente                         |
 |         F8         |  US57  |     Eu, como usuário-coordenador, desejo editar as informações de um drill para corrigir erros                 |
 |         F8         |  US58  |     Eu, como usuário-coordenador, desejo deletar um drill obsoleto para não deixar drills obsoletos em um plano de aula                        |
-|         F8         |  US59  |     Eu, como usuário-coordenador, desejo editar as informações de um drill para corrigir um erro               |
-|         F8         |  US60  |     Eu, como usuário-coordenador, desejo atribuir planos de aula a professores para informar a eles sobre como as aulas devem ser                        |
-|         F8         |  US61  |      Eu, como usuário-coordenador, desejo visualizar uma lista com todos os planos de aula para ter uma noção da quantidade de planos feitos                        |
-|         F8         |  US62  |      Eu, como usuário-coordenador, desejo visualizar uma lista com todos os drills de um plano de aula para ter uma noção da quantidade de drills nesse plano                       |
-|         F8         |  US63  |      Eu, como usuário-professor, desejo visualizar os planos de aula que me forem atribuídos para ter uma orientação de como devem ser minhas aulas                       |
-|         F9         |  US64  |      Eu, como usuário-professor, desejo visualizar o horário e quadra das minhas aulas no formato de agenda para que eu possa organizar meu trabalho                       |
-|         F9         |  US65  |    Eu, como usuário-professor, desejo visualizar a lista de alunos das minhas aulas para que eu possa ver as informações das pessoas a quem darei aula                         |
-|         F9         |  US66  |   Eu, como usuário-professor, desejo visualizar quais alunos notificaram que vão faltar a aula para que eu possa reorganizar meu tempo caso todos alunos de uma aula tenham avisado que não vão                          |
-|         F9         |  US67  |  Eu, como usuário-professor, desejo visualizar os planos de aula compartilhados comigo para saber como será minha aula                           |
+|         F8         |  US59  |     Eu, como usuário-coordenador, desejo atribuir planos de aula a professores para informar a eles sobre como as aulas devem ser                        |
+|         F8         |  US60  |      Eu, como usuário-coordenador, desejo visualizar uma lista com todos os planos de aula para ter uma noção da quantidade de planos feitos                        |
+|         F8         |  US61  |      Eu, como usuário-coordenador, desejo visualizar uma lista com todos os drills de um plano de aula para ter uma noção da quantidade de drills nesse plano                       |
+|         F8         |  US62  |      Eu, como usuário-professor, desejo visualizar os planos de aula que me forem atribuídos para ter uma orientação de como devem ser minhas aulas                       |
+|         F9         |  US63  |      Eu, como usuário-professor, desejo visualizar o horário e quadra das minhas aulas no formato de agenda para que eu possa organizar meu trabalho                       |
+|         F9         |  US64  |    Eu, como usuário-professor, desejo visualizar a lista de alunos das minhas aulas para que eu possa ver as informações das pessoas a quem darei aula                         |
+|         F9         |  US65  |   Eu, como usuário-professor, desejo visualizar quais alunos notificaram que vão faltar a aula para que eu possa reorganizar meu tempo caso todos alunos de uma aula tenham avisado que não vão                          |
+|         F9         |  US66  |  Eu, como usuário-professor, desejo visualizar os planos de aula compartilhados comigo para saber como será minha aula                           |
