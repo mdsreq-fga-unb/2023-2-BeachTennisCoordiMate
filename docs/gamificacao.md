@@ -9,8 +9,11 @@
 # Facção "Guardiões da Galáxia"
 
 <center>
-![Escudo da Facção](../assets/apresentação da facção/logo.jpeg)
+
+![Escudo da Facção](./assets/apresentação da facção/logo.jpeg)
+
 </center>
+
 
 ## Membros
 - Cowboy Intergaláctico (João)

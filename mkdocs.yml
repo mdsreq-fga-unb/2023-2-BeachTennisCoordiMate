@@ -42,11 +42,13 @@ nav:
       - Lições Aprendidas: doc-visao/5.licoes-aprendidas.md
     - Backlog SAFE: backlog.md
     - MPV: mvp.md
-    - Reuniões Scrum: reunioes_scrum.md
   - Reuniões:
     - Pré-planejamento:
       - Reunião 01 - Documento de Visão: sprints/pre-planejamento/1.doc-visao.md
-      - Reunião 06 - Priorização e MPV: sprints/pre-planejamento/6.priorizacao-mpv.md
+      - Sprint 06: sprints/pre-planejamento/sprint6.md
+      - Sprint 09: sprints/pre-planejamento/sprint9.md
+    - Scrum:
+      - Sprint 10: sprints/scrum/sprint10.md
       
   - Entregas:
     - Unidade 1: entregas/1.entrega-unidade1.md
