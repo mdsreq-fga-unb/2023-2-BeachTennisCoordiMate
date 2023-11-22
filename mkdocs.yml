@@ -1,12 +1,12 @@
-site_name: "Beach Tennis CoordiMate"
+site_name: 'Beach Tennis CoordiMate'
 repo_url: https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate
 repo_name: BeachTennisCoordiMate
 features:
-    - navigation.tabs
-    - navigation.top
-    - navigation.tabs.sticky
+  - navigation.tabs
+  - navigation.top
+  - navigation.tabs.sticky
 theme:
-  palette: 
+  palette:
     - scheme: default
       toggle:
         icon: material/weather-night
@@ -31,25 +31,23 @@ markdown_extensions:
 
 nav:
   - Início: index.md
-  
-  - Documentação:
-    - Visão do produto e projeto:
-      - Visão do Produto: doc-visao/1.visao-produto.md
-      - Requisitos Funcionais e Não Funcionais: doc-visao/2.requisitos.md
-      - Visão do Projeto: doc-visao/2.visao-projeto.md
-      - Processo de Desenvolvimento: doc-visao/3.processo-dev.md
-      - Processo de Engenharia de Requisitos: doc-visao/4.processo-requisitos.md
-      - Lições Aprendidas: doc-visao/5.licoes-aprendidas.md
-    - Backlog SAFE: backlog.md
-    - MPV: mvp.md
-  - Reuniões:
-    - Pré-planejamento:
-      - Reunião 01 - Documento de Visão: sprints/pre-planejamento/1.doc-visao.md
-      - Reunião 06 - Priorização e MPV: sprints/pre-planejamento/6.priorizacao-mpv.md
-      
-  - Entregas:
-    - Unidade 1: entregas/1.entrega-unidade1.md
-    - Unidade 2: entregas/2.entrega-unidade2.md
 
-      
-      
+  - Documentação:
+      - Visão do produto e projeto:
+          - Visão do Produto: doc-visao/1.visao-produto.md
+          - Requisitos Funcionais e Não Funcionais: doc-visao/2.requisitos.md
+          - Visão do Projeto: doc-visao/2.visao-projeto.md
+          - Processo de Desenvolvimento: doc-visao/3.processo-dev.md
+          - Processo de Engenharia de Requisitos: doc-visao/4.processo-requisitos.md
+          - Lições Aprendidas: doc-visao/5.licoes-aprendidas.md
+      - Backlog SAFE: backlog.md
+      - MPV: mvp.md
+      - User Stories: us.md
+  - Reuniões:
+      - Pré-planejamento:
+          - Reunião 01 - Documento de Visão: sprints/pre-planejamento/1.doc-visao.md
+          - Reunião 06 - Priorização e MPV: sprints/pre-planejamento/6.priorizacao-mpv.md
+
+  - Entregas:
+      - Unidade 1: entregas/1.entrega-unidade1.md
+      - Unidade 2: entregas/2.entrega-unidade2.md
