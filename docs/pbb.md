@@ -37,11 +37,58 @@ Os Critérios de Verificação foram feitos com base na documentação do proble
 [ X ] As USs estão estruturadas no formato: “Eu, como _persona_, posso _ação_ para _valor de negócio_
 
 Em um contexto geral, o grupo atendeu às necessidades do problema proposto. Porém, existem algumas observações a serem apontadas:
-<br>
-<br>
-_Personas:_
+
+### Personas
 As atividades e objetivos das personas devem possuir uma granularidade menor, para que elas tenham uma maior especificidade e claridade.
-<br>
-<br>
-_User Stories:_
-As User Stories da Funcionalidade de Gerenciamento de Agendamento de Consultas poderiam ter critérios de aceitação mais específicos, principalmente as US01 e US02, pois os critérios apenas repetem o que está no objetivo da US.
+
+### User Stories
+
+Abaixo seguem observações para melhoria das User Stories:
+
+#### US01 - Como gerenciador de consultas, Posso ser capaz de agendar consultas com diferentes especialistas Para que eu possa ter uma visão unificada das agendas e escolher horários convenientes.
+
+Critério de aceitação se refere a outra persona.
+
+#### US03 - Como gerenciador de consultas, quero ter a capacidade de acessar um painel de controle que exiba as agendas de todos os médicos, para não ter conflito de horário.
+
+Critérios de aceitação estão muitos específicos e a User Story também é muito específica e
+o para não é a solução direta de visualizar as agendas de todos os médicos
+
+#### US04 - Como gerenciador de consultas, quero receber alertas que identifiquem automaticamente conflitos de agendamento, Para evitar que pacientes tenham que ser reagendados devido a sobreposições.
+
+Não seria melhor o sistema evitar uma marcagem
+de consulta em cima de outra? Essa US mais parece critério de aceitação da US 1
+
+#### US05 - Como recepcionista, eu quero ser capaz de registrar informações dos pacientes no sistema, para manter um registro organizado dos pacientes que visitam a Healthnet.
+
+Critérios de aceitação ñ especificam quais informações são cadastradas
+
+#### US09 - Como paciente, posso receber notificações de consultas próximas para tornar mais conveniente a comunicação com pacientes.
+
+Não seria critéiro de aceitação da US 8?
+
+#### US10 - Como paciente, posso visualizar o resultado de exames realizados para que possa me manter informado sobre minha saúde. 
+
+O 2º critério de aceitação se refere a exame ou
+consulta? Porque são coisas diferentes
+
+#### US11 - Como paciente, posso receber lembretes sobre medicamento prescritos para que possa me lembrar de tomá-los. 
+
+Não seria critério de aceitação da US 13???
+
+#### US16 - Como médico, posso verificar alergias a medicamentos para evitar danos à saúde do paciente.
+
+US relacionada verificar alergias a medicamentos, porém a maioria dos critérios estão relacionados
+a criação de prescrição de medicamento.
+
+#### US18 - Como médico, posso inserir observações sobre o paciente para acrescentar informações relevantes.
+
+Essas observações sobre o paciente não são inseridas no prontuário médico?
+
+#### US23 - Como farmacêutica Posso cadastrar prescrições através da digitalização Para agilizar e reduzir erros no cadastro destes documentos.
+
+Gerar um json interfere na regra de negócio ?
+
+#### US25 - Como farmacêutica Posso integrar o sistema com outras farmácias internas Para melhorar o compartilhamento de informações.
+
+integrar o sistema com outras farmácias é um requisito de alto nível que deveria ser quebrado em várias histórias de usuário
