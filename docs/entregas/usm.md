@@ -45,6 +45,6 @@ Os beneficiados por essa plataforma seriam:
 
 ## USM construído
 
-Abaixo, está apresentado o [USM](./assets/USMComunEventos.jpg) proposto para a resolução do problema:
+Abaixo, está apresentado o [USM](/assets/USMComunEventos.jpg) proposto para a resolução do problema:
 
-![USM](./assets/USMComunEventos.jpg)
+![USM](/assets/USMComunEventos.jpg)
