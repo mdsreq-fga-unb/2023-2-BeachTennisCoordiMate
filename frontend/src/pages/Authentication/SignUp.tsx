@@ -349,7 +349,7 @@ const SignUp = () => {
                 <div className="mt-6 text-center">
                   <p>
                     Já tem uma conta?{' '}
-                    <Link to="/auth/signin" className="text-primary">
+                    <Link to="/login" className="text-primary">
                       Login
                     </Link>
                   </p>
