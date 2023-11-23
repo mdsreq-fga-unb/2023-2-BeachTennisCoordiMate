@@ -1,12 +1,12 @@
-site_name: "Beach Tennis CoordiMate"
+site_name: 'Beach Tennis CoordiMate'
 repo_url: https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate
 repo_name: BeachTennisCoordiMate
+features:
+  - navigation.tabs
+  - navigation.top
+  - navigation.tabs.sticky
 theme:
-  features:
-    - navigation.tabs
-    - navigation.top
-    - navigation.tabs.sticky
-  palette: 
+  palette:
     - scheme: default
       toggle:
         icon: material/weather-night
@@ -43,6 +43,7 @@ nav:
     - Backlog SAFE: backlog.md
     - MPV: mvp.md
     - DoR & DoD: dor_dod.md
+    - User Stories: us.md
   - Reuniões:
     - Pré-planejamento:
       - Reunião 01 - Documento de Visão: sprints/pre-planejamento/1.doc-visao.md
@@ -50,7 +51,6 @@ nav:
       - Sprint 09: sprints/pre-planejamento/sprint9.md
     - Scrum:
       - Sprint 10: sprints/scrum/sprint10.md
-      
   - Entregas:
     - Unidade 1: entregas/1.entrega-unidade1.md
     - Unidade 2: entregas/2.entrega-unidade2.md
@@ -60,6 +60,3 @@ nav:
       - BDD: entregas/bdd.md
       - USM: entregas/usm.md
       - DoR & DoD: entregas/dor_dod.md
-
-      
-      
