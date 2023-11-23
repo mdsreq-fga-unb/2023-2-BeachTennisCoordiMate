@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const httpClient = axios.create({
   baseURL:
-    process.env.NODE_ENV === 'production'
+    process.env.NODE_ENV === 'produrl'
       ? 'https://beachtenniscoordimate.onrender.com'
       : 'http://localhost:3000',
 });
