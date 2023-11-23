@@ -5,10 +5,11 @@
 | **Data**   | **Versão** | **Descrição**        | **Autor**      |
 | ---------- | ---------- | -------------------- | -------------- |
 | 22/11/2023 | 0.1        | Criação do documento | Weslley Barros |
+| 22/11/2023 | 0.2        | Atualização dos critérios de aceitação | João, Luciano, Victório |
 
 </center>
 
-## US01 - Criar conta de administrador
+## US001 - Criar conta de administrador
 
 **Descrição:**
 
@@ -16,11 +17,15 @@ Eu, como usuário-coordenador, desejo criar minha conta para administrar a arena
 
 **Critérios de Aceitação:**
 
-- [ ] Ao acessar a página de cadastro, o usuário-coordenador deve fornecer as seguintes informações: nome, endereço de e-mail, senha e confirmação de senha.
-- [ ] O sistema deve validar se o endereço de e-mail fornecido é único e ainda não está registrado no sistema.
-- [ ] A senha e a confirmação de senha devem coincidir
+- Ao acessar a página de cadastro, o usuário-coordenador deve fornecer as seguintes informações: nome, endereço de e-mail, senha e confirmação de senha.
+- O sistema deve validar se o endereço de e-mail fornecido é único e ainda não está registrado no sistema.
+- A senha e a confirmação de senha devem coincidir
+- O email deve estar no formato "nome@email.com"
+- Todos os campos devem ser obrigatórios
+- A senha deve ter tamanho entre 8 e 20 caracteres
+- O nome deve ter no mínimo 3 caracteres 
 
-## US02 - Fazer login como administrador
+## US002 - Fazer login como administrador
 
 **Descrição**
 
@@ -28,10 +33,11 @@ Eu, como usuário-coordenador, desejo fazer login na minha conta para acessar as
 
 **Critérios de Aceitação**
 
-- [ ] Ao acessar a página de login, o usuário-coordenador deve encontrar campos para inserir o endereço de e-mail e senha.
-- [ ] Os campos e-mail e senha são obrigatórios
+- Ao acessar a página de login, o usuário-coordenador deve encontrar campos para inserir o endereço de e-mail e senha.
+- Os campos e-mail e senha são obrigatórios
+- O usuário deve receber uma mensagem de aviso, caso o email ou a senha estejam incorretos
 
-## US49 - Criar plano de aula
+## US049 - Criar plano de aula
 
 **Descrição**
 
@@ -39,8 +45,11 @@ Eu, como usuário-coordenador, desejo criar um plano de aula, para poder adminis
 
 **Critérios de Aceitação**
 
-- [ ] Ao criar um plano de aula, o usuário-coordenador deve fornecer as informações: título, objetivos e observações.
-- [ ] O campo título é obrigatório.
+- Ao criar um plano de aula, o usuário-coordenador deve fornecer as informações: título, objetivos e observações.
+- O campo título é obrigatório.
+- O título deverá ter entre 5 e 30 caracteres
+- O campo objetivos deverá ter, no mínimo, 100 caracteres
+- O campo observações deverá ter no máximo 500 caracteres
 
 ## US050 - Visualizar plano de aula
 
@@ -50,7 +59,7 @@ Eu, como usuário-coordenador, desejo poder visualizar um plano de aula, para pr
 
 **Critérios de Aceitação**
 
-- [ ] O sistema deve permitir que o usuário-coordenador consiga selecionar um plano de aula para conseguir visualizar seu título, descrição, observações e representação gráfica do treino.
+- O sistema deve permitir que o usuário consiga selecionar um plano de aula para conseguir visualizar o título, a descrição, as observações e os drills.
 
 ## US051 - Excluir plano de aula
 
@@ -60,9 +69,9 @@ Eu, como usuário-coordenador, desejo poder excluir um plano de aula, para apaga
 
 **Critérios de Aceitação**
 
-- [ ] Ao selecionar a opção de exclusão, o sistema deve solicitar uma confirmação antes
+- Ao selecionar a opção de exclusão, o sistema deve solicitar uma confirmação antes
       de apagar o plano de aula.
-- [ ] O sistema deve retornar uma mensagem ao usuário confirmando a realização da ação
+- O sistema deve retornar uma mensagem ao usuário confirmando a realização da ação
 
 ## US052 - Editar plano de aula
 
@@ -73,8 +82,11 @@ planos de aula que estiverem com alguma informação errada:
 
 **Critérios de Aceitação**
 
-- [ ] Os campos título, objetivos e observações do plano de aula devem ser editáveis.
-- [ ] O sistema deve impedir o usuário de deixar o campo obrigatório "título" vazio
+- Os campos título, objetivos e observações do plano de aula devem ser editáveis.
+- O sistema deve impedir o usuário de deixar o campo obrigatório "título" vazio
+- O título deverá ter entre 5 e 30 caracteres
+- O campo objetivos deverá ter, no mínimo, 100 caracteres  
+- O campo observações deverá ter no máximo 500 caracteres
 
 ## US053 - Baixar planos de aula
 
@@ -85,10 +97,10 @@ enviá-los aos responsáveis pela verificação dos planos, que são externos a 
 
 **Critérios de Aceitação**
 
-- [ ] O sistema deve gerar um arquivo de download contendo as informações completas
-      do plano de aula com título, objetivos, observações e os drills (onde cada drill deve apresentar seu título, descrição, observações e a representação gráfica do treino) .
-- [ ] O arquivo de download deve estar em um formato PDF e com uma visualização
-      compreensível.
+- O sistema deve gerar um arquivo de download contendo as informações completas
+      do plano de aula com título, objetivos, observações e os drills.
+- Cada drill do plano de aula deve apresentar seu título, descrição, observações e a representação gráfica do treino.
+- O arquivo de download deve estar em um formato PDF.
 
 ## US054 - Adicionar Drills
 
@@ -99,9 +111,12 @@ aula para declarar os diferentes drills presentes em um plano de aula
 
 **Critérios de Aceitação**
 
-- [ ] Devem ser informados os campos título, descrição e observações dos drills para adicioná-los ao plano de aula.
-- [ ] O campo "Título" é obrigatório
-- [ ] Ao se criar um drill, deve ser adicionada uma representação gráfica do treino básica (só com a rede e a quadra) a esse drill.
+- Devem ser informados os campos título, descrição e observações dos drills para adicioná-los ao plano de aula.
+- O campo "Título" é obrigatório.
+- O título deverá ter entre 5 e 30 caracteres
+- A descrição do drill deverá ter, no mínimo, 100 caracteres.
+- O campo observações deverá ter no máximo 500 caracteres
+- Quando um drill for criado, o sistema deve adicionar de forma automática uma representação gráfica base do treino (só com a rede e a quadra) a esse drill.
 
 ## US055 - História do Usuário
 
@@ -111,7 +126,9 @@ Eu, como usuário-coordenador, desejo adicionar elementos gráficos a um drill p
 
 **Critérios de Aceitação**
 
-- [ ] Deve ser permitir adicionar elementos gráficos como jogadores, cano alterado, arco, cone e setas
+- Deve ser permitir adicionar elementos gráficos como jogadores, cano alterado, arco, cone e setas
+- Os elementos gráficos não podem ser sobrepostos na representação dos drills
+- O sistema deve permitir que o usuário adicione, no máximo, 50 elementos gráficos a um drill
 
 ## US056 - Deletar elementos gráficos
 
@@ -121,7 +138,7 @@ Eu, como usuário coordenador, desejo deletar elementos gráficos de um drill pa
 
 **Critérios de Aceitação**
 
-- [ ] O sistema deve permitir deletar elementos gráficos como jogadores, cano alterado, arco, cone e setas
+- O sistema deve permitir deletar elementos gráficos como jogadores, cano alterado, arco, cone e setas
 
 ## US057 - Editar drill
 
@@ -131,8 +148,10 @@ Eu, como usuário-coordenador, desejo editar as informações de um drill para c
 
 **Critérios de Aceitação**
 
-- [ ] O sistema deve permitir editar os campos título, descrição e observações
-- [ ] O sistema deve impedir que o campo Título seja editado para vazio
+- O sistema deve permitir editar os campos título, descrição e observações
+- O campo título deve ter entre 5 e 30 caracteres
+- O campo descrição deve ter entre 10 e 500 caracteres
+- O campo observações deve ter entre 0 e 500 caracteres
 
 ## US058 - Deletar drill
 
@@ -142,8 +161,8 @@ Eu, como usuário-coordenador, desejo deletar um drill obsoleto para não deixar
 
 **Critérios de Aceitação**
 
-- [ ] O sistema deve pedir que o usuário confirme a ação de deletar um drill
-- [ ] O sistema deve fornecer uma notificação para o usuário confirmando o sucesso da ação
+- Ao selecionar a opção de exclusão, o sistema deve solicitar uma confirmação antes de apagar o drill
+- O sistema deve fornecer uma notificação para o usuário confirmando o sucesso da ação
 
 ## US060 - Visualizar planos de aula
 
@@ -153,9 +172,10 @@ Eu, como usuário-coordenador, desejo visualizar uma lista com todos os planos d
 
 **Critérios de Aceitação**
 
-- [ ] O sistema deve exibir os títulos dos diferentes planos de aula
-- [ ] O sistema deve permitir ao usuário pesquisar planos de aula pelos seus títulos
-- [ ] O sistema deve permitir ao usuário informar um intervalo de tempo em dias (com um dia de início e um dia de fim) e filtrar os planos de aula cuja data de criação se encontram nesse intervalo
+- O sistema deve exibir os títulos dos diferentes planos de aula
+- O sistema deve permitir ao usuário pesquisar planos de aula por uma parte de seus títulos
+- O sistema deve permitir ao usuário informar um intervalo de tempo em dias (com um dia de início e um dia de fim) e filtrar os planos de aula cuja data de criação se encontram nesse intervalo
+- O sistema deve permitir que a pesquisa por parte do título e o filtro possam funcionar de maneira simultânea e alternada 
 
 ## US061 - Visualizar drills
 
@@ -165,5 +185,5 @@ Eu, como usuário-coordenador, desejo visualizar uma lista com todos os drills d
 
 **Critérios de Aceitação**
 
-- [ ] O sistema deve permitir que o usuário-coordenador visualize os drills de um plano de aula específico
-- [ ] O sistema deve exibir os títulos dos diferentes drills
+- O sistema deve permitir que o usuário-coordenador visualize os drills de um plano de aula específico
+- O sistema deve exibir os títulos dos diferentes drills
