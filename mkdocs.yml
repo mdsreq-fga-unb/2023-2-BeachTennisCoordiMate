@@ -42,9 +42,7 @@ nav:
       - Lições Aprendidas: doc-visao/5.licoes-aprendidas.md
     - Backlog SAFE: backlog.md
     - MPV: mvp.md
-    - PBB: pbb.md
-    - BDD: bdd.md
-    - USM: usm.md
+    - DoR & DoD: dor_dod.md
   - Reuniões:
     - Pré-planejamento:
       - Reunião 01 - Documento de Visão: sprints/pre-planejamento/1.doc-visao.md
@@ -56,6 +54,12 @@ nav:
   - Entregas:
     - Unidade 1: entregas/1.entrega-unidade1.md
     - Unidade 2: entregas/2.entrega-unidade2.md
+    - Unidade 3:
+      - Apresentação: entregas/3.entrega-unidade3.md
+      - PBB: entregas/pbb.md
+      - BDD: entregas/bdd.md
+      - USM: entregas/usm.md
+      - DoR & DoD: entregas/dor_dod.md
 
       
       
