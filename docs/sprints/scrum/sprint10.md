@@ -1,18 +1,14 @@
-## Histórico de Revisão
+# Sprint 10 - Definição dos critérios de DOR e DOD
+**Período: 12/11/2023 - 18/11/2023**
 
-<center>
+## Sprint Planning
 
-| **Data** | **Versão** | **Descrição** | **Autor** |
-| -------- | ---------- | ------------- | --------- |
-|     11/11/2023      |      0.1      | Criação do documento              |  Victório       |
+![Sprint Planning sprint 10](../../assets/templates_reunioes_sprint/sprint10/planning.png)
 
+## Sprint Review
 
-## Sprint Planning - 11/11/2023
+![Sprint Review sprint 10](../../assets/templates_reunioes_sprint/sprint10/review.jpg)
 
-![Sprint Planning - 11/11](../../assets/templates_reunioes_sprint/Sprint_Planning11_11.png)
+## Sprint Retrospective
 
-
-## Sprint Retrospective - 18/11/2023
-
-
-## Sprint Review - 18/11/2023
+![Sprint Retrospective sprint 10](../../assets/templates_reunioes_sprint/sprint10/retro.jpg)

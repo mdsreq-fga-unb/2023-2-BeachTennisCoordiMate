@@ -46,11 +46,12 @@ nav:
     - User Stories - MPV: us.md
   - Reuniões:
     - Pré-planejamento:
-      - Reunião 01 - Documento de Visão: sprints/pre-planejamento/1.doc-visao.md
-      - Sprint 06: sprints/pre-planejamento/sprint6.md
-      - Sprint 09: sprints/pre-planejamento/sprint9.md
+      - Sprint 3 - Finalizar Visão do Produto e Projeto: sprints/pre-planejamento/sprint3.md
+      - Sprint 6 - Priorização dos requisitos e MPV: sprints/pre-planejamento/sprint6.md
+      - Sprint 9 - Definição dos critérios de aceitação das histórias: sprints/pre-planejamento/sprint9.md
     - Scrum:
-      - Sprint 10: sprints/scrum/sprint10.md
+      - Sprint 10 - Definição dos critérios de DOR e DOD: sprints/scrum/sprint10.md
+      
   - Entregas:
     - Unidade 1: entregas/1.entrega-unidade1.md
     - Unidade 2: entregas/2.entrega-unidade2.md
