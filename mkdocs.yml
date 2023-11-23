@@ -46,6 +46,9 @@ nav:
     - User Stories - MPV: us.md
   - Reuniões:
     - Pré-planejamento:
+      - Sprint 0 - Definição do problema e solução: sprints/pre-planejamento/sprint0.md
+      - Sprint 1 - Definição do produto: sprints/pre-planejamento/sprint1.md
+      - Sprint 2 - Definição do projeto e alinhamento do produto: sprints/pre-planejamento/sprint2.md
       - Sprint 3 - Finalizar Visão do Produto e Projeto: sprints/pre-planejamento/sprint3.md
       - Sprint 6 - Priorização dos requisitos e MPV: sprints/pre-planejamento/sprint6.md
       - Sprint 9 - Definição dos critérios de aceitação das histórias: sprints/pre-planejamento/sprint9.md
