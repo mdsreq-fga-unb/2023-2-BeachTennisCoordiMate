@@ -1,0 +1,94 @@
+# PBB
+
+| **Data** | **Versão** | **Descrição** | **Autor** |
+| -------- | ---------- | ------------- | --------- |
+|     20/11/2023      |      0.1      | Criação do documento              | Artur e João        |
+
+O Product Backlog Building (PBB) é uma técnica utilizada no contexto de gerenciamento ágil de projetos de software. Ele é uma estratégia para a construção e refinamento contínuo do Product Backlog, uma lista dinâmica e priorizada de todos os requisitos, funcionalidades, melhorias e correções necessárias para um produto. O PBB envolve a criação e atualização iterativa do backlog, adicionando novos itens conforme são identificados, removendo ou refinando aqueles que se tornam mais claros ou menos relevantes ao longo do tempo e priorizando-os de acordo com o valor de negócio que oferecem ao produto. Essa técnica visa manter o backlog constantemente alinhado com as necessidades do produto e do cliente, permitindo uma melhor adaptação e evolução durante o ciclo de desenvolvimento.
+
+## PBB de Feedback
+
+Os Critérios de Verificação foram feitos com base na documentação do problema e sua respectiva descrição. Segue abaixo uma lista dos critérios utilizados:
+
+[ X ] Contém o nome do produto no PBB
+<br>
+[ X ] Os problemas do cliente foram listados corretamente
+<br>
+[ X ] As expectativas atendem aos problemas apresentados
+<br>
+[ X ] As personas representam os perfis que utilizam o Health de alguma forma
+<br>
+[ X ] É definido o que as personas fazem e o que elas esperam
+<br>
+[ X ] As funcionalidades são capazes de identificar ações e/ou interações das personas com o produto
+<br>
+[ X ] As funcionalidades resolvem os problemas das personas
+<br>
+[ X ] As funcionalidades trazem benefícios para as personas
+<br>
+[ X ] Os PBIs representam todas as funcionalidades
+<br>
+[ X ] Cada PBI representa uma ação do usuário no produto
+<br>
+[ X ] As PBIs foram priorizadas com relação ao uso e ao valor de negócio
+<br>
+[ X ] Os PBIs seguem uma sequência lógica de organização
+<br>
+[ X ] As USs estão estruturadas no formato: “Eu, como _persona_, posso _ação_ para _valor de negócio_
+
+Em um contexto geral, o grupo atendeu às necessidades do problema proposto. Porém, existem algumas observações a serem apontadas:
+
+### Personas
+As atividades e objetivos das personas devem possuir uma granularidade menor, para que elas tenham uma maior especificidade e claridade.
+
+### User Stories
+
+Abaixo seguem observações para melhoria das User Stories:
+
+#### US01 - Como gerenciador de consultas, Posso ser capaz de agendar consultas com diferentes especialistas Para que eu possa ter uma visão unificada das agendas e escolher horários convenientes.
+
+Critério de aceitação se refere a outra persona.
+
+#### US03 - Como gerenciador de consultas, quero ter a capacidade de acessar um painel de controle que exiba as agendas de todos os médicos, para não ter conflito de horário.
+
+Critérios de aceitação estão muitos específicos e a User Story também é muito específica e
+o para não é a solução direta de visualizar as agendas de todos os médicos
+
+#### US04 - Como gerenciador de consultas, quero receber alertas que identifiquem automaticamente conflitos de agendamento, Para evitar que pacientes tenham que ser reagendados devido a sobreposições.
+
+Não seria melhor o sistema evitar uma marcagem
+de consulta em cima de outra? Essa US mais parece critério de aceitação da US 1
+
+#### US05 - Como recepcionista, eu quero ser capaz de registrar informações dos pacientes no sistema, para manter um registro organizado dos pacientes que visitam a Healthnet.
+
+Critérios de aceitação ñ especificam quais informações são cadastradas
+
+#### US09 - Como paciente, posso receber notificações de consultas próximas para tornar mais conveniente a comunicação com pacientes.
+
+Não seria critéiro de aceitação da US 8?
+
+#### US10 - Como paciente, posso visualizar o resultado de exames realizados para que possa me manter informado sobre minha saúde. 
+
+O 2º critério de aceitação se refere a exame ou
+consulta? Porque são coisas diferentes
+
+#### US11 - Como paciente, posso receber lembretes sobre medicamento prescritos para que possa me lembrar de tomá-los. 
+
+Não seria critério de aceitação da US 13???
+
+#### US16 - Como médico, posso verificar alergias a medicamentos para evitar danos à saúde do paciente.
+
+US relacionada verificar alergias a medicamentos, porém a maioria dos critérios estão relacionados
+a criação de prescrição de medicamento.
+
+#### US18 - Como médico, posso inserir observações sobre o paciente para acrescentar informações relevantes.
+
+Essas observações sobre o paciente não são inseridas no prontuário médico?
+
+#### US23 - Como farmacêutica Posso cadastrar prescrições através da digitalização Para agilizar e reduzir erros no cadastro destes documentos.
+
+Gerar um json interfere na regra de negócio ?
+
+#### US25 - Como farmacêutica Posso integrar o sistema com outras farmácias internas Para melhorar o compartilhamento de informações.
+
+integrar o sistema com outras farmácias é um requisito de alto nível que deveria ser quebrado em várias histórias de usuário

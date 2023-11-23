@@ -1,0 +1,258 @@
+# BDD
+
+| **Data** | **Versão** | **Descrição** | **Autor** |
+| -------- | ---------- | ------------- | --------- |
+|     20/11/2023      |      0.1      | Criação do documento              | Artur e João        |
+
+O Behavior Driven Developmente (BDD) é uma abordagem que enfoca o comportamento do software do ponto de vista do usuário final. Ele utiliza exemplos concretos e histórias de usuário descritos em uma linguagem compreensível por todos os membros da equipe. Esses exemplos, chamados de cenários, descrevem como o sistema deveria se comportar em situações específicas. 
+
+
+## Avalliação das User Stories
+
+US01) Como gerenciador de consultas, Posso ser capaz de agendar consultas com diferentes especialistas Para que eu possa ter uma visão unificada das agendas e escolher horários convenientes. Erro: Critério de aceitação se refere a outra persona
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Agendar consulta do cardiologista João em horário disponível     |      O usuário Rafael é um gerenciador de consulta cadastrado no sistema, o cardiologista João ao qual se deseja atribuir uma consulta seja um médico cadastrado no sistema e o dia e hora da consulta estejam disponíveis na agenda do cardiologista     |         O usuário solicitar o agendamento da reunião     |    O sistema deve marcar a consulta na agenda do cardiologista    |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|      Agendar consulta de cardiologista em horário indisponível    |    O usuário Rafael é um gerenciador de consulta cadastrado no sistema, o cardiologista João ao qual se atribuir uma consulta seja um médico cadastrado no sistema e o dia e hora da consulta não estejam disponíveis na agenda do cardiologista       |      O usuário solicitar o agendamento da reunião        |   O sistema deve notificar o usuário que o horário e dia escolhidos não estão disponíveis para serem agendados     |
+
+
+US02) Como gerenciador de consultas, quero ter a capacidade de acessar o histórico
+completo de consultas de cada paciente, Para ter noção da frequência que o paciente
+acessa o hospital.
+
+| **Cenário** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|    Acessar o histórico de consultas de uma paciente     |     o usuário Rafael é um gerenciador de consulta cadastrado no sistema e o paciente Carlos está cadastrado no sistema    |      O usuário solicitar o histórico de consultas do paciente       |     O sistema deve exibir uma lista com todas as consultas do paciente Carlos, sendo exibido a data da consulta e o tipo de especialista que fez a consulta para diferenciar as consultas exibidas   |
+
+
+US03) Como gerenciador de consultas, quero ter a capacidade de acessar um painel de
+controle que exiba as agendas de todos os médicos, para não ter conflito de horário. Erro: Critérios de aceitação estão muitos específicos e a User Story também é muito específica e
+o para não é a solução direta de visualizar as agendas de todos os médicos
+
+| **Cenário** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|      Visualizar as agendas de todos os médicos    |      O usuário Rafael é um gerenciador de consulta cadastrado no sistema     |      O usuário solicitar as agendas de todos os médicos cadastrados        |    O sistema deve exibir uma uma lista com todas as agendas, sendo exibido o nome do médico e sua especialidade para diferenciar as agendas exibidas    |
+
+
+US04) Como gerenciador de consultas, quero receber alertas que identifiquem
+automaticamente conflitos de agendamento, Para evitar que pacientes tenham que ser
+reagendados devido a sobreposições. 
+<br>
+_Não seria melhor o sistema evitar uma marcagem
+de consulta em cima de outra? Essa US mais parece critério de aceitação da US 1_
+
+
+US05) Como recepcionista, eu quero ser capaz de registrar informações dos pacientes no
+sistema, para manter um registro organizado dos pacientes que visitam a Healthnet.
+Critérios de aceitação ñ especificam quais informações são cadastradas
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|    Registro de um paciente não cadastrado com os dados corretos      |      O usuário Rafael é um gerenciador de consulta cadastrado no sistema e a paciente Roberta não esteja cadastrada no sistema     |     O usuário cadastrar os dados da paciente em um formulário e solicitar que o sistema salve os dados da nova paciente         |     O sistema deve notificar ao usuário que a operação foi realizada com sucesso   |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Tentativa de registro de um paciente não cadastrado com o CPF inválido     |     O usuário Rafael é um gerenciador de consulta cadastrado no sistema e o paciente Cláudio não esteja cadastrada no sistema e forneça um CPF que não existe para cadastro      |       O usuário cadastrar os dados da paciente em um formulário e solicitar que o sistema salve os dados do novo paciente       |   O sistema deve notificar ao usuário que a operação foi realizada com sucesso     |
+
+| **Cenário 3** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Tentativa de registro de um paciente previamente cadastrado     |    O usuário Rafael é um gerenciador de consulta cadastrado no sistema e o paciente Afonso já esteja cadastrada no sistema       |      O usuário cadastrar os dados da paciente em um formulário e solicitar que o sistema salve os dados do paciente        |   O sistema deve notificar ao usuário que a operação não pode ser realizada pois já existe um registro desse paciente     |
+
+
+US06) Como recepcionista, eu quero ser capaz de atualizar as informações dos pacientes no
+sistema, para manter seus registros precisos e atualizados.
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|      Atualização do endereço de um paciente    |     O usuário Rafael é um gerenciador de consulta cadastrado no sistema, a paciente Lorena já esteja cadastrada no sistema e a paciente percebeu que o endereço errado foi atribuído a ela      |      O usuário fornecer o endereço certo ao sistema e solicitar que o sistema atualize os dados da paciente        |     O sistema deve notificar ao usuário que a operação foi realizada com sucesso    |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|      Tentativa de atualização do CPF de um paciente    |    O usuário Rafael é um gerenciador de consulta cadastrado no sistema, o paciente Leonardo já esteja cadastrado no sistema e o paciente percebeu que o CPF foi atribuído a ele mas na hora de fornecer o CPF certo ele inverte os dois últimos dígitos de seu CPF (tornando o CPF inválido)       |        O usuário fornecer o CPF supostamente certo ao sistema e solicitar que o sistema atualize os dados da paciente      |    O sistema deve notificar ao usuário que a operação não pode ser realizada com sucesso pois o CPF é inválido    |
+
+
+US07) Como recepcionista, eu quero ser capaz de solicitar o histórico do paciente no sistema,
+para fornecer informações relevantes aos profissionais de saúde.
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|    Solicitar histórico de paciente cadastrada      |    A usuário-recepcionista Maria é uma recepcionista cadastrada no sistema e ela está atendendo a paciente Laura que acabou de chegar ao hospital para tratar uma gripe e é uma paciente cadastrada no sistema       |     A usuário Maria fornecer o CPF da paciente ao sistema na parte de busca de histórico         |    O sistema deve exibir o histórico da paciente
+    |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Tentativa de solicitar histórico de paciente não cadastrado     |    A usuário-recepcionista Maria é uma recepcionista cadastrada no sistema e ela está atendendo o paciente Elias que acabou de chegar ao hospital para tratar uma virose e não está cadastrada no sistema, além de que ele não se lembre se já foi em outras unidades desse hospital ou não       |      A usuário Maria fornecer o CPF da paciente ao sistema na parte de busca de histórico        |     O sistema deve exibir uma notificação informando que o CPF não está cadastrado no sistema   |
+
+
+US08) Como paciente, posso realizar o agendamento de consultas on-line para tornar mais
+conveniente o processo de agendamento.
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|      Agendar consulta em horário e dia livres    |    O paciente Guilherme é um paciente cadastrado no sistema e ele deseja marcar uma consulta com um neurologista       |     O usuário encontrar na agenda do neurologista Sebastião um horário e dia vagos e agendar uma consulta nesse horário e dia         |    O sistema deve exibir uma notificação informando que o agendamento foi feito com sucesso    |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Tentativa de agendar consulta em horário e dia não livres     |     O paciente Gabriel é um paciente cadastrado no sistema e ele deseja marcar uma consulta com a endocrinologista Márcia em uma horário e dia que não estão disponíveis      |      O usuário encontrar na agenda da médica um horário e dia que não estão vagos e pedir ao sistema que agende uma consulta nesse horário e dia        |   O sistema deve exibir uma notificação informando que a operação não foi realizada com sucesso pois o horário não está disponível     |
+
+| **Cenário 3** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Lembrete de consulta     |     Miguel é um paciente cadastrado no sistema, ele marcou uma consulta com a endocrinologista Márcia no dia 13/11/2023 às 08:00 e ele informou ao sistema que deve receber um lembrete da consulta 1 dia antes      |     For 08:00 do dia 12/11/2023         |  O sistema deve enviar ao usuário um lembrete da consulta      |
+
+
+US09) Como paciente, posso receber notificações de consultas próximas para tornar mais
+conveniente a comunicação com pacientes. 
+<br>
+_Erro: Não seria critéiro de aceitação da US 8?_
+
+
+US10) Como paciente, posso visualizar o resultado de exames realizados para que possa
+me manter informado sobre minha saúde. 
+<br>
+_Erro: O 2º critério de aceitação se refere a exame ou
+consulta? Porque são coisas diferentes_
+
+US11) Como paciente, posso receber lembretes sobre medicamento prescritos para que
+possa me lembrar de tomá-los. 
+<br>
+_Não seria critério de aceitação da US 13???_
+
+
+
+US12) Como paciente, posso visualizar o meu histórico de prontuários para que eu possa
+acompanhar minhas informações de saúde.
+
+| **Cenário** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|    Visualizar prontuário      |     O paciente Rodrigo, que está cadastrado no sistema, deseja ver seu histórico de consultas      |      Ele solicitar ao sistema o prontuário médico         |     O sistema deve exibir todos suas consultas   |
+
+
+US13) Como paciente, posso visualizar o meu histórico de medicamentos prescritos para
+que eu posse manter controle dos meus medicamentos.
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|      Visualizar histórico de medicamentos    |    O paciente Rodrigo, que está cadastrado no sistema, deseja ver seu histórico de medicamentos       |       Ele solicitar ao sistema o seu histórico de medicamentos       |   O sistema deve exibir todos os medicamentos do paciente, os que devem ser tomados atualmente e os que já tiveram que ser tomados     |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Visualizar histórico de medicamentos     |    O paciente Rodrigo, que está cadastrado no sistema, deseja ver seu histórico de medicamentos       |       Ele solicitar ao sistema o seu histórico de medicamentos       |   O sistema deve exibir todos os medicamentos do paciente, os que devem ser tomados atualmente e os que já tiveram que ser tomados     |
+
+| **Cenário 3** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Lembrete de medicamento     |     Miguel é um paciente cadastrado no sistema, o médico de Miguel determinou que ele tomasse um comprimido de 600 mg ibuprofeno a cada 8 horas por cinco dias e que Miguel registrou no sistema que começou a tomar o remédio 11:00      |       For o horário determinado para Miguel tomar o remédio       |    O sistema deve enviar ao usuário um lembrete de ingestão do medicamento
+    |
+
+
+US14) Como médico, posso buscar informações do paciente para realizar um atendimento melhor.
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|      Exibir prontuário do paciente    |    O médico, Dr. João, está autenticado no sistema e o sistema possui o prontuário do paciente Clara cadastrado       |     O médico acessa a seção de prontuários do sistema e seleciona o Clara na lista de pacientes disponíveis        |    O sistema deve apresentar detalhes do prontuário do Clara, incluindo informações pessoais, histórico médico, alergias e outras informações relevantes |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ----------- | ------------- | --------- |
+|     Exibir exames realizados pelo paciente | o médico, Dr. João, está autenticado no sistema e o sistema possui registros de exames realizados para o Clara | o médico acessa a seção de prontuários do sistema e seleciona o Clara na lista de pacientes disponíveis | o sistema deve apresentar uma lista de exames médicos realizados pelo Clara, incluindo resultados e datas de realização.|
+
+
+US15) Como médico, posso criar prescrições para receitar medicamentos para o paciente.
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|    Criar prescrição médica | o médico, Dr. João, está autenticado no sistema E o sistema possui informações sobre o paciente Clara  |  o médico acessa a função de criação de prescrição e seleciona Maria Silva como o paciente atual e insere medicamentos específicos na prescrição, juntamente com as dosagens apropriadas e adiciona informações textuais relevantes sobre a prescrição     |  o sistema deve armazenar a prescrição médica para a paciente Clara.      |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|   Imprimir prescrição       |     o médico, Dr. João, está autenticado no sistema e possui uma prescrição médica previamente criada para a paciente Clara | o médico acessa a função de impressão de prescrição, seleciona a prescrição desejada|   o sistema deve permitir a impressão da prescrição médica para que possa ser entregue à paciente Clara.     |
+
+
+US16) Como médico, posso verificar alergias a medicamentos para evitar danos à saúde do paciente. Erro:
+US relacionada verificar alergias a medicamentos, porém a maioria dos critérios estão relacionados
+a criação de prescrição de medicamento.
+
+
+US17) Como médico, posso verificar interações medicamentosas para evitar efeitos adversos.
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Verificar interações medicamentosas na prescrição médica:     |      o médico, Dr. João, está autenticado no sistema E está na tela de criação de prescrição para a paciente Clara     |     o médico adiciona medicamentos à prescrição e o sistema verifica se há interações medicamentosas entre os medicamentos na prescrição         |   o sistema deve destacar os medicamentos que possuem interações medicamentosas.     |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Impedir a criação da prescrição com interações medicamentosas     |   o médico, Dr. João, está autenticado no sistema e está na tela de criação de prescrição para a paciente Clara e o sistema identifica interações medicamentosas entre os medicamentos na prescrição. | o médico tenta finalizar a prescrição e a prescrição contém medicamentos com interações medicamentosas | o sistema deve impedir a conclusão da prescrição e notificar o médico sobre as interações medicamentosas. |
+
+US18) Como médico, posso inserir observações sobre o paciente para acrescentar informações
+relevantes. Erro: Essas observações sobre o paciente não são inseridas no prontuário médico?
+
+
+US19) Como farmacêutica Posso buscar medicamentos cadastrados no sistema Para fazer verificações
+e visualizar informações de forma clara.
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|      Buscar medicamentos no sistema    |     a farmacêutica, Lívia, está autenticada no sistema       |     a farmacêutica digita um termo de pesquisa (com até 50 caracteres) na caixa de pesquisa e o sistema retorna os medicamentos que correspondem ao termo de pesquisa, sugerindo opções relevantes em tempo real         |    os medicamentos encontrados devem ser exibidos em ordem alfabética para facilitar a visualização.    |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|      Exibir mensagem de medicamento não encontrado    |    a farmacêutica, Lívia, realizou uma busca por medicamentos no sistema       |    o sistema não encontra medicamentos correspondentes ao termo de pesquisa          |   o sistema deve exibir uma mensagem informando à farmacêutica que nenhum medicamento foi encontrado.     |
+
+US20) Como farmacêutica Posso verificar a relação entre um medicamento e possíveis alergias Para
+garantir o bem estar de todos os pacientes.
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|   Selecionar medicamento e prontuário para verificar alergias       |    a farmacêutica, Lívia, está autenticada no sistema        |      a farmacêutica acessa a funcionalidade de verificação de alergias e seleciona um medicamento cadastrado no sistema e seleciona o prontuário de um paciente ou inserir manualmente alergias que o paciente possui        |    o sistema deve permitir a verificação da relação entre o medicamento e as alergias do paciente.    |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|Exibir mensagem de alergias e possíveis reações|     a farmacêutica, Lívia, verificou a relação entre um medicamento e as alergias do paciente      |      o paciente possui alergia a algum componente no medicamento         |  o sistema deve exibir uma mensagem informando quais componentes o paciente possui alergia e quais as possíveis reações alérgicas que ele pode sofrer.      |
+
+US21) Como farmacêutica Posso verificar as interações entre medicamentos Para garantir que
+pacientes não usem medicamentos com formulações conflitantes.
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|    Selecionar medicamento para verificar interações     |     a farmacêutica, Lívia, está autenticada no sistema      |       a farmacêutica acessa a funcionalidade de verificação de interações entre medicamentos e seleciona um medicamento cadastrado no sistema       |    o sistema deve permitir a verificação das interações entre o medicamento selecionado e outros medicamentos.    |   
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|    Exibir mensagem de ausência de medicamentos incompatíveis      |       a farmacêutica, Lívia, verificou as interações entre um medicamento e outros medicamentos no sistema     |       não há medicamentos com formulações incompatíveis        |     o sistema deve exibir uma mensagem informando que não há medicamentos incompatíveis.    |
+
+US22) Como farmacêutica Posso verificar se um medicamento prescrito é o mesmo entregue ao
+paciente Para garantir que os pacientes recebam a medicação correta.
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Verificar correspondência entre medicamento prescrito e retirado do estoque     |    a farmacêutica, Lívia, está autenticada no sistema       |      a farmacêutica recebe uma prescrição de medicamento e retira o medicamento correspondente do estoque e seleciona a opção de verificar correspondência entre o medicamento prescrito e o retirado do estoque        |     o sistema deve comparar se o medicamento retirado do estoque é o mesmo que foi prescrito.   |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Exibir mensagem de não correspondência     |   a farmacêutica, Lívia, verificou a correspondência entre o medicamento prescrito e o retirado do estoque        |    o medicamento retirado do estoque não corresponde ao prescrito        |   o sistema deve exibir uma mensagem informando à farmacêutica que a medicação retirada não é a mesma prescrita.     |   
+
+
+US23) Como farmacêutica Posso cadastrar prescrições através da digitalização Para agilizar e reduzir
+erros no cadastro destes documentos. Erro: Gerar um json interfere na regra de negócio ?
+
+| **Cenário 1** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|      Cadastrar prescrições por digitalização    |    a farmacêutica, Lívia, está autenticada no sistema       |           a farmacêutica acessa a funcionalidade de cadastrar prescrições E escolhe a opção de cadastrar por digitalização e digitalizar a prescrição do paciente    |     o sistema deve processar a digitalização e cadastrar a prescrição no sistema    |
+
+| **Cenário 2** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|     Exibir mensagem de erro no cadastro     |     a farmacêutica, Lívia, tentou cadastrar uma prescrição por digitalização      |        ocorre algum erro no processo de digitalização ou cadastro       |    o sistema deve exibir uma mensagem informando à farmacêutica sobre o erro no cadastro da prescrição.    |
+
+US24) Como farmacêutica Posso cadastrar prescrições manualmente Para manter o sistema atualizado
+caso a digitalização falhe.
+
+| **Cenário** | **Dado que** | **Quando** | **Então** |
+| -------- | ---------- | ------------- | --------- |
+|   Cadastrar prescrições manualmente |    a farmacêutica, Lívia, está autenticada no sistema       |  a farmacêutica acessa a funcionalidade de cadastrar prescrições manualmente e preenche o campo de nome do medicamento (com até 50 caracteres) e preenche o campo de nome do médico (com até 50 caracteres) e insere as demais informações necessárias da prescrição e conclui o processo de cadastro          |  o sistema deve cadastrar a prescrição no sistema.     |
+
+
+
+US25) Como farmacêutica Posso integrar o sistema com outras farmácias internas Para melhorar o
+compartilhamento de informações. Erro: integrar o sistema com outras farmácias é um requisito de alto nível que deveria ser quebrado em várias histórias de usuário
