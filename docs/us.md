@@ -2,9 +2,9 @@
 
 <center>
 
-| **Data**   | **Versão** | **Descrição**        | **Autor**      |
-| ---------- | ---------- | -------------------- | -------------- |
-| 22/11/2023 | 0.1        | Criação do documento | Weslley Barros |
+| **Data**   | **Versão** | **Descrição**                          | **Autor**               |
+| ---------- | ---------- | -------------------------------------- | ----------------------- |
+| 22/11/2023 | 0.1        | Criação do documento                   | Weslley Barros          |
 | 22/11/2023 | 0.2        | Atualização dos critérios de aceitação | João, Luciano, Victório |
 
 </center>
@@ -23,7 +23,7 @@ Eu, como usuário-coordenador, desejo criar minha conta para administrar a arena
 - O email deve estar no formato "nome@email.com"
 - Todos os campos devem ser obrigatórios
 - A senha deve ter tamanho entre 8 e 20 caracteres
-- O nome deve ter no mínimo 3 caracteres 
+- O nome deve ter no mínimo 3 caracteres
 
 ## US002 - Fazer login como administrador
 
@@ -70,7 +70,7 @@ Eu, como usuário-coordenador, desejo poder excluir um plano de aula, para apaga
 **Critérios de Aceitação**
 
 - Ao selecionar a opção de exclusão, o sistema deve solicitar uma confirmação antes
-      de apagar o plano de aula.
+  de apagar o plano de aula.
 - O sistema deve retornar uma mensagem ao usuário confirmando a realização da ação
 
 ## US052 - Editar plano de aula
@@ -85,7 +85,7 @@ planos de aula que estiverem com alguma informação errada:
 - Os campos título, objetivos e observações do plano de aula devem ser editáveis.
 - O sistema deve impedir o usuário de deixar o campo obrigatório "título" vazio
 - O título deverá ter entre 5 e 30 caracteres
-- O campo objetivos deverá ter, no mínimo, 100 caracteres  
+- O campo objetivos deverá ter, no mínimo, 100 caracteres
 - O campo observações deverá ter no máximo 500 caracteres
 
 ## US053 - Baixar planos de aula
@@ -98,7 +98,7 @@ enviá-los aos responsáveis pela verificação dos planos, que são externos a 
 **Critérios de Aceitação**
 
 - O sistema deve gerar um arquivo de download contendo as informações completas
-      do plano de aula com título, objetivos, observações e os drills.
+  do plano de aula com título, objetivos, observações e os drills.
 - Cada drill do plano de aula deve apresentar seu título, descrição, observações e a representação gráfica do treino.
 - O arquivo de download deve estar em um formato PDF.
 
@@ -175,7 +175,7 @@ Eu, como usuário-coordenador, desejo visualizar uma lista com todos os planos d
 - O sistema deve exibir os títulos dos diferentes planos de aula
 - O sistema deve permitir ao usuário pesquisar planos de aula por uma parte de seus títulos
 - O sistema deve permitir ao usuário informar um intervalo de tempo em dias (com um dia de início e um dia de fim) e filtrar os planos de aula cuja data de criação se encontram nesse intervalo
-- O sistema deve permitir que a pesquisa por parte do título e o filtro possam funcionar de maneira simultânea e alternada 
+- O sistema deve permitir que a pesquisa por parte do título e o filtro possam funcionar de maneira simultânea e alternada
 
 ## US061 - Visualizar drills
 

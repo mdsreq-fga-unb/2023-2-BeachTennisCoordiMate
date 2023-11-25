@@ -1,11 +1,13 @@
 # Sprint 06 - Priorização dos requisitos e MPV
+
 **Período: 15/10/2023 - 21/10/2023**
 
 ## Objetivos da reunião
-* Arrumar questões do documento de visão e projeto apontados pelo professor.
-* Revisão do backlog: reavaliação do backlog dos requisitos baseado nos feedbacks dado pelo professor e a facção Skywalkers.
-* Priorização das funcionalidades do SAFE e definição do MVP1 do projeto
-  
+
+- Arrumar questões do documento de visão e projeto apontados pelo professor.
+- Revisão do backlog: reavaliação do backlog dos requisitos baseado nos feedbacks dado pelo professor e a facção Skywalkers.
+- Priorização das funcionalidades do SAFE e definição do MVP1 do projeto
+
 ## Ações a serem feitas
 
 **1. Revisão do backlog pela equipe**
@@ -29,7 +31,7 @@
 3.2 Arrumar tabela de organização de projeto para ter o engenheiro de requisitos
 
 3.3 Arrumar o cronograma para ter períodos de 14 dias
-  
+
 ### Planejamento das tarefas
 
 <center>
@@ -50,8 +52,3 @@
 ## Mudanças e observações visualizadas durante a semana
 
 - A equipe teve alguns problemas de organização, com muitas entregas sendo feitas de último prazo e com atraso. Isso se deve a problemas de comunicação e organização da equipe, que serão resolvidos na próxima semana.
-
-  
-
-
-

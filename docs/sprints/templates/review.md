@@ -1,24 +1,25 @@
 # Sprint [Número da Sprint]
+
 **Período: xx/xx/2023 - xx/xx/2023**
 
 ## Review
 
-
 ### Resumo da Sprint
+
 - [Breve resumo do que foi planejado para a Sprint e os objetivos atingidos.]
 
 ### Entregas Concluídas
 
 1. **Visão Geral:**
-      - [Breve descrição geral do progresso alcançado durante a Sprint.]
+
+   - [Breve descrição geral do progresso alcançado durante a Sprint.]
 
 2. **Itens do Backlog Concluídos:**
-      - [Lista de itens do backlog que foram concluídos e entregues.]
+
+   - [Lista de itens do backlog que foram concluídos e entregues.]
 
 3. **Demonstrações:**
-      - [Exibições ou demonstrações de funcionalidades concluídas, se aplicável.]
-
-
+   - [Exibições ou demonstrações de funcionalidades concluídas, se aplicável.]
 
 ### Comparação com Objetivos Iniciais
 
@@ -27,7 +28,6 @@
 ### Pontos Fortes e Realizações
 
 - [Destacar os aspectos positivos, conquistas notáveis ou inovações durante a sprint.]
-
 
 ### Desafios e Lições Aprendidas
 
@@ -49,8 +49,6 @@
 
 - [Identificar áreas específicas que podem ser aprimoradas na próxima sprint.]
 
-
 ### Agenda para a Próxima Sprint
 
 - [Listar tópicos a serem discutidos ou planejados para a próxima sprint.]
-

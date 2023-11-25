@@ -1,21 +1,22 @@
 # TailAdmin React - Free React Tailwind Admin Dashboard Template
 
-TailAdmin is a free and open-source admin dashboard template built on **React and Tailwind CSS**, providing developers with everything they need to create a comprehensive, data-driven back-end, 
+TailAdmin is a free and open-source admin dashboard template built on **React and Tailwind CSS**, providing developers with everything they need to create a comprehensive, data-driven back-end,
 dashboard, or admin panel solution for upcoming web projects.
 
 [![tailwind react admin template](https://ucarecdn.com/d2a6daed-eb9c-4c2f-8a95-4419c450e23a/tailadminreact.jpg)](https://react-demo.tailadmin.com/)
-
 
 With TailAdmin, you get access to all the necessary dashboard UI components, elements, and pages required to build a feature-rich and complete dashboard or admin panel. Whether you're building dashboard or admin panel for a complex web application or a simple website, TailAdmin is the perfect solution to help you get up and running quickly.
 
 ### [✨ Visit Website](https://tailadmin.com/)
 
 ### [🚀 PRO Demo](https://react-demo.tailadmin.com/)
+
 ### [🚀 FREE Demo](https://free-react-demo.tailadmin.com/)
 
 ### TailAdmin React PRO vs TailAdmin React FREE Comparison 📊
 
 #### [TailAdmin React PRO](https://react-demo.tailadmin.com/)
+
 - 4 Unique Dashboards: Analytics, Ecommerce, Marketing, and CRM (More will be added)
 - 120+ Dashboard UI Components
 - 200+ Total UI Elements
@@ -23,17 +24,19 @@ With TailAdmin, you get access to all the necessary dashboard UI components, ele
 - All Essential Elements and Files
 - Full Figma Design Source - As Shown on Demo
 
-___
+---
 
 #### [TailAdmin React FREE](https://free-react-demo.tailadmin.com/)
+
 - 1 Unique Dashboard
 - 30+ Dashboard UI Components
-- 50+ Total UI Elements 
+- 50+ Total UI Elements
 - 10+ HTML Files
 - TypeScript Support
 - Basic UI Kit Elements and Files
 - Figma Design Source - Free Sample
-___
+
+---
 
 ### [⬇️ Download Now](https://tailadmin.com/download)
 
@@ -69,4 +72,5 @@ Default build output directory: /dist
 This command will generate a dist as build folder in the root of your template that you can upload to your server.
 
 ## Tons of React Tailwind Components for Dashboard
+
 React and Tailwind are two popular technologies that have taken the web development world by storm. React is a JavaScript library for building user interfaces, while Tailwind is a utility-first CSS framework that makes it easy to style web applications. TailAdmin React Offers 200+ Essential React + Tailwind CSS UI Components that you copy-paste and use with your dashboard projects. That includes - charts, graphs, navbars, tabs, buttons, cards, tables, profile, tabs, forms, modals, app pages, calender, web apps example templates and more... for React and Styled using Tailwind CSS
