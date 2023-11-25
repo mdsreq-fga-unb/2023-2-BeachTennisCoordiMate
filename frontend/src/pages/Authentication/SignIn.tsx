@@ -1,10 +1,49 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import userService from '../../service/userService';
+const user = new userService();
 import LogoDark from '../../images/logo/logo-dark.svg';
 import Logo from '../../images/logo/logo.svg';
+import { AxiosError } from 'axios';
 
 const SignIn = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignIn = async () => {
+    try {
+      let regexEmail = /\S+@\S+\.\S+/;
+      if (!email || !password) {
+        toast.warn('Preencha todos os campos!');
+      } else if (!regexEmail.test(email)) {
+        toast.warn('E-mail inválido!');
+      } else {
+        let data = await user.login(email, password);
+
+        if (data.status === 200) {
+          localStorage.setItem('token', data.data.token);
+          console.log(data.data);
+          localStorage.setItem('user', JSON.stringify(data.data));
+          toast.success('Login realizado com sucesso!');
+          setTimeout(() => {
+            window.location.href = '/';
+          }, 3000);
+        }
+        return;
+      }
+    } catch (error) {
+      const err = error as AxiosError;
+      if (err.response?.status === 400)
+        toast.error('E-mail ou senha incorretos!');
+      else toast.error('Erro ao realizar o login!');
+    }
+    return;
+  };
+
   return (
     <>
+      <ToastContainer />
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="flex flex-wrap items-center">
           <div className="hidden w-full xl:block xl:w-1/2">
@@ -150,14 +189,16 @@ const SignIn = () => {
                 CoordiMate
               </h2>
 
-              <form>
+              <form onSubmit={(e) => e.preventDefault()}>
                 <div className="mb-4">
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
-                    Usuário
+                    E-mail
                   </label>
                   <div className="relative">
                     <input
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="Digite seu e-mail"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     />
@@ -189,6 +230,8 @@ const SignIn = () => {
                   <div className="relative">
                     <input
                       type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       placeholder="Digite sua senha"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     />
@@ -221,6 +264,7 @@ const SignIn = () => {
                   <input
                     type="submit"
                     value="Login"
+                    onClick={handleSignIn}
                     className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white transition hover:bg-opacity-90"
                   />
                 </div>

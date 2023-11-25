@@ -38,6 +38,7 @@ const SignUp = () => {
           window.location.href = '/login';
         }, 3000);
       }
+      
     } catch (error) {
       const err = error as AxiosError;
       if (err.response?.data.errors.email) toast.error('Email já cadastrado');

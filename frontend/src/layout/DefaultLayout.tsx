@@ -1,12 +1,15 @@
 import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import { isAuthenticated } from '../service/isAuthenticated';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
-import { Outlet } from 'react-router-dom';
+
+const login = isAuthenticated();
 
 const DefaultLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  return (
+  return login ? (
     <div className="dark:bg-boxdark-2 dark:text-bodydark">
       {/* <!-- ===== Page Wrapper Start ===== --> */}
       <div className="flex h-screen overflow-hidden">
@@ -32,6 +35,8 @@ const DefaultLayout = () => {
       </div>
       {/* <!-- ===== Page Wrapper End ===== --> */}
     </div>
+  ) : (
+    (window.location.href = '/login')
   );
 };
 
