@@ -15,4 +15,5 @@ model User {
   name  String
   email String  @unique
   password String
+  level String @default("user")
 }
