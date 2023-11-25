@@ -2,9 +2,8 @@
 name: Bug report
 about: Bug encontrado na aplicação
 title: "[BUG] - "
-labels: 'bug'
-assignees: ''
-
+labels: "bug"
+assignees: ""
 ---
 
 # Relatório de Bug

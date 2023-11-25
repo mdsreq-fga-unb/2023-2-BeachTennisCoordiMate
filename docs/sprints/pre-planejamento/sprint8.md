@@ -1,4 +1,5 @@
-# Sprint 8 -  	Refatoração e validação do MVP
+# Sprint 8 - Refatoração e validação do MVP
+
 **Período: 29/10/2023 - 04/11/2023**
 
 ## Sprint Planning

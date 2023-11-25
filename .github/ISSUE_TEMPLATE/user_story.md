@@ -2,9 +2,8 @@
 name: User Story Template
 about: Template para user stories
 title: "[US001] - "
-labels: 'user story'
-assignees: ''
-
+labels: "user story"
+assignees: ""
 ---
 
 # US001 - História do Usuário
@@ -30,4 +29,3 @@ Detalhe mais os critérios de aceitação, se necessário.
 ## Link para Wireframes ou Design (opcional)
 
 Inclua links para qualquer wireframe ou design relacionado à história do usuário.
-
