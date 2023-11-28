@@ -24,4 +24,14 @@ model ClassPlan {
   createdAt    DateTime @default(now())
   userId       String
   user         User     @relation(fields: [userId], references: [id])
+  drills Drill[]
+}
+
+model Drill {
+  id           String   @id @default(uuid())
+  title        String
+  description  String
+  observations String
+  classPlanId  String
+  classPlan    ClassPlan     @relation(fields: [classPlanId], references: [id])
 }
