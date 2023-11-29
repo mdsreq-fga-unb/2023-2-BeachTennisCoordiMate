@@ -2,7 +2,7 @@ import { Router } from "express"
 import homeRoutes from "./homeRouters"
 import userRoutes from "./userRouters"
 import classPlanRouters from "./classPlanRouters"
-import drillRouters from "./drill"
+import drillRouters from "./drillRouter"
 
 const router = Router()
 

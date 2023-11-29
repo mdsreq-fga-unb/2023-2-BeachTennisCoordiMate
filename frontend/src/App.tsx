@@ -7,6 +7,7 @@ import SignUp from './pages/Authentication/SignUp';
 import Loader from './common/Loader';
 import routes from './routes';
 import ViewPlan from './pages/ViewPlan';
+import Drills from './pages/Drills';
 
 const DefaultLayout = lazy(() => import('./layout/DefaultLayout'));
 
@@ -29,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<SignIn />} />
         <Route path="/registro" element={<SignUp />} />
+        <Route path="/meusDrills" element={<Drills />} />
         
         <Route path="/visualizar/:id" element={
           <Suspense fallback={<Loader />}>

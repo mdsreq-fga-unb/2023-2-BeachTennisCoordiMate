@@ -211,7 +211,7 @@ span.flatpickr-weekday,
   background-color: #272727;
 }
 
-#panelNewItem{
+#panelHandleItem{
   height: 190px;
   width: 315px;
   background-color: #494949;
@@ -221,8 +221,7 @@ span.flatpickr-weekday,
   color: #fff;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  padding: 10px 0;
+  padding: 3px 0px 10px 10px;
 }
 
 .containerVisibleComp{
@@ -236,7 +235,7 @@ span.flatpickr-weekday,
 .upContainer{
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   
 }
@@ -270,6 +269,24 @@ span.flatpickr-weekday,
 
 .labelForm{
   color: white;
+}
+
+.buttonsPanel{
+  display: flex;
+  flex-direction: row;
+}
+
+.itemButton {
+  width: 330px;
+  height: 115px;
+  background-color: #5899EB;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 0px 10px;
+  position: relative;
 }
 
 @media (max-width: 910px) {
