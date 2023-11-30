@@ -6,6 +6,7 @@ import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
 import Loader from './common/Loader';
 import routes from './routes';
+import ViewPlan from './pages/ViewPlan';
 
 const DefaultLayout = lazy(() => import('./layout/DefaultLayout'));
 
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<SignIn />} />
         <Route path="/registro" element={<SignUp />} />
+        <Route path="/visualizar" element={<ViewPlan />} />
         <Route path="/" element={<ClassPlans />}>
           {/* <Route index element={<ClassPlans />} /> */}
           {routes.map((routes, index) => {
