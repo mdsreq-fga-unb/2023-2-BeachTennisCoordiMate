@@ -168,7 +168,6 @@ span.flatpickr-weekday,
 }
 
 .addButton {
-  width: 330px;
   height: 115px;
   background-color: #5899EB;
   border-radius: 20px;
@@ -211,7 +210,7 @@ span.flatpickr-weekday,
   background-color: #272727;
 }
 
-#panelHandleItem{
+.panelHandleItem{
   height: 190px;
   width: 315px;
   background-color: #494949;
@@ -240,7 +239,7 @@ span.flatpickr-weekday,
   
 }
 
-#closeIcon{
+.clickableIcon{
   cursor: pointer;
 }
 
@@ -272,12 +271,13 @@ span.flatpickr-weekday,
 }
 
 .buttonsPanel{
-  display: flex;
-  flex-direction: row;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 330px));
+  grid-gap: 20px;
 }
 
 .itemButton {
-  width: 330px;
   height: 115px;
   background-color: #5899EB;
   border-radius: 20px;
@@ -285,8 +285,72 @@ span.flatpickr-weekday,
   justify-content: center;
   align-items: center;
   color: white;
-  margin: 0px 10px;
   position: relative;
+}
+
+.clickableTitle:hover{
+  text-decoration: underline;
+  background-color: #72aef7;
+}
+
+.drillPage{
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #272727;
+  padding-bottom: 10px;
+}
+
+.titleLayout{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.contentDrill{
+  padding-left: 15px;
+}
+
+.pDrill{
+  margin: 10px 0 0 0;
+  background-color: #494949;
+  padding: 15px;
+  border-radius: 20px;
+  height: 300px;
+  width: 350px;
+}
+
+.inputsDesign{
+  background-color: #292222;
+  height: 30px; 
+  width: 250px; 
+  border-radius: 10px; 
+  padding-left: 5px;
+  color: "white"; 
+  border: "1px solid black";
+}
+
+.inputsDrill{
+  background-color: #494949;
+  height: 30px; 
+  width: 250px; 
+  border-radius: 10px; 
+  padding-left: 5px;
+  color: "white"; 
+  border: "1px solid black";
+}
+
+.textAreaDrill{
+  background-color: #494949;
+  border-radius: 20px;
+  height: 300px;
+  width: 250px;
+  height: 300px;
+  width: 350px;
+  padding: 15px;
 }
 
 @media (max-width: 910px) {
@@ -296,5 +360,15 @@ span.flatpickr-weekday,
     height: 100%;
     justify-content: flex-start;
     padding-top: 20px;
+  }
+
+  .drillPage{
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #272727;
+    padding-bottom: 10px;
   }
 }

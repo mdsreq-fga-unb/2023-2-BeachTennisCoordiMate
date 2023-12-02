@@ -3,8 +3,9 @@ import '../index.css';
 import { Icon } from '@iconify/react';
 import { toast, ToastContainer } from 'react-toastify';
 import DrillService from '../service/drillService';
+import { Link } from 'react-router-dom';
 
-const Drills = () => {
+const DrillsList = () => {
   const classPlanId = '48ba4b70-bc5d-4351-9eff-ce7d2cea74e7'; //Valor fixo
   const [title, setTitle] = useState('');
   const [visible, setVisible] = useState(false);
@@ -93,28 +94,34 @@ const Drills = () => {
                     <Icon icon="simple-line-icons:plus" color="white" width="40"/>
                 </button>
                 {drills.length > 0 && drills.map((a) => {
-                  return <div id={a["id"]} key={a["id"]} className="itemButton">
-                  <h1>{a["title"]}</h1>
-                    <Icon icon="mdi:trash" color="white" width="20" key={a["id"]} style={{position: 'absolute', bottom: '0', right: '20px', cursor: 'pointer'}} onClick = {()=> {
-                      setDeletedItemTitle(a["title"]);
-                      setDeletedItem(a["id"]);
-                      openDeletePanel();
-                      }}/>
-                  </div>;
+                  return <div id={a["id"]} key={a["id"]} className="itemButton" > 
+                  <Link
+                    to={'/drill'}
+                    state={{drillInfo: a}}
+                  >
+                    <h1 className='clickableTitle'>{a["title"]}</h1>
+                  </Link>
+                  <Icon icon="mdi:trash" color="white" width="20" key={a["id"]} style={{position: 'absolute', bottom: '0', right: '20px', cursor: 'pointer'} } onClick = {()=> {
+                    console.log(a);
+                    setDeletedItemTitle(a["title"]);
+                    setDeletedItem(a["id"]);
+                    openDeletePanel();
+                    }}/>
+                  </div>
                 })}
             </div>
           </div>
-        {visible && <div id="panelHandleItem">
+        {visible && <div className="panelHandleItem" style={{zIndex: 5}}>
           <div className="upContainer">
             <h1>Criar Drill</h1>
-            <Icon onClick={closeNewItemPanel} icon="tabler:x" id="closeIcon" color="white" width="30"/>
+            <Icon onClick={closeNewItemPanel} icon="tabler:x" className="clickableIcon" color="white" width="30"/>
           </div>
-          <input placeholder='Título' style={{backgroundColor: "#292222", height: "30px", width: "250px", borderRadius: "10px", paddingLeft: "5px", color: "white", border: "1px solid black"}} onChange={(e) => setTitle(e.target.value)}></input>
+          <input placeholder='Título' className='inputsDesign' onChange={(e) => setTitle(e.target.value)}></input>
           <button style={{backgroundColor: "#1B74E4", padding: "5px 20px", borderRadius: "10px", border: "1px solid black"}} onClick={handleCreateDrill}>Criar</button>
         </div>}
-        {visibleDel && <div id="panelHandleItem" style={{padding:"3px 0px 10px 0px"}}>
+        {visibleDel && <div className="panelHandleItem" style={{padding:"3px 0px 10px 0px", zIndex: 5}}>
           <div className="upContainer" style={{justifyContent: "flex-end"}}>
-            <Icon onClick={closeDeleteItemPanel} icon="tabler:x" id="closeIcon" color="white" width="30"/>
+            <Icon onClick={closeDeleteItemPanel} icon="tabler:x" className="clickableIcon" color="white" width="30"/>
           </div>
           <h1 style={{textAlign:"center"}}>Tem certeza que deseja excluir "{deletedItemTitle}"?</h1>
           <button style={{backgroundColor: "#1B74E4", padding: "5px 20px", borderRadius: "10px", border: "1px solid black"}} onClick={handleDeleteDrill}>Excluir</button>
@@ -124,4 +131,4 @@ const Drills = () => {
   );
 };
   
-export default Drills;
+export default DrillsList;

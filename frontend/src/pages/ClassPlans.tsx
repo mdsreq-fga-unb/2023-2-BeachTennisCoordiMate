@@ -93,7 +93,7 @@ const ClassPlans = () => {
         {visible && <div id="panelNewItem">
           <div className="upContainer">
             <h1>Criar Plano de Aula</h1>
-            <Icon onClick={closeNewItemPanel} icon="tabler:x" id="closeIcon" color="white" width="30"/>
+            <Icon onClick={closeNewItemPanel} icon="tabler:x" className="clickableIcon" color="white" width="30"/>
           </div>
           <input placeholder='Título' style={{backgroundColor: "#292222", height: "30px", width: "250px", borderRadius: "10px", paddingLeft: "5px", color: "white", border: "1px solid black"}} onChange={(e) => setTitle(e.target.value)}></input>
           <button style={{backgroundColor: "#1B74E4", padding: "5px 20px", borderRadius: "10px", border: "1px solid black"}} onClick={handleCreateClassPlan}>Criar</button>
