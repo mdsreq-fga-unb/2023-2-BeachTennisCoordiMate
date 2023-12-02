@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import { toast, ToastContainer } from 'react-toastify';
 import DrillService from '../service/drillService';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 
 const DrillsList = () => {
   const classPlanId = '48ba4b70-bc5d-4351-9eff-ce7d2cea74e7'; //Valor fixo
@@ -86,6 +87,7 @@ const DrillsList = () => {
   return (
     <>
       <ToastContainer toastStyle={{backgroundColor: "#272727", color: "white"}} closeButton={<Icon icon="tabler:x" color="white" width="15px"/>}/>
+      <Header path='meusDrills' hasReturnArrow={true}/>
       <div className="buttonsPages">
           <div className='containerVisibleComp'>
             <h1 style={{fontSize: "30px", color: "white", padding: "10px 0"}}>Drills</h1>
@@ -116,10 +118,10 @@ const DrillsList = () => {
             <h1>Criar Drill</h1>
             <Icon onClick={closeNewItemPanel} icon="tabler:x" className="clickableIcon" color="white" width="30"/>
           </div>
-          <input placeholder='Título' className='inputsDesign' onChange={(e) => setTitle(e.target.value)}></input>
+          <input placeholder='Título' className='inputsDesign w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary' onChange={(e) => setTitle(e.target.value)}></input>
           <button style={{backgroundColor: "#1B74E4", padding: "5px 20px", borderRadius: "10px", border: "1px solid black"}} onClick={handleCreateDrill}>Criar</button>
         </div>}
-        {visibleDel && <div className="panelHandleItem" style={{padding:"3px 0px 10px 0px", zIndex: 5}}>
+        {visibleDel && <div className="panelHandleItem" style={{padding:"3px 0px 10px 0px"}}>
           <div className="upContainer" style={{justifyContent: "flex-end"}}>
             <Icon onClick={closeDeleteItemPanel} icon="tabler:x" className="clickableIcon" color="white" width="30"/>
           </div>

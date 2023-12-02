@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import { toast, ToastContainer } from 'react-toastify';
 import ClassPlanService from '../service/classPlanService';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 
 const ClassPlans = () => {
   const userString = localStorage.getItem('user');
@@ -68,6 +69,7 @@ const ClassPlans = () => {
   return (
     <>
       <ToastContainer toastStyle={{backgroundColor: "#272727", color: "white"}} closeButton={<Icon icon="tabler:x" color="white" width="15px"/>}/>
+      <Header path='' hasReturnArrow={false}></Header>
       <div className="buttonsPages" >
           <div className='containerVisibleComp'>
             <h1 style={{fontSize: "30px", color: "white", padding: "10px 0"}}>Meus Planos de Aula</h1>
@@ -90,12 +92,12 @@ const ClassPlans = () => {
             ))}
           </section>
        
-        {visible && <div id="panelNewItem">
+        {visible && <div className="panelHandleItem">
           <div className="upContainer">
             <h1>Criar Plano de Aula</h1>
             <Icon onClick={closeNewItemPanel} icon="tabler:x" className="clickableIcon" color="white" width="30"/>
           </div>
-          <input placeholder='Título' style={{backgroundColor: "#292222", height: "30px", width: "250px", borderRadius: "10px", paddingLeft: "5px", color: "white", border: "1px solid black"}} onChange={(e) => setTitle(e.target.value)}></input>
+          <input placeholder='Título' className='w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary' style={{backgroundColor: "#292222", height: "30px", width: "250px", borderRadius: "10px", paddingLeft: "5px", color: "white"}} onChange={(e) => setTitle(e.target.value)}></input>
           <button style={{backgroundColor: "#1B74E4", padding: "5px 20px", borderRadius: "10px", border: "1px solid black"}} onClick={handleCreateClassPlan}>Criar</button>
         </div>}
       </div>

@@ -221,6 +221,7 @@ span.flatpickr-weekday,
   justify-content: space-between;
   align-items: center;
   padding: 3px 0px 10px 10px;
+  z-index: 5;
 }
 
 .containerVisibleComp{
