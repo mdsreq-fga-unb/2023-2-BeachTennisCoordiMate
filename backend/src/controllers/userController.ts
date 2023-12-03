@@ -21,21 +21,20 @@ export default class userController {
       })
       res.status(201).json(data)
     } catch (err) {
+      let inputErr: { email?: string; username?: string } = {}
       if (err instanceof ZodError) {
         res.status(400).json(fromZodError(err))
       } else if (err instanceof Prisma.PrismaClientKnownRequestError) {
         err as Prisma.PrismaClientKnownRequestError
         const b = err.meta?.target as string[] | undefined
-        let inputErr: { email?: string; username?: string } = {}
 
         if (b?.includes("email")) inputErr = { email: "Invalid email" }
-
         if (b?.includes("username"))
           inputErr = { username: "Username already exists" }
-
-        if (inputErr) res.status(400).json({ errors: inputErr })
       }
-      res.status(500).json({ errors: { server: "Server error" } })
+
+      if (inputErr) res.status(400).json({ errors: inputErr })
+      else res.status(500).json({ errors: { server: "Server error" } })
     }
   }
 

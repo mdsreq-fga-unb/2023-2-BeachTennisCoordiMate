@@ -73,6 +73,4 @@ export default class classPlanController {
       res.status(500).json({ error: "Internal Server Error" })
     }
   }
-
-
 }
