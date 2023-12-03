@@ -29,7 +29,12 @@ function App() {
       <Routes>
         <Route path="/login" element={<SignIn />} />
         <Route path="/registro" element={<SignUp />} />
-        <Route path="/visualizar" element={<ViewPlan />} />
+        
+        <Route path="/visualizar/:id" element={
+          <Suspense fallback={<Loader />}>
+            <ViewPlan />
+          </Suspense> 
+                  } /> 
         <Route path="/" element={<ClassPlans />}>
           {/* <Route index element={<ClassPlans />} /> */}
           {routes.map((routes, index) => {

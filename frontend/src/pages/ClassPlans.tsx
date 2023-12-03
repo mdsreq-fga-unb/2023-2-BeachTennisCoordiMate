@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../index.css';
 import { Icon } from '@iconify/react';
 import { toast, ToastContainer } from 'react-toastify';
 import ClassPlanService from '../service/classPlanService';
+import { Link } from 'react-router-dom';
 
 const ClassPlans = () => {
   const userString = localStorage.getItem('user');
@@ -13,16 +14,28 @@ const ClassPlans = () => {
   } else {
     id = '';
   }
+  
+  useEffect(() => {
+    loadPlans();
+  }, []);
+  
   const [title, setTitle] = useState('');
   const [visible, setVisible] = useState(false);
   const classPlan = new ClassPlanService();
   let data = {
+    id: '',
     title: title,
     goals: '',
     observations: '',
     userId: id 
   };
-
+  const [plans, setPlans] = useState([data]);
+  
+  async function loadPlans() {
+    const response = await classPlan.get("/");
+    setPlans(response.data);
+  };
+  
   const addClassPlan = () => {
     setVisible(true);
     setTitle('');
@@ -50,6 +63,8 @@ const ClassPlans = () => {
     }
     return;
   };
+
+
   return (
     <>
       <ToastContainer toastStyle={{backgroundColor: "#272727", color: "white"}} closeButton={<Icon icon="tabler:x" color="white" width="15px"/>}/>
@@ -62,6 +77,19 @@ const ClassPlans = () => {
                 </button>
             </div>
           </div>
+          <section className="listPlans">
+
+            {plans.map((plan) => (
+              <article className="plans" key={plan.id}>
+                  <div className="plan">
+                  <Link to={`/visualizar/${plan.id}`}>
+                      <h1 style={{fontSize: "30px", color: "white", padding: "10px 0"}}>{plan.title}</h1>
+                    </Link>
+                  </div>
+              </article>
+            ))}
+          </section>
+       
         {visible && <div id="panelNewItem">
           <div className="upContainer">
             <h1>Criar Plano de Aula</h1>

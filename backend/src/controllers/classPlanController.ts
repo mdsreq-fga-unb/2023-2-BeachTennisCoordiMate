@@ -33,4 +33,46 @@ export default class classPlanController {
       }
     }
   }
+  list = async (req: Request, res: Response) => {
+    try {
+      const classPlan = await prisma.classPlan.findMany({
+        include: {
+          user: {
+            select: {
+              id: true,
+              email: true,
+              name: true,
+            },
+          },
+        },
+      })
+      res.status(200).json(classPlan)
+    } catch (err) {
+      res.status(500).json({ error: "Internal Server Error" })
+    }
+  }
+  show = async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params
+      const classPlan = await prisma.classPlan.findUnique({
+        where: {
+          id: id,
+        },
+        include: {
+          user: {
+            select: {
+              id: true,
+              email: true,
+              name: true,
+            },
+          },
+        },
+      })
+      res.status(200).json(classPlan)
+    } catch (err) {
+      res.status(500).json({ error: "Internal Server Error" })
+    }
+  }
+
+
 }
