@@ -20,6 +20,10 @@ class ClassPlanService extends Apiservice {
     const requestUrl = `${this.apiurl}${url}`;
     return httpClient.get(requestUrl);
   }
+
+  async getManyById(userId: string) {
+    return this.get('/' + userId);
+  }
 }
 
 export default ClassPlanService;

@@ -73,4 +73,19 @@ export default class classPlanController {
       res.status(500).json({ error: "Internal Server Error" })
     }
   }
+
+  delete = async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params
+
+      const classPlan = await prisma.classPlan.delete({
+        where: { id },
+      })
+
+      res.status(200).json(classPlan)
+    } catch (err) {
+      err as Prisma.PrismaClientKnownRequestError
+      res.status(500).json({ errors: { server: "Server error" } })
+    }
+  }
 }
