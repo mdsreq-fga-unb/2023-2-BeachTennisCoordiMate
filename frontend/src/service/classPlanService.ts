@@ -21,8 +21,12 @@ class ClassPlanService extends Apiservice {
     return httpClient.get(requestUrl);
   }
 
-  async getManyById(userId: string) {
+  async getManyById(userId: string){
     return this.get('/' + userId);
+  }
+
+  async remove(id: string){
+    return this.delete('/' + id);
   }
 }
 

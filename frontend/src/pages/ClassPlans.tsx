@@ -6,6 +6,7 @@ import ClassPlanService from '../service/classPlanService';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { Link } from 'react-router-dom';
+import { AxiosError } from 'axios';
 
 const ClassPlans = () => {
   const [classPlans, setClassPlans] = useState([]);
@@ -82,12 +83,12 @@ const ClassPlans = () => {
 
   const handleDeleteClassPlan = async () => {
     try {
-      // await drill.deleteById(deletedItem);
-      toast.success('Drill excluído com sucesso');
+      await classPlan.remove(deletedItem);
+      toast.success('Plano de aula excluído com sucesso');
       closeDeleteItemPanel();
       setDeletedItem('');
     } catch (error) {
-      toast.error('Erro ao excluir drill');
+      toast.error('Erro ao excluir plano de aula');
     }
     return;
   };
@@ -140,9 +141,9 @@ const ClassPlans = () => {
                         cursor: 'pointer',
                       }}
                       onClick={() => {
-                        // setDeletedItemTitle(a["title"]);
-                        // setDeletedItem(a["id"]);
-                        // openDeletePanel();
+                        setDeletedItemTitle(a["title"]);
+                        setDeletedItem(a["id"]);
+                        openDeletePanel();
                       }}
                     />
                   </div>
