@@ -38,7 +38,6 @@ const SignUp = () => {
           window.location.href = '/login';
         }, 3000);
       }
-      
     } catch (error) {
       const err = error as AxiosError;
       if (err.response?.data.errors.email) toast.error('Email já cadastrado');
@@ -50,15 +49,16 @@ const SignUp = () => {
 
   return (
     <>
-      <ToastContainer toastStyle={{backgroundColor: "#272727", color: "white"}} closeButton={<Icon icon="tabler:x" color="white" width="15px"/>}/>
+      <ToastContainer
+        toastStyle={{ backgroundColor: '#272727', color: 'white' }}
+        closeButton={<Icon icon="tabler:x" color="white" width="15px" />}
+      />
       <div className="signInSignUpScreen">
         <div className="formSignInSignUp">
           <img src={Logo} width={208}></img>
-          <form onSubmit={(e) => e.preventDefault()} style={{width: "80%"}}>
+          <form onSubmit={(e) => e.preventDefault()} style={{ width: '80%' }}>
             <div className="mb-4">
-              <label className="labelForm">
-                Nome
-              </label>
+              <label className="labelForm">Nome</label>
               <div className="relative">
                 <input
                   type="text"
@@ -93,9 +93,7 @@ const SignUp = () => {
             </div>
 
             <div className="mb-4">
-              <label className="labelForm">
-                Email
-              </label>
+              <label className="labelForm">Email</label>
               <div className="relative">
                 <input
                   type="email"
@@ -126,9 +124,7 @@ const SignUp = () => {
             </div>
 
             <div className="mb-4">
-              <label className="labelForm">
-                Senha
-              </label>
+              <label className="labelForm">Senha</label>
               <div className="relative">
                 <input
                   type="password"
@@ -206,7 +202,7 @@ const SignUp = () => {
               />
             </div>
 
-            <div className="mt-6 text-center" style={{color: "white"}}>
+            <div className="mt-6 text-center" style={{ color: 'white' }}>
               <p>
                 Já tem uma conta?{' '}
                 <Link to="/login" className="text-primary">

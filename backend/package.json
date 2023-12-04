@@ -12,7 +12,8 @@
     "test:watch": "jest --passWithNoTests --watch",
     "test:stage": "jest --passWithNoTests --findRelatedTests",
     "test:coverage": "jest --passWithNoTests --coverage",
-    "lint": "eslint --ext .ts ./src"
+    "lint": "eslint --ext .ts ./src",
+    "prettier": "prettier . --write"
   },
   "keywords": [],
   "author": "",

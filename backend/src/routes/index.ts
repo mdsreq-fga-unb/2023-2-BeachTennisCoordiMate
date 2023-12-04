@@ -12,4 +12,3 @@ router.use("/classPlan", classPlanRouters)
 router.use("/drill", drillRouters)
 
 export { router }
-    

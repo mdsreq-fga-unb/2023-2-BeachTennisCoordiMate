@@ -16,7 +16,7 @@ export default class drillController {
         include: {
           classPlan: {
             select: {
-              id: true
+              id: true,
             },
           },
         },
@@ -33,32 +33,31 @@ export default class drillController {
 
   getManyByClassPlanId = async (req: Request, res: Response) => {
     try {
-      const classPlanId = req.params.classPlanId;
-      const drills = (await prisma.drill.findMany({
-          where:{
-            classPlanId
-          }, 
-        })
-      ) 
-      res.status(200).json(drills);
+      const classPlanId = req.params.classPlanId
+      const drills = await prisma.drill.findMany({
+        where: {
+          classPlanId,
+        },
+      })
+      res.status(200).json(drills)
     } catch (err) {
-        res.status(500).json({ error: "Internal Server Error" })
+      res.status(500).json({ error: "Internal Server Error" })
     }
   }
 
   updateById = async (req: Request, res: Response) => {
     try {
-      const id = req.params.id;
-      const data = drillSchema.parse(req.body);
-      const updatedDrill = (await prisma.drill.update({
+      const id = req.params.id
+      const data = drillSchema.parse(req.body)
+      const updatedDrill = await prisma.drill.update({
         where: {
           id,
         },
         data: {
           ...data,
-        }
-      })) 
-      res.status(204).json(updatedDrill);
+        },
+      })
+      res.status(204).json(updatedDrill)
     } catch (err) {
       if (err instanceof ZodError) {
         res.status(400).json(fromZodError(err))
@@ -70,16 +69,15 @@ export default class drillController {
 
   deleteById = async (req: Request, res: Response) => {
     try {
-      const id = req.params.id;
-      const deletedDrill = (await prisma.drill.delete({
-          where:{
-            id,
-          }, 
-        })
-      ) 
-      res.status(204).json(deletedDrill);
+      const id = req.params.id
+      const deletedDrill = await prisma.drill.delete({
+        where: {
+          id,
+        },
+      })
+      res.status(204).json(deletedDrill)
     } catch (err) {
-        res.status(500).json({ error: "Internal Server Error" })
+      res.status(500).json({ error: "Internal Server Error" })
     }
   }
 }

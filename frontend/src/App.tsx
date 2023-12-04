@@ -10,7 +10,6 @@ import ViewPlan from './pages/ViewPlan';
 import DrillsList from './pages/DrillsList';
 import Drill from './pages/Drill';
 
-
 const DefaultLayout = lazy(() => import('./layout/DefaultLayout'));
 
 function App() {

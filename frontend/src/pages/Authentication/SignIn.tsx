@@ -4,7 +4,7 @@ import userService from '../../service/userService';
 const user = new userService();
 import { AxiosError } from 'axios';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import '../../index.css'
+import '../../index.css';
 import Logo from '../../images/logoBeachTennisCoordimate.png';
 
 const SignIn = () => {
@@ -43,15 +43,16 @@ const SignIn = () => {
 
   return (
     <>
-      <ToastContainer toastStyle={{backgroundColor: "#272727", color: "white"}} closeButton={<Icon icon="tabler:x" color="white" width="15px"/>}/>
+      <ToastContainer
+        toastStyle={{ backgroundColor: '#272727', color: 'white' }}
+        closeButton={<Icon icon="tabler:x" color="white" width="15px" />}
+      />
       <div className="signInSignUpScreen">
         <div className="formSignInSignUp">
           <img src={Logo} width={208}></img>
-          <form onSubmit={(e) => e.preventDefault()} style={{width: "80%"}}>
+          <form onSubmit={(e) => e.preventDefault()} style={{ width: '80%' }}>
             <div className="mb-4">
-              <label className="labelForm">
-                E-mail
-              </label>
+              <label className="labelForm">E-mail</label>
               <div className="relative">
                 <input
                   type="email"
@@ -82,9 +83,7 @@ const SignIn = () => {
             </div>
 
             <div className="mb-6">
-              <label className="labelForm">
-                Senha
-              </label>
+              <label className="labelForm">Senha</label>
               <div className="relative">
                 <input
                   type="password"

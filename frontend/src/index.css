@@ -169,7 +169,7 @@ span.flatpickr-weekday,
 
 .addButton {
   height: 115px;
-  background-color: #5899EB;
+  background-color: #5899eb;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -200,7 +200,31 @@ span.flatpickr-weekday,
 
 }
 
-.buttonsPages{
+.listPlans{
+  width: 100%;
+  height: 100%;
+  margin-top: -400px;
+  display: grid;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+
+}
+
+.plans {
+  width: 330px;
+  height: 115px;
+  background-color: #5899EB;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.buttonsPages {
   position: relative;
   display: flex;
   justify-content: center;
@@ -210,7 +234,7 @@ span.flatpickr-weekday,
   background-color: #272727;
 }
 
-.panelHandleItem{
+.panelHandleItem {
   height: 190px;
   width: 315px;
   background-color: #494949;
@@ -224,7 +248,7 @@ span.flatpickr-weekday,
   z-index: 5;
 }
 
-.containerVisibleComp{
+.containerVisibleComp {
   position: absolute;
   top: 5px;
   left: 5px;
@@ -232,7 +256,7 @@ span.flatpickr-weekday,
   flex-direction: column;
 }
 
-.upContainer{
+.upContainer {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -240,11 +264,11 @@ span.flatpickr-weekday,
   
 }
 
-.clickableIcon{
+.clickableIcon {
   cursor: pointer;
 }
 
-.formSignInSignUp{
+.formSignInSignUp {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -254,7 +278,7 @@ span.flatpickr-weekday,
   border-radius: 40px;
 }
 
-.signInSignUpScreen{
+.signInSignUpScreen {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -267,11 +291,11 @@ span.flatpickr-weekday,
   background-repeat: no-repeat;
 }
 
-.labelForm{
+.labelForm {
   color: white;
 }
 
-.buttonsPanel{
+.buttonsPanel {
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 330px));
@@ -280,7 +304,7 @@ span.flatpickr-weekday,
 
 .itemButton {
   height: 115px;
-  background-color: #5899EB;
+  background-color: #5899eb;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -289,12 +313,12 @@ span.flatpickr-weekday,
   position: relative;
 }
 
-.clickableTitle:hover{
+.clickableTitle:hover {
   text-decoration: underline;
   background-color: #72aef7;
 }
 
-.drillPage{
+.drillPage {
   color: white;
   width: 100%;
   height: 100%;
@@ -304,18 +328,18 @@ span.flatpickr-weekday,
   padding-bottom: 10px;
 }
 
-.titleLayout{
+.titleLayout {
   display: flex;
   flex-direction: row;
   padding-top: 10px;
   padding-right: 10px;
 }
 
-.contentDrill{
+.contentDrill {
   padding-left: 15px;
 }
 
-.pDrill{
+.pDrill {
   margin: 10px 0 0 0;
   background-color: #494949;
   padding: 15px;
@@ -324,27 +348,27 @@ span.flatpickr-weekday,
   width: 350px;
 }
 
-.inputsDesign{
+.inputsDesign {
   background-color: #292222;
-  height: 30px; 
-  width: 250px; 
-  border-radius: 10px; 
+  height: 30px;
+  width: 250px;
+  border-radius: 10px;
   padding-left: 5px;
-  color: "white"; 
-  border: "1px solid black";
+  color: 'white';
+  border: '1px solid black';
 }
 
-.inputsDrill{
+.inputsDrill {
   background-color: #494949;
-  height: 30px; 
-  width: 250px; 
-  border-radius: 10px; 
+  height: 30px;
+  width: 250px;
+  border-radius: 10px;
   padding-left: 5px;
-  color: "white"; 
-  border: "1px solid black";
+  color: 'white';
+  border: '1px solid black';
 }
 
-.textAreaDrill{
+.textAreaDrill {
   background-color: #494949;
   border-radius: 20px;
   height: 300px;
@@ -355,7 +379,7 @@ span.flatpickr-weekday,
 }
 
 @media (max-width: 910px) {
-  .formSignInSignUp{
+  .formSignInSignUp {
     width: 100%;
     border-radius: 0;
     height: 100%;
@@ -363,7 +387,7 @@ span.flatpickr-weekday,
     padding-top: 20px;
   }
 
-  .drillPage{
+  .drillPage {
     color: white;
     width: 100vw;
     height: 100vh;
