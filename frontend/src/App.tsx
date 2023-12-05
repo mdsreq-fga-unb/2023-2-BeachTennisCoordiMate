@@ -1,8 +1,7 @@
 import { Suspense, lazy, useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-
-import Dashboard from './pages/Dashboard';
+import ClassPlans from './pages/ClassPlans';
 import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
 import Loader from './common/Loader';
@@ -29,8 +28,8 @@ function App() {
       <Routes>
         <Route path="/login" element={<SignIn />} />
         <Route path="/registro" element={<SignUp />} />
-        <Route element={<DefaultLayout />}>
-          <Route index element={<Dashboard />} />
+        <Route path="/" element={<ClassPlans />}>
+          {/* <Route index element={<ClassPlans />} /> */}
           {routes.map((routes, index) => {
             const { path, component: Component } = routes;
             return (

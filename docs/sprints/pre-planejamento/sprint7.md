@@ -1,4 +1,5 @@
 # Sprint 7 - Validação do Backlog SAFE do Produto
+
 **Período: 22/10/2023 - 28/10/2023**
 
 ## Sprint Planning

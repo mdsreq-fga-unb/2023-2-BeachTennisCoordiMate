@@ -1,4 +1,5 @@
 # Sprint 10 - Definição dos critérios de DOR e DOD
+
 **Período: 12/11/2023 - 18/11/2023**
 
 ## Sprint Planning

@@ -1,4 +1,4 @@
-site_name: 'Beach Tennis CoordiMate'
+site_name: "Beach Tennis CoordiMate"
 repo_url: https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate
 repo_name: BeachTennisCoordiMate
 features:
@@ -33,36 +33,36 @@ nav:
   - Início: index.md
   - Gamificação: gamificacao.md
   - Documentação:
-    - Visão do produto e projeto:
-      - Visão do Produto: doc-visao/1.visao-produto.md
-      - Requisitos Funcionais e Não Funcionais: doc-visao/2.requisitos.md
-      - Visão do Projeto: doc-visao/2.visao-projeto.md
-      - Processo de Desenvolvimento: doc-visao/3.processo-dev.md
-      - Processo de Engenharia de Requisitos: doc-visao/4.processo-requisitos.md
-      - Lições Aprendidas: doc-visao/5.licoes-aprendidas.md
-    - Backlog SAFE: backlog.md
-    - MPV: mvp.md
-    - DoR & DoD: dor_dod.md
-    - User Stories - MPV: us.md
+      - Visão do produto e projeto:
+          - Visão do Produto: doc-visao/1.visao-produto.md
+          - Requisitos Funcionais e Não Funcionais: doc-visao/2.requisitos.md
+          - Visão do Projeto: doc-visao/2.visao-projeto.md
+          - Processo de Desenvolvimento: doc-visao/3.processo-dev.md
+          - Processo de Engenharia de Requisitos: doc-visao/4.processo-requisitos.md
+          - Lições Aprendidas: doc-visao/5.licoes-aprendidas.md
+      - Backlog SAFE: backlog.md
+      - MPV: mvp.md
+      - DoR & DoD: dor_dod.md
+      - User Stories - MPV: us.md
   - Reuniões:
-    - Pré-planejamento:
-      - Sprint 0 - Definição do problema e solução: sprints/pre-planejamento/sprint0.md
-      - Sprint 1 - Definição do produto: sprints/pre-planejamento/sprint1.md
-      - Sprint 2 - Definição do projeto e alinhamento do produto: sprints/pre-planejamento/sprint2.md
-      - Sprint 3 - Finalizar Visão do Produto e Projeto: sprints/pre-planejamento/sprint3.md
-      - Sprint 6 - Priorização dos requisitos e MPV: sprints/pre-planejamento/sprint6.md
-      - Sprint 9 - Definição dos critérios de aceitação das histórias: sprints/pre-planejamento/sprint9.md
-    - Scrum:
-      - Sprint 10 - Definição dos critérios de DOR e DOD: sprints/scrum/sprint10.md
-      
+      - Pré-planejamento:
+          - Sprint 0 - Definição do problema e solução: sprints/pre-planejamento/sprint0.md
+          - Sprint 1 - Definição do produto: sprints/pre-planejamento/sprint1.md
+          - Sprint 2 - Definição do projeto e alinhamento do produto: sprints/pre-planejamento/sprint2.md
+          - Sprint 3 - Finalizar Visão do Produto e Projeto: sprints/pre-planejamento/sprint3.md
+          - Sprint 6 - Priorização dos requisitos e MPV: sprints/pre-planejamento/sprint6.md
+          - Sprint 9 - Definição dos critérios de aceitação das histórias: sprints/pre-planejamento/sprint9.md
+      - Scrum:
+          - Sprint 10 - Definição dos critérios de DOR e DOD: sprints/scrum/sprint10.md
+
   - Entregas:
-    - Unidade 1: entregas/1.entrega-unidade1.md
-    - Unidade 2: entregas/2.entrega-unidade2.md
-    - Unidade 3:
-      - Apresentação: entregas/unidade-03/1.entrega-unidade3.md
-      - PBB: entregas/unidade-03/2.pbb.md
-      - Ver&Val PBB - Facção GBL: entregas/unidade-03/3.pbb-revisao.md
-      - Ver&Val Critérios de aceitação - Facção GBL: entregas/unidade-03/4.criterios-revisao.md
-      - BDD - Facção GBL: entregas/unidade-03/5.bdd.md
-      - USM: entregas/unidade-03/6.usm.md
-      - Ver&Val DoR & DoD - Facção GBL: entregas/unidade-03/7.dor_dod.md
+      - Unidade 1: entregas/1.entrega-unidade1.md
+      - Unidade 2: entregas/2.entrega-unidade2.md
+      - Unidade 3:
+          - Apresentação: entregas/unidade-03/1.entrega-unidade3.md
+          - PBB: entregas/unidade-03/2.pbb.md
+          - Ver&Val PBB - Facção GBL: entregas/unidade-03/3.pbb-revisao.md
+          - Ver&Val Critérios de aceitação - Facção GBL: entregas/unidade-03/4.criterios-revisao.md
+          - BDD - Facção GBL: entregas/unidade-03/5.bdd.md
+          - USM: entregas/unidade-03/6.usm.md
+          - Ver&Val DoR & DoD - Facção GBL: entregas/unidade-03/7.dor_dod.md

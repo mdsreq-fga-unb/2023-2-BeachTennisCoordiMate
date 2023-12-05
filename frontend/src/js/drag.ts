@@ -28,7 +28,7 @@ const Drag = (): void => {
 
   const insertAboveTask = (
     zone: HTMLElement,
-    mouseY: number
+    mouseY: number,
   ): HTMLElement | null => {
     const els = zone.querySelectorAll<HTMLElement>('.task:not(.is-dragging)');
 
