@@ -5,8 +5,6 @@ import { toast, ToastContainer } from 'react-toastify';
 import ClassPlanService from '../service/classPlanService';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import { Link } from 'react-router-dom';
-import { AxiosError } from 'axios';
 
 const ClassPlans = () => {
   const [classPlans, setClassPlans] = useState([]);
@@ -21,11 +19,11 @@ const ClassPlans = () => {
   } else {
     id = '';
   }
-  
+
   useEffect(() => {
     loadPlans();
   }, []);
-  
+
   const [title, setTitle] = useState('');
   const [visible, setVisible] = useState(false);
   const classPlan = new ClassPlanService();
@@ -34,15 +32,15 @@ const ClassPlans = () => {
     title: title,
     goals: '',
     observations: '',
-    userId: id
+    userId: id,
   };
   const [plans, setPlans] = useState([data]);
-  
+
   async function loadPlans() {
-    const response = await classPlan.get("/");
+    const response = await classPlan.get('/');
     setPlans(response.data);
-  };
-  
+  }
+
   const addClassPlan = () => {
     setVisible(true);
     setTitle('');
@@ -126,7 +124,10 @@ const ClassPlans = () => {
               classPlans.map((a) => {
                 return (
                   <div id={a['id']} key={a['id']} className="itemButton">
-                    <Link to={'/drill'} state={{ drillInfo: a }}>
+                    <Link
+                      to={`/plano-aula/${a['id']}`}
+                      state={{ drillInfo: a }}
+                    >
                       <h1 className="clickableTitle">{a['title']}</h1>
                     </Link>
                     <Icon
@@ -141,8 +142,8 @@ const ClassPlans = () => {
                         cursor: 'pointer',
                       }}
                       onClick={() => {
-                        setDeletedItemTitle(a["title"]);
-                        setDeletedItem(a["id"]);
+                        setDeletedItemTitle(a['title']);
+                        setDeletedItem(a['id']);
                         openDeletePanel();
                       }}
                     />
@@ -151,7 +152,7 @@ const ClassPlans = () => {
               })}
           </div>
         </div>
-          <section className="listPlans">
+        {/* <section className="listPlans">
 
             {plans.map((plan) => (
               <article className="plans" key={plan.id}>
@@ -162,8 +163,8 @@ const ClassPlans = () => {
                   </div>
               </article>
             ))}
-          </section>
-       
+          </section> */}
+
         {visible && (
           <div className="panelHandleItem">
             <div className="upContainer">

@@ -34,6 +34,7 @@ const SignIn = () => {
       }
     } catch (error) {
       const err = error as AxiosError;
+      console.log(err);
       if (err.response?.status === 400)
         toast.error('E-mail ou senha incorretos!');
       else toast.error('Erro ao realizar o login!');

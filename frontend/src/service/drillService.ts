@@ -20,6 +20,10 @@ class DrillService extends Apiservice {
   async deleteById(id: string) {
     return this.delete('/' + id);
   }
+
+  async getById(id: string) {
+    return this.get('/drill/' + id);
+  }
 }
 
 export default DrillService;

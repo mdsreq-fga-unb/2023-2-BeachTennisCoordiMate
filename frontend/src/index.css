@@ -176,7 +176,7 @@ span.flatpickr-weekday,
   align-items: center;
 }
 
-.listPlans{
+.listPlans {
   width: 100%;
   height: 100%;
   margin-top: -400px;
@@ -185,22 +185,19 @@ span.flatpickr-weekday,
   justify-content: flex-start;
   align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-
-
 }
 
 .plans {
   width: 330px;
   height: 115px;
-  background-color: #5899EB;
+  background-color: #5899eb;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.listPlans{
+.listPlans {
   width: 100%;
   height: 100%;
   margin-top: -400px;
@@ -209,19 +206,16 @@ span.flatpickr-weekday,
   justify-content: flex-start;
   align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-
-
 }
 
 .plans {
   width: 330px;
   height: 115px;
-  background-color: #5899EB;
+  background-color: #5899eb;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .buttonsPages {
@@ -231,6 +225,14 @@ span.flatpickr-weekday,
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background-color: #272727;
+}
+
+.buttonsDrills {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #272727;
 }
 
@@ -246,14 +248,11 @@ span.flatpickr-weekday,
   align-items: center;
   padding: 3px 0px 10px 10px;
   z-index: 5;
-}
-
-.containerVisibleComp {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px black solid;
 }
 
 .upContainer {
@@ -261,7 +260,6 @@ span.flatpickr-weekday,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 .clickableIcon {

@@ -7,7 +7,6 @@ import SignUp from './pages/Authentication/SignUp';
 import Loader from './common/Loader';
 import routes from './routes';
 import ViewPlan from './pages/ViewPlan';
-import DrillsList from './pages/DrillsList';
 import Drill from './pages/Drill';
 
 const DefaultLayout = lazy(() => import('./layout/DefaultLayout'));
@@ -31,15 +30,17 @@ function App() {
       <Routes>
         <Route path="/login" element={<SignIn />} />
         <Route path="/registro" element={<SignUp />} />
-        <Route path="/meusDrills" element={<DrillsList />} />
-        
-        <Route path="/visualizar/:id" element={
-          <Suspense fallback={<Loader />}>
-            <ViewPlan />
-          </Suspense> 
-                  } /> 
+
+        <Route
+          path="/plano-aula/:id"
+          element={
+            <Suspense fallback={<Loader />}>
+              <ViewPlan />
+            </Suspense>
+          }
+        />
         <Route path="/" element={<ClassPlans />} />
-        <Route path="/drill" element={<Drill />}>
+        <Route path="/drill/:id" element={<Drill />}>
           {/* <Route index element={<ClassPlans />} /> */}
           {routes.map((routes, index) => {
             const { path, component: Component } = routes;

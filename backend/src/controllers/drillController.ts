@@ -33,10 +33,14 @@ export default class drillController {
 
   getManyByClassPlanId = async (req: Request, res: Response) => {
     try {
-      const classPlanId = req.params.classPlanId
+      const { classPlanId } = req.params
       const drills = await prisma.drill.findMany({
         where: {
           classPlanId,
+        },
+        select: {
+          id: true,
+          title: true,
         },
       })
       res.status(200).json(drills)
@@ -76,6 +80,27 @@ export default class drillController {
         },
       })
       res.status(204).json(deletedDrill)
+    } catch (err) {
+      res.status(500).json({ error: "Internal Server Error" })
+    }
+  }
+
+  show = async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params
+      const drill = await prisma.drill.findUnique({
+        where: {
+          id: id,
+        },
+        include: {
+          classPlan: {
+            select: {
+              id: true,
+            },
+          },
+        },
+      })
+      res.status(200).json(drill)
     } catch (err) {
       res.status(500).json({ error: "Internal Server Error" })
     }

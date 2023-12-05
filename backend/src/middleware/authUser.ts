@@ -2,7 +2,6 @@ import { sign } from "jsonwebtoken"
 
 interface Idata {
   id: string
-  level: string
 }
 
 export default class AuthUser {

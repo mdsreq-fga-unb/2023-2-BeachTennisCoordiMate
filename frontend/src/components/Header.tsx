@@ -2,6 +2,12 @@ import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react/dist/iconify.js';
 
 const Header = (props: { path: string; hasReturnArrow: boolean }) => {
+  const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    window.location.href = '/login';
+  };
+
   return (
     <header
       className="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none"
@@ -27,6 +33,7 @@ const Header = (props: { path: string; hasReturnArrow: boolean }) => {
           color="white"
           width="25px"
           className="clickableIcon"
+          onClick={logout}
         />
       </div>
     </header>

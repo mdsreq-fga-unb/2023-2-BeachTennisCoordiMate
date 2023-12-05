@@ -1,37 +1,58 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../index.css';
 import { Icon } from '@iconify/react';
 import { toast, ToastContainer } from 'react-toastify';
 import DrillService from '../service/drillService';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 
 const Drill = () => {
-  const location = useLocation();
-  const { drillInfo } = location.state;
-  const [title, setTitle] = useState(drillInfo['title']);
+  const { id } = useParams();
+  const [title, setTitle] = useState('');
   const [titleAux, setTitleAux] = useState('');
-  const [description, setDescription] = useState(drillInfo['description']);
+  const [description, setDescription] = useState('');
   const [descriptionAux, setDescriptionAux] = useState('');
-  const [observations, setObservations] = useState(drillInfo['observations']);
+  const [observations, setObservations] = useState('');
   const [observationsAux, setObservationsAux] = useState('');
   const [titleNotEdited, setTitleNotEdited] = useState(true);
   const [descriptionNotEdited, setDescriptionNotEdited] = useState(true);
   const [observationsNotEdited, setObservationsNotEdited] = useState(true);
   const drill = new DrillService();
 
+  const [drillUpdated, setDrillUpdated] = useState({
+    id: '',
+    title: '',
+    description: '',
+    observations: '',
+    classPlanId: '',
+  });
+
+  async function loadData() {
+    if (id != null) {
+      const response = await drill.getById(id);
+      setDrillUpdated(response.data);
+    }
+  }
+
+  useEffect(() => {
+    loadData();
+    setTitle(drillUpdated.title);
+    setDescription(drillUpdated.description);
+    setObservations(drillUpdated.observations);
+  }, [drillUpdated]);
+
   const startEditingTitle = () => {
-    setTitleAux(title);
+    setTitleAux(drillUpdated.title);
     setTitleNotEdited(false);
   };
 
   const startEditingDescription = () => {
-    setDescriptionAux(description);
+    setDescriptionAux(drillUpdated.description);
     setDescriptionNotEdited(false);
   };
 
   const startEditingObservations = () => {
-    setObservationsAux(observations);
+    setObservationsAux(drillUpdated.observations);
     setObservationsNotEdited(false);
   };
 
@@ -42,16 +63,15 @@ const Drill = () => {
         toast.warning('O título deve ter no mínimo 5 caracteres');
       else {
         let data = {
-          id: drillInfo['id'],
+          id: drillUpdated.id,
           title: titleAux,
-          description: description,
-          observations: observations,
-          classPlanId: drillInfo['classPlanId'],
+          description: drillUpdated.description,
+          observations: drillUpdated.observations,
+          classPlanId: drillUpdated.classPlanId,
         };
-        setTitle(titleAux);
         setTitleNotEdited(true);
         setTitleAux('');
-        await drill.updateById(drillInfo['id'], data);
+        await drill.updateById(drillUpdated.id, data);
         toast.success('Título atualizado com sucesso');
       }
     } catch (error) {
@@ -65,14 +85,13 @@ const Drill = () => {
   const finishEditingDescription = async () => {
     try {
       let data = {
-        id: drillInfo['id'],
-        title: title,
+        id: drillUpdated.id,
+        title: drillUpdated.title,
         description: descriptionAux,
-        observations: observations,
-        classPlanId: drillInfo['classPlanId'],
+        observations: drillUpdated.observations,
+        classPlanId: drillUpdated.classPlanId,
       };
-      setDescription(descriptionAux);
-      await drill.updateById(drillInfo['id'], data);
+      await drill.updateById(drillUpdated.id, data);
       toast.success('Descrição atualizada com sucesso');
     } catch (error) {
       toast.error('Erro ao atualizar drill');
@@ -85,16 +104,15 @@ const Drill = () => {
 
   const finishEditingObservations = async () => {
     try {
-      setObservations(observationsAux);
       setObservationsAux('');
       let data = {
-        id: drillInfo['id'],
-        title: title,
-        description: description,
+        id: drillUpdated.id,
+        title: drillUpdated.title,
+        description: drillUpdated.description,
         observations: observationsAux,
-        classPlanId: drillInfo['classPlanId'],
+        classPlanId: drillUpdated.classPlanId,
       };
-      await drill.updateById(drillInfo['id'], data);
+      await drill.updateById(drillUpdated.id, data);
       toast.success('Observações atualizadas com sucesso');
     } catch (error) {
       toast.error('Erro ao atualizar drill');
@@ -118,7 +136,10 @@ const Drill = () => {
           />
         }
       />
-      <Header path="meusDrills" hasReturnArrow={true} />
+      <Header
+        path={`plano-aula/${drillUpdated.classPlanId}`}
+        hasReturnArrow={true}
+      />
       <div className="drillPage">
         {titleNotEdited ? (
           <div className="titleLayout" style={{ justifyContent: 'center' }}>

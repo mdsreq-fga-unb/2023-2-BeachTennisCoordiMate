@@ -6,6 +6,7 @@ const drill = new drillController()
 
 drillRouters.post("/", drill.create)
 drillRouters.get("/:classPlanId", drill.getManyByClassPlanId)
+drillRouters.get("/drill/:id", drill.show)
 drillRouters.put("/:id", drill.updateById)
 drillRouters.delete("/:id", drill.deleteById)
 
