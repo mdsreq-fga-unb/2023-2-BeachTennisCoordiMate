@@ -118,12 +118,11 @@ const ViewPlan = () => {
   return (
     <>
       <Header path={''} hasReturnArrow={true} />
-      <div style={{ backgroundColor: '#272727' }}>
+      <div className="page">
         <div className="plan" key={plan.id}>
           <h1
             style={{
-              fontSize: '30px',
-              color: 'black',
+              color: 'white',
               padding: '10px 0',
               textAlign: 'center',
             }}
@@ -131,37 +130,23 @@ const ViewPlan = () => {
             {plan.title}
           </h1>
         </div>
-        <h2 style={{ marginTop: '1em', marginLeft: '3em', fontSize: '3em' }}>
-          Objetivos
-        </h2>
         <div
-          className="card space-y-4"
           style={{
-            backgroundColor: 'gray',
-            padding: '5em',
-            marginLeft: '5em',
-            marginRight: '5em',
-            borderRadius: '1em',
-            marginTop: '5em',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
           }}
         >
-          <p style={{ color: 'white', fontSize: '2em' }}>{plan.goals}</p>
-        </div>
-        <h2 style={{ marginTop: '1em', marginLeft: '3em', fontSize: '3em' }}>
-          Observações
-        </h2>
-        <div
-          className="card space-y-4"
-          style={{
-            backgroundColor: 'gray',
-            padding: '5em',
-            marginLeft: '5em',
-            marginRight: '5em',
-            borderRadius: '1em',
-            marginTop: '5em',
-          }}
-        >
-          <p style={{ color: 'white', fontSize: '2em' }}>{plan.observations}</p>
+          <div style={{ width: '90%' }}>
+            <h1 style={{ paddingRight: '10px' }}>Objetivos</h1>
+          </div>
+          <p className="pClassPlan">{plan.goals}</p>
+          <br></br>
+          <div style={{ width: '90%' }}>
+            <h1 style={{ paddingRight: '10px' }}>Observações</h1>
+          </div>
+          <p className="pClassPlan">{plan.observations}</p>
+          <br></br>
         </div>
         <div>
           <h1 style={{ fontSize: '30px', color: 'white', padding: '10px 0' }}>

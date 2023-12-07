@@ -140,7 +140,7 @@ const Drill = () => {
         path={`plano-aula/${drillUpdated.classPlanId}`}
         hasReturnArrow={true}
       />
-      <div className="drillPage">
+      <div className="pageDrill">
         {titleNotEdited ? (
           <div className="titleLayout" style={{ justifyContent: 'center' }}>
             {' '}

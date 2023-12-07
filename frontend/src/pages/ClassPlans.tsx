@@ -111,7 +111,7 @@ const ClassPlans = () => {
         closeButton={<Icon icon="tabler:x" color="white" width="15px" />}
       />
       <Header path="" hasReturnArrow={false}></Header>
-      <div className="buttonsPages">
+      <div className="buttonsPagesClassPlans">
         <div className="containerVisibleComp">
           <h1 style={{ fontSize: '30px', color: 'white', padding: '10px 0' }}>
             Meus Planos de Aula
@@ -152,19 +152,6 @@ const ClassPlans = () => {
               })}
           </div>
         </div>
-        {/* <section className="listPlans">
-
-            {plans.map((plan) => (
-              <article className="plans" key={plan.id}>
-                  <div className="plan">
-                  <Link to={`/visualizar/${plan.id}`}>
-                      <h1 style={{fontSize: "30px", color: "white", padding: "10px 0"}}>{plan.title}</h1>
-                    </Link>
-                  </div>
-              </article>
-            ))}
-          </section> */}
-
         {visible && (
           <div className="panelHandleItem">
             <div className="upContainer">
