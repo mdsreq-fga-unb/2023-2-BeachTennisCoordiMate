@@ -168,16 +168,57 @@ span.flatpickr-weekday,
 }
 
 .addButton {
-  width: 330px;
   height: 115px;
-  background-color: #5899EB;
+  background-color: #5899eb;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.buttonsPages{
+.listPlans {
+  width: 100%;
+  height: 100%;
+  margin-top: -400px;
+  display: grid;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.plans {
+  width: 330px;
+  height: 115px;
+  background-color: #5899eb;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listPlans {
+  width: 100%;
+  height: 100%;
+  margin-top: -400px;
+  display: grid;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.plans {
+  width: 330px;
+  height: 115px;
+  background-color: #5899eb;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonsPages {
   position: relative;
   display: flex;
   justify-content: center;
@@ -187,7 +228,22 @@ span.flatpickr-weekday,
   background-color: #272727;
 }
 
-#panelNewItem{
+.buttonsPagesClassPlans {
+  display: block;
+  overflow: auto;
+  height: 100vh;
+  background-color: #272727;
+}
+
+.buttonsDrills {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #272727;
+}
+
+.panelHandleItem {
   height: 190px;
   width: 315px;
   background-color: #494949;
@@ -197,29 +253,27 @@ span.flatpickr-weekday,
   color: #fff;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 3px 0px 10px 10px;
+  z-index: 5;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px black solid;
 }
 
-.containerVisibleComp{
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  display: flex;
-  flex-direction: column;
-}
-
-.upContainer{
+.upContainer {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
-#closeIcon{
+.clickableIcon {
   cursor: pointer;
 }
 
-.formSignInSignUp{
+.formSignInSignUp {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -229,7 +283,7 @@ span.flatpickr-weekday,
   border-radius: 40px;
 }
 
-.signInSignUpScreen{
+.signInSignUpScreen {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -242,16 +296,139 @@ span.flatpickr-weekday,
   background-repeat: no-repeat;
 }
 
-.labelForm{
+.labelForm {
   color: white;
 }
 
+.buttonsPanel {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 330px));
+  grid-gap: 20px;
+}
+
+.itemButton {
+  height: 115px;
+  background-color: #5899eb;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+.clickableTitle:hover {
+  text-decoration: underline;
+  background-color: #72aef7;
+}
+
+.page {
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #272727;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pageDrill {
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #272727;
+  flex-grow: 1;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.titleLayout {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.contentDrill {
+  padding-left: 15px;
+}
+
+.containerVisibleComp {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pDrill {
+  margin: 10px 0 0 0;
+  background-color: #494949;
+  padding: 15px;
+  border-radius: 20px;
+  height: 300px;
+  width: 350px;
+}
+
+.pClassPlan {
+  color: white;
+  background-color: #494949;
+  padding: 15px;
+  border-radius: 20px;
+  height: fit-content;
+  width: 90%;
+}
+
+.inputsDesign {
+  background-color: #292222;
+  height: 30px;
+  width: 250px;
+  border-radius: 10px;
+  padding-left: 5px;
+  color: 'white';
+  border: '1px solid black';
+}
+
+.inputsDrill {
+  background-color: #494949;
+  height: 30px;
+  width: 250px;
+  border-radius: 10px;
+  padding-left: 5px;
+  color: 'white';
+  border: '1px solid black';
+}
+
+.textAreaDrill {
+  background-color: #494949;
+  border-radius: 20px;
+  height: 300px;
+  width: 250px;
+  height: 300px;
+  width: 350px;
+  padding: 15px;
+}
+
 @media (max-width: 910px) {
-  .formSignInSignUp{
+  .formSignInSignUp {
     width: 100%;
     border-radius: 0;
     height: 100%;
     justify-content: flex-start;
     padding-top: 20px;
+  }
+
+  .drillPage {
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #272727;
+    padding-bottom: 10px;
   }
 }

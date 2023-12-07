@@ -6,8 +6,8 @@ class userService extends Apiservice {
   }
   async login(email: string, password: string) {
     return this.post('/login', {
-      "email": email,
-      "password": password,
+      email: email,
+      password: password,
     });
   }
 

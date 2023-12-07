@@ -8,6 +8,18 @@ class ClassPlanService extends Apiservice {
   async save(data: any) {
     return this.post('/', data);
   }
+
+  async getById(id: string) {
+    return this.get('/' + id);
+  }
+
+  async getManyById(userId: string) {
+    return this.get('/planos-usuario/' + userId);
+  }
+
+  async remove(id: string) {
+    return this.delete('/' + id);
+  }
 }
 
 export default ClassPlanService;

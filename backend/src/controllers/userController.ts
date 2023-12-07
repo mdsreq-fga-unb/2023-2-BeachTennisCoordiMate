@@ -31,10 +31,9 @@ export default class userController {
         if (b?.includes("email")) inputErr = { email: "Invalid email" }
         if (b?.includes("username"))
           inputErr = { username: "Username already exists" }
-      }
 
-      if (inputErr) res.status(400).json({ errors: inputErr })
-      else res.status(500).json({ errors: { server: "Server error" } })
+        if (inputErr) res.status(400).json({ errors: inputErr })
+      } else res.status(500).json({ errors: { server: "Server error" } })
     }
   }
 
@@ -61,14 +60,12 @@ export default class userController {
 
       const token = authUser.generateToken({
         id: user.id,
-        level: user.level,
       })
 
       res.status(200).json({
         id: user.id,
         name: user.name,
         email: user.email,
-        level: user.level,
         token,
       })
     } catch (err) {
