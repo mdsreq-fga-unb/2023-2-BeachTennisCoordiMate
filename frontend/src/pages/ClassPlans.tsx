@@ -121,11 +121,7 @@ const ClassPlans = () => {
                     >
                       <h1 className="clickableTitle">{a['title']}</h1>
                     </Link>
-                    <Icon
-                      icon="mdi:trash"
-                      color="white"
-                      width="20"
-                      key={a['id']}
+                    <button
                       style={{
                         position: 'absolute',
                         bottom: '0',
@@ -136,8 +132,16 @@ const ClassPlans = () => {
                         setDeletedItemTitle(a['title']);
                         setDeletedItem(a['id']);
                         openDeletePanel();
-                      }}
-                    />
+                      }} >
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="20" 
+                        height="20" 
+                        viewBox="0 0 24 24"
+                        key={a['id']}>
+                        <path fill="white" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"/>
+                      </svg>
+                    </button>
                   </div>
                 );
               })}
@@ -147,13 +151,13 @@ const ClassPlans = () => {
           <div className="panelHandleItem">
             <div className="upContainer">
               <h1>Criar Plano de Aula</h1>
-              <Icon
+              <button
                 onClick={closeNewItemPanel}
-                icon="tabler:x"
-                className="clickableIcon"
-                color="white"
-                width="30"
-              />
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                  <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12" className="clickableIcon"/>
+                </svg>
+              </button>
             </div>
             <input
               placeholder="Título"
@@ -187,13 +191,12 @@ const ClassPlans = () => {
             style={{ padding: '3px 0px 10px 0px' }}
           >
             <div className="upContainer" style={{ justifyContent: 'flex-end' }}>
-              <Icon
-                onClick={closeDeleteItemPanel}
-                icon="tabler:x"
-                className="clickableIcon"
-                color="white"
-                width="30"
-              />
+              <button
+                onClick={closeDeleteItemPanel}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                    <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12" className="clickableIcon"/>
+                  </svg>
+              </button>
             </div>
             <h1 style={{ textAlign: 'center' }}>
               Tem certeza que deseja excluir "{deletedItemTitle}"?

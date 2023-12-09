@@ -5,7 +5,6 @@ import ClassPlanService from '../service/classPlanService';
 import { Link, useParams } from 'react-router-dom';
 import DrillService from '../service/drillService';
 import { toast } from 'react-toastify';
-import { Icon } from '@iconify/react/dist/iconify.js';
 
 const ViewPlan = () => {
   const { id } = useParams();
@@ -153,8 +152,13 @@ const ViewPlan = () => {
             Drills
           </h1>
           <div className="buttonsPanel">
-            <button className="addButton" onClick={openNewItemPanel}>
-              <Icon icon="simple-line-icons:plus" color="white" width="40" />
+            <button
+              className="addButton" 
+              onClick={openNewItemPanel}
+              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 1024 1024">
+                <path fill="white" d="M512 0C229.232 0 0 229.232 0 512c0 282.784 229.232 512 512 512c282.784 0 512-229.216 512-512C1024 229.232 794.784 0 512 0zm0 961.008c-247.024 0-448-201.984-448-449.01c0-247.024 200.976-448 448-448s448 200.977 448 448s-200.976 449.01-448 449.01zM736 480H544V288c0-17.664-14.336-32-32-32s-32 14.336-32 32v192H288c-17.664 0-32 14.336-32 32s14.336 32 32 32h192v192c0 17.664 14.336 32 32 32s32-14.336 32-32V544h192c17.664 0 32-14.336 32-32s-14.336-32-32-32z"/>
+              </svg>
             </button>
             {drills.length > 0 &&
               drills.map((a) => {
@@ -163,10 +167,7 @@ const ViewPlan = () => {
                     <Link to={`/drill/${a['id']}`}>
                       <h1 className="clickableTitle">{a['title']}</h1>
                     </Link>
-                    <Icon
-                      icon="mdi:trash"
-                      color="white"
-                      width="20"
+                    <button
                       key={a['id']}
                       style={{
                         position: 'absolute',
@@ -179,7 +180,11 @@ const ViewPlan = () => {
                         setDeletedItem(a['id']);
                         openDeletePanel();
                       }}
-                    />
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                        <path fill="white" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"/>
+                      </svg>
+                    </button>
                   </div>
                 );
               })}
@@ -189,13 +194,14 @@ const ViewPlan = () => {
           <div className="panelHandleItem" style={{ zIndex: 5 }}>
             <div className="upContainer">
               <h1>Criar Drill</h1>
-              <Icon
-                onClick={closeNewItemPanel}
-                icon="tabler:x"
+              <button
                 className="clickableIcon"
-                color="white"
-                width="30"
-              />
+                onClick={closeNewItemPanel}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                  <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+              </button>
             </div>
             <input
               placeholder="Título"
@@ -221,13 +227,14 @@ const ViewPlan = () => {
             style={{ padding: '3px 0px 10px 0px' }}
           >
             <div className="upContainer" style={{ justifyContent: 'flex-end' }}>
-              <Icon
+              <button
                 onClick={closeDeleteItemPanel}
-                icon="tabler:x"
                 className="clickableIcon"
-                color="white"
-                width="30"
-              />
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                  <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+              </button>
             </div>
             <h1 style={{ textAlign: 'center' }}>
               Tem certeza que deseja excluir "{deletedItemTitle}"?
