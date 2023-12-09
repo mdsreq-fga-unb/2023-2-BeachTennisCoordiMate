@@ -10,6 +10,7 @@ import { saveAs } from 'file-saver';
 
 const ViewPlan = () => {
   const { id } = useParams();
+  const { idDrill } = useParams();
   const [title, setTitle] = useState('');
   const [titleAux, setTitleAux] = useState('');
   const [goals, setGoals] = useState('');
@@ -41,6 +42,7 @@ const ViewPlan = () => {
     userId = '';
   }
   
+  
   const [titleDrill, setTitleDrill] = useState('');
   const [descriptionDrill, setDescriptionDrill] = useState('');
   const [observationsDrill, setObservationsDrill] = useState('');
@@ -69,8 +71,8 @@ const ViewPlan = () => {
   }
 
   async function loadDataDrill() {
-    if (id != null) {
-      const response = await drill.getById(id);
+    if (idDrill != null) {
+      const response = await drill.getById(idDrill);
       setDrillUpdated(response.data);
     }
   }
@@ -154,10 +156,10 @@ const ViewPlan = () => {
 
   useEffect(() => {
     loadDataDrill();
-    setTitleDrill(titleDrill);
-    setDescriptionDrill(descriptionDrill);
-    setObservationsDrill(observationsDrill);
-  }, [titleDrill, descriptionDrill, observationsDrill]);
+    setTitleDrill(drillUpdated.title);
+    setDescriptionDrill(drillUpdated.description);
+    setObservationsDrill(drillUpdated.observations);
+  }, [drillUpdated]);
 
   
 
@@ -252,11 +254,10 @@ const ViewPlan = () => {
         goals: planUpdated.goals,
         observations: planUpdated.observations,
       },
-      drills: drills.map((drill) => ({
-        title: drillUpdated.title,
-        description: drillUpdated.description,
-        observations: drillUpdated.observations,
-
+      drills: drills.map((Drill) => ({
+        title: Drill.title || '',
+        description: Drill.description || '',
+        observations: Drill.observations || '',
       })),
     };
 
