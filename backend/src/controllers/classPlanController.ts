@@ -88,4 +88,25 @@ export default class classPlanController {
       res.status(500).json({ errors: { server: "Server error" } })
     }
   }
+  updateById = async (req: Request, res: Response) => {
+    try {
+      const id = req.params.id
+      const data = classPlanSchema.parse(req.body)
+      const updatedPlan = await prisma.classPlan.update({
+        where: {
+          id,
+        },
+        data: {
+          ...data,
+        },
+      })
+      res.status(204).json(updatedPlan)
+    } catch (err) {
+      if (err instanceof ZodError) {
+        res.status(400).json(fromZodError(err))
+      } else {
+        res.status(500).json({ error: "Internal Server Error" })
+      }
+    }
+  }
 }

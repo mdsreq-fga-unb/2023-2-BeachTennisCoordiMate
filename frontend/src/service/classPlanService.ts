@@ -20,6 +20,11 @@ class ClassPlanService extends Apiservice {
   async remove(id: string) {
     return this.delete('/' + id);
   }
+  
+  async updateById(id: string, data: any) {
+    return this.put('/' + id, data);
+  }
+
 }
 
 export default ClassPlanService;
