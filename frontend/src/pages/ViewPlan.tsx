@@ -6,6 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 import DrillService from '../service/drillService';
 import { toast, ToastContainer} from 'react-toastify';
 import { Icon } from '@iconify/react/dist/iconify.js';
+import { saveAs } from 'file-saver';
 
 const ViewPlan = () => {
   const { id } = useParams();
@@ -18,6 +19,7 @@ const ViewPlan = () => {
   const [titleNotEdited, setTitleNotEdited] = useState(true);
   const [goalsNotEdited, setGoalsNotEdited] = useState(true);
   const [observationsNotEdited, setObservationsNotEdited] = useState(true);
+  
   
   const classPlan = new ClassPlanService();
   
@@ -38,27 +40,38 @@ const ViewPlan = () => {
   } else {
     userId = '';
   }
-
+  
   const [titleDrill, setTitleDrill] = useState('');
+  const [descriptionDrill, setDescriptionDrill] = useState('');
+  const [observationsDrill, setObservationsDrill] = useState('');
   const [visibleCreateDrill, setVisibleCreateDrill] = useState(false);
   const [visibleDeleteDrill, setVisibleDeleteDrill] = useState(false);
   const [deletedItem, setDeletedItem] = useState('');
   const [deletedItemTitle, setDeletedItemTitle] = useState('');
   const [drills, setDrills] = useState([]);
   const drill = new DrillService();
-
-  let data = {
+  
+  const [drillUpdated, setDrillUpdated] = useState({
+    id: '',
     title: titleDrill,
-    description: '',
-    observations: '',
+    description: descriptionDrill,
+    observations: observationsDrill,
     classPlanId: id,
-  };
+  });
+  
 
 
   async function loadData() {
     if (id != null) {
       const response = await classPlan.getById(id);
       setplanUpdated(response.data);
+    }
+  }
+
+  async function loadDataDrill() {
+    if (id != null) {
+      const response = await drill.getById(id);
+      setDrillUpdated(response.data);
     }
   }
 
@@ -85,6 +98,12 @@ const ViewPlan = () => {
 
   const handleCreateDrill = async () => {
     try {
+      let data = {
+        title: titleDrill,
+        description: descriptionDrill,
+        observations: observationsDrill,
+        classPlanId: id,
+      };
       if (!titleDrill) toast.warning('Preencha o campo do título');
       else if (titleDrill.length < 5)
         toast.warning('O título deve ter no mínimo 5 caracteres');
@@ -132,6 +151,15 @@ const ViewPlan = () => {
     setGoals(planUpdated.goals);
     setObservations(planUpdated.observations);
   }, [planUpdated]);
+
+  useEffect(() => {
+    loadDataDrill();
+    setTitleDrill(titleDrill);
+    setDescriptionDrill(descriptionDrill);
+    setObservationsDrill(observationsDrill);
+  }, [titleDrill, descriptionDrill, observationsDrill]);
+
+  
 
   const startEditingTitle = () => {
     setTitleAux(planUpdated.title);
@@ -214,6 +242,34 @@ const ViewPlan = () => {
     }
     return;
   };
+ 
+
+  const downloadPlan = () => {
+    // Combine as informações do plano de aula e dos drills em um objeto
+    const planData = {
+      plan: {
+        title: planUpdated.title,
+        goals: planUpdated.goals,
+        observations: planUpdated.observations,
+      },
+      drills: drills.map((drill) => ({
+        title: drillUpdated.title,
+        description: drillUpdated.description,
+        observations: drillUpdated.observations,
+
+      })),
+    };
+
+    // Converte o objeto para uma string JSON
+    const planJSON = JSON.stringify(planData, null, 2);
+
+    // Cria um Blob a partir da string JSON
+    const blob = new Blob([planJSON], { type: 'application/json' });
+
+    // Utiliza o FileSaver.js para iniciar o download
+    saveAs(blob, 'plano_de_aula_com_drills.json');
+  };
+
 
   return (
     <>
@@ -252,6 +308,11 @@ const ViewPlan = () => {
               onClick={startEditingTitle}
               className="clickableIcon"
             />{' '}
+            <button onClick={downloadPlan} className="downloadButton">
+              <Icon icon="bi:download" color="white" width="20" />
+              Baixar Plano de Aula
+            </button>
+
           </div>
         ) : (
           <div className="titleLayout" style={{ justifyContent: 'center' }}>
