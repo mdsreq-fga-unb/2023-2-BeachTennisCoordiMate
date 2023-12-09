@@ -9,7 +9,7 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 
 const ViewPlan = () => {
   const { id } = useParams();
-const [title, setTitle] = useState('');
+  const [title, setTitle] = useState('');
   const [titleAux, setTitleAux] = useState('');
   const [goals, setGoals] = useState('');
   const [goalsAux, setGoalsAux] = useState('');
@@ -29,7 +29,7 @@ const [title, setTitle] = useState('');
     userId: '',
   });
   const userString = localStorage.getItem('user');
-
+  
   let userId: string;
 
   if (userString !== null) {
@@ -55,7 +55,6 @@ const [title, setTitle] = useState('');
     classPlanId: id,
   };
 
-  
   async function loadData() {
     if (id != null) {
       const response = await classPlan.getById(id);
@@ -163,7 +162,8 @@ const [title, setTitle] = useState('');
           userId: planUpdated.userId,
         };
         setTitleNotEdited(true);
-        await classPlan.updateById(id as string, data);
+        setTitleAux('');
+        await classPlan.updateById(planUpdated.id, data);
         toast.success('Título atualizado com sucesso');
       }
     } catch (error) {
@@ -217,7 +217,7 @@ const [title, setTitle] = useState('');
 
   return (
     <>
-<ToastContainer
+      <ToastContainer
         toastStyle={{ backgroundColor: '#272727', color: 'white' }}
         closeButton={
           <Icon
@@ -234,18 +234,18 @@ const [title, setTitle] = useState('');
           <div className="titleLayout" style={{ justifyContent: 'center' }}>
             {' '}
             <div className="plan" key={planUpdated.id}>
-          <h1
-            style={{
-              fontSize: '50px',
-              padding: '10px 0',
-              textAlign: 'center',
-              overflow: 'hidden'
-            }}
-          >
-            {title}
-          </h1>{' '}
-        </div>
-        <Icon
+              <h1
+                style={{
+                  fontSize: '50px',
+                  padding: '10px 0',
+                  textAlign: 'center',
+                  overflow: 'hidden'
+                }}
+              >
+                {title}
+              </h1>{' '}
+            </div>
+            <Icon
               icon="ph:pencil"
               color="white"
               width="25px"
@@ -253,7 +253,7 @@ const [title, setTitle] = useState('');
               className="clickableIcon"
             />{' '}
           </div>
-          ) : (
+        ) : (
           <div className="titleLayout" style={{ justifyContent: 'center' }}>
             {' '}
             <input
@@ -272,7 +272,7 @@ const [title, setTitle] = useState('');
               className="clickableIcon"
             />{' '}
           </div>
-          )}
+        )}
         <div className="contentDrill" id="descObsContainer">
           <div className="titleLayout">
               <p style={{marginLeft: '3em', fontSize: '3em' }}>Objetivos</p>
@@ -293,8 +293,8 @@ const [title, setTitle] = useState('');
                   className="clickableIcon"
                   />
                   )}
-        </div>
-        <div
+          </div>
+              <div
                 className="card space-y-4"
                 style={{
                   backgroundColor: 'gray',
