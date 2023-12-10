@@ -85,8 +85,8 @@ planos de aula que estiverem com alguma informação errada:
 
 - Os campos título, objetivos e observações do plano de aula devem ser editáveis.
 - O sistema deve impedir o usuário de deixar o campo obrigatório "título" vazio
-- O título deverá ter entre 5 e 30 caracteres
-- O campo objetivos deverá ter, no mínimo, 100 caracteres
+- O título deverá ter, no mínimo, 5 caracteres
+- O campo objetivos deverá ter, no máximo, 600 caracteres
 - O campo observações deverá ter no máximo 500 caracteres
 
 ## US053 - Baixar planos de aula
