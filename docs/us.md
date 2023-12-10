@@ -93,13 +93,11 @@ planos de aula que estiverem com alguma informação errada:
 
 **Descrição**
 
-Eu, como usuário-coordenador, desejo baixar os planos de aulas, para conseguir
-enviá-los aos responsáveis pela verificação dos planos, que são externos a arena:
+Eu, como usuário-coordenador, desejo baixar os planos de aulas, para conseguir enviá-los aos responsáveis pela verificação dos planos, que são externos a arena:
 
 **Critérios de Aceitação**
 
-- O sistema deve gerar um arquivo de download contendo as informações completas
-  do plano de aula com título, objetivos, observações e os drills.
+- O sistema deve gerar um arquivo de download contendo as informações completas do plano de aula com título, objetivos, observações e os drills.
 - Cada drill do plano de aula deve apresentar seu título, descrição, observações e a representação gráfica do treino.
 - O arquivo de download deve estar em um formato PDF.
 
