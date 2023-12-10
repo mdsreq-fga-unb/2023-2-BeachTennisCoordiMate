@@ -6,6 +6,7 @@ import { AxiosError } from 'axios';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import '../../index.css';
 import Logo from '../../images/logoBeachTennisCoordimate.png';
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -125,6 +126,15 @@ const SignIn = () => {
                 onClick={handleSignIn}
                 className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white transition hover:bg-opacity-90"
               />
+            </div>
+
+            <div className="mt-6 text-center" style={{ color: 'white' }}>
+              <p>
+                Não tem uma conta?{' '}
+                <Link to="/registro" className="text-primary">
+                  Cadastre-se
+                </Link>
+              </p>
             </div>
           </form>
         </div>

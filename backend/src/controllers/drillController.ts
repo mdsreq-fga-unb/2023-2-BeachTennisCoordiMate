@@ -63,6 +63,7 @@ export default class drillController {
       })
       res.status(204).json(updatedDrill)
     } catch (err) {
+      console.log("newds", err)
       if (err instanceof ZodError) {
         res.status(400).json(fromZodError(err))
       } else {
@@ -71,16 +72,35 @@ export default class drillController {
     }
   }
 
+  updateImage = async (req: Request, res: Response) => {
+    try {
+      const id = req.params.id
+      const image = req.body.image
+      const updatedDrill = await prisma.drill.update({
+        where: {
+          id,
+        },
+        data: {
+          image,
+        },
+      })
+      res.status(204).json(updatedDrill)
+    } catch (err) {
+      res.status(500).json({ error: "Internal Server Error" })
+    }
+  }
+
   deleteById = async (req: Request, res: Response) => {
     try {
       const id = req.params.id
-      const deletedDrill = await prisma.drill.delete({
+      const deletedDrill = await prisma.drill.deleteMany({
         where: {
           id,
         },
       })
       res.status(204).json(deletedDrill)
     } catch (err) {
+      console.log(err)
       res.status(500).json({ error: "Internal Server Error" })
     }
   }
