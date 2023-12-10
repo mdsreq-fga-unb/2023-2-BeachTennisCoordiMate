@@ -27,11 +27,11 @@ model ClassPlan {
 }
 
 model Drill {
-  id           String   @id @default(uuid())
+  id           String         @id @default(uuid())
   title        String
   description  String
   observations String
-  image        String
+  image        String        @default("")
   classPlanId  String
   classPlan    ClassPlan     @relation(fields: [classPlanId], references: [id])
   drillElements DrillElement[]

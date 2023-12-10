@@ -63,6 +63,7 @@ export default class drillController {
       })
       res.status(204).json(updatedDrill)
     } catch (err) {
+      console.log("newds", err)
       if (err instanceof ZodError) {
         res.status(400).json(fromZodError(err))
       } else {
