@@ -35,7 +35,11 @@ export default class classPlanController {
   }
   list = async (req: Request, res: Response) => {
     try {
+      const { userId } = req.params
       const classPlan = await prisma.classPlan.findMany({
+        where: {
+          userId: userId,
+        },
         include: {
           user: {
             select: {

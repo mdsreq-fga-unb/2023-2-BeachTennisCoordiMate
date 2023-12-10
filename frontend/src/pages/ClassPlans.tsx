@@ -20,10 +20,6 @@ const ClassPlans = () => {
     id = '';
   }
 
-  useEffect(() => {
-    loadPlans();
-  }, []);
-
   const [title, setTitle] = useState('');
   const [visible, setVisible] = useState(false);
   const classPlan = new ClassPlanService();
@@ -34,12 +30,6 @@ const ClassPlans = () => {
     observations: '',
     userId: id,
   };
-  const [plans, setPlans] = useState([data]);
-
-  async function loadPlans() {
-    const response = await classPlan.get('/');
-    setPlans(response.data);
-  }
 
   const addClassPlan = () => {
     setVisible(true);
@@ -92,6 +82,7 @@ const ClassPlans = () => {
   };
 
   useEffect(() => {
+    console.log(id);
     if (id != '') {
       classPlan
         .getManyById(id as string)
