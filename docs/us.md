@@ -45,11 +45,13 @@ Eu, como usuário-coordenador, desejo criar um plano de aula, para poder adminis
 
 **Critérios de Aceitação**
 
-- Ao criar um plano de aula, o usuário-coordenador deve fornecer as informações: título, objetivos e observações.
+- Ao criar um plano de aula, o usuário-coordenador deve fornecer as informações no título.
 - O campo título é obrigatório.
-- O título deverá ter entre 5 e 30 caracteres
-- O campo objetivos deverá ter, no mínimo, 100 caracteres
-- O campo observações deverá ter no máximo 500 caracteres
+- O título deverá ter no mínimo 5 caracteres.
+- O campo objetivos deverá ter, no máximo, 600 caracteres.
+- O campo observações deverá ter no máximo 500 caracteres.
+- O sistema deve criar os campos "objetivos" e "observações" vazios.
+
 
 ## US050 - Visualizar plano de aula
 
