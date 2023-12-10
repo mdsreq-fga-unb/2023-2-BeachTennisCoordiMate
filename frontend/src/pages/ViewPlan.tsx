@@ -6,11 +6,10 @@ import { Link, useParams } from 'react-router-dom';
 import DrillService from '../service/drillService';
 import { toast, ToastContainer} from 'react-toastify';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import { saveAs } from 'file-saver';
+import html2pdf from 'html2pdf.js';
 
 const ViewPlan = () => {
   const { id } = useParams();
-  const { idDrill } = useParams();
   const [title, setTitle] = useState('');
   const [titleAux, setTitleAux] = useState('');
   const [goals, setGoals] = useState('');
@@ -42,7 +41,8 @@ const ViewPlan = () => {
     userId = '';
   }
   
-  
+  const { idDrill } = useParams();
+
   const [titleDrill, setTitleDrill] = useState('');
   const [descriptionDrill, setDescriptionDrill] = useState('');
   const [observationsDrill, setObservationsDrill] = useState('');
@@ -246,31 +246,68 @@ const ViewPlan = () => {
   };
  
 
-  const downloadPlan = () => {
-    // Combine as informações do plano de aula e dos drills em um objeto
-    const planData = {
-      plan: {
-        title: planUpdated.title,
-        goals: planUpdated.goals,
-        observations: planUpdated.observations,
-      },
-      drills: drills.map((Drill) => ({
-        title: Drill.title || '',
-        description: Drill.description || '',
-        observations: Drill.observations || '',
-      })),
-    };
 
-    // Converte o objeto para uma string JSON
-    const planJSON = JSON.stringify(planData, null, 2);
-
-    // Cria um Blob a partir da string JSON
-    const blob = new Blob([planJSON], { type: 'application/json' });
-
-    // Utiliza o FileSaver.js para iniciar o download
-    saveAs(blob, 'plano_de_aula_com_drills.json');
+  // ... (other imports)
+  
+  const downloadPlan = async () => {
+    try {
+      // Carregar todos os drills relacionados ao plano de aula
+      const drillResponses = await Promise.all(
+        drills.map((drl) => drill.getById((drl as { id: string }).id))
+      );
+  
+      // Criar um elemento HTML para representar o plano de aula e os drills
+      const container = document.createElement('div');
+  
+      // Adicionar os dados do plano de aula ao HTML
+      const planDiv = document.createElement('div');
+      planDiv.innerHTML = `
+        <center><h1>${planUpdated.title}</h1></center>
+        <br></br>
+        <h2>Objetivos</h2>
+        <p>${planUpdated.goals}</p>
+        <br></br>
+        <h2>Observações</h2>
+        <p>${planUpdated.observations}</p>
+        <br></br>
+        <center><h1>Drills</h1></center>
+      `;
+      container.appendChild(planDiv);
+  
+      // Adicionar os dados dos drills ao HTML
+      drillResponses.forEach((response) => {
+        const drillData = response.data;
+        const drillDiv = document.createElement('div');
+        drillDiv.innerHTML = `
+          <br></br>
+          <h1>${drillData.title}</h2>
+          <br></br>
+          <h1>Descrição</h1>
+          <p>${drillData.description}</p>
+          <br></br>
+          <h1>Observações</h2>
+          <p>${drillData.observations}</p>
+        `;
+        container.appendChild(drillDiv);
+      });
+  
+      // Configurar as opções do html2pdf
+      const options = {
+        margin: 10,
+        filename: 'plano_de_aula_com_drills.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      };
+  
+      // Converter o HTML para PDF usando html2pdf
+      html2pdf(container, options);
+  
+    } catch (error) {
+      console.error('Erro ao criar o arquivo PDF:', error);
+      // Lide com o erro conforme necessário
+    }
   };
-
 
   return (
     <>

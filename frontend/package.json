@@ -19,6 +19,11 @@
     "axios": "^1.6.2",
     "headlessui": "^0.0.0",
     "html2canvas": "^1.4.1",
+<<<<<<< HEAD
+=======
+    "html2pdf.js": "^0.10.1",
+    "jspdf": "^2.5.1",
+>>>>>>> 07d85d7 (Resolvendo bug anterior e modificando arquivo JSON para PDF - Outro bug de importacao a corrigir)
     "jsvectormap": "^1.5.3",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
