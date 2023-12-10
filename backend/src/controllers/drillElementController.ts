@@ -76,7 +76,7 @@ export default class drillElementController {
   deleteById = async (req: Request, res: Response) => {
     try {
       const { id } = req.params
-      const deletedDrillElement = await prisma.drillElement.delete({
+      const deletedDrillElement = await prisma.drillElement.deleteMany({
         where: {
           id,
         },

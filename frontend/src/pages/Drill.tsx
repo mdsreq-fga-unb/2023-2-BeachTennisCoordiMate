@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import { toast, ToastContainer } from 'react-toastify';
 import DrillService from '../service/drillService';
 import { useParams } from 'react-router-dom';
+import html2canvas from 'html2canvas';
 import Header from '../components/Header';
 import DrillElement from '../components/DrillElement';
 import arco from "../images/drillElements/arco.png";
@@ -54,6 +55,7 @@ const Drill = () => {
   ]
   const { id } = useParams();
   const [title, setTitle] = useState('');
+  const [imagemBase64, setimagemBase64] = useState('');
   const [titleAux, setTitleAux] = useState('');
   const [description, setDescription] = useState('');
   const [descriptionAux, setDescriptionAux] = useState('');
@@ -69,6 +71,7 @@ const Drill = () => {
     title: '',
     description: '',
     observations: '',
+    image: '',
     classPlanId: '',
   });
   const [newItems, setNewItems] = useState(Array<[string, number, number]>);
@@ -82,6 +85,18 @@ const Drill = () => {
   const [deletedSavedIds, setDeletedSavedIds] = useState<string[]>([]);
   const [count, setCount] = useState(0);
   
+
+  const updateImagen = () => {
+    const captureElement = document.querySelector('#drillGraphicContainer')
+    if(captureElement != null){
+      html2canvas(captureElement as HTMLElement).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      setimagemBase64(imgData)
+    });
+  }
+  }
+  
+
   const addDrillElement = (typeImage : number, width: number) => {
     setNewItems([...newItems, [String(count), typeImage, width]]);
     setCount(count + 1);
@@ -100,6 +115,17 @@ const Drill = () => {
   }
   
   async function saveDrillState(){
+    updateImagen()
+        let data = {
+          id: drillUpdated.id,
+          title: titleAux,
+          image: imagemBase64,
+          description: drillUpdated.description,
+          observations: drillUpdated.observations,
+          classPlanId: drillUpdated.classPlanId,
+        };
+        console.log(data)
+        await drill.updateById(id as string, data);
     for(const [idNewItem, indexNewItem] of newItems){
       try{
         const element = document.getElementById(idNewItem);
@@ -155,12 +181,13 @@ const Drill = () => {
       setDrillUpdated(response.data);
     }
   }
-
+  console.log("id: " + id) 
   useEffect(() => {
     loadData();
     setTitle(drillUpdated.title);
     setDescription(drillUpdated.description);
     setObservations(drillUpdated.observations);
+     
     if (id != null) {
       drillElement
         .getManyByDrillId(id)
@@ -194,36 +221,36 @@ const Drill = () => {
       else if (titleAux.length < 5)
         toast.warning('O título deve ter no mínimo 5 caracteres');
       else {
+        updateImagen()
         let data = {
           id: drillUpdated.id,
           title: titleAux,
+          image: imagemBase64,
           description: drillUpdated.description,
           observations: drillUpdated.observations,
           classPlanId: drillUpdated.classPlanId,
         };
-        setTitleNotEdited(true);
-        setTitleAux('');
-        await drill.updateById(drillUpdated.id, data);
+        await drill.updateById(id as string, data);
         toast.success('Título atualizado com sucesso');
       }
     } catch (error) {
       toast.error('Erro ao atualizar drill');
-      setTitleNotEdited(true);
-      setTitleAux('');
     }
     return;
   };
 
   const finishEditingDescription = async () => {
     try {
+      updateImagen()
       let data = {
         id: drillUpdated.id,
         title: drillUpdated.title,
         description: descriptionAux,
         observations: drillUpdated.observations,
+        image: imagemBase64,
         classPlanId: drillUpdated.classPlanId,
       };
-      await drill.updateById(drillUpdated.id, data);
+      await drill.updateById(id as string, data);
       toast.success('Descrição atualizada com sucesso');
     } catch (error) {
       toast.error('Erro ao atualizar drill');
@@ -237,14 +264,16 @@ const Drill = () => {
   const finishEditingObservations = async () => {
     try {
       setObservationsAux('');
+      updateImagen()
       let data = {
         id: drillUpdated.id,
         title: drillUpdated.title,
         description: drillUpdated.description,
         observations: observationsAux,
+        image: imagemBase64,
         classPlanId: drillUpdated.classPlanId,
       };
-      await drill.updateById(drillUpdated.id, data);
+      await drill.updateById(id as string, data);
       toast.success('Observações atualizadas com sucesso');
     } catch (error) {
       toast.error('Erro ao atualizar drill');

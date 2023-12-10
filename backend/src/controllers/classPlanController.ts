@@ -82,7 +82,7 @@ export default class classPlanController {
     try {
       const { id } = req.params
 
-      const classPlan = await prisma.classPlan.delete({
+      const classPlan = await prisma.classPlan.deleteMany({
         where: { id },
       })
 

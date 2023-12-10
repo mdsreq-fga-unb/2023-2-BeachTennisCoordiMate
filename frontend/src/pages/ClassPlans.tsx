@@ -20,6 +20,10 @@ const ClassPlans = () => {
     id = '';
   }
 
+  useEffect(() => {
+    loadPlans();
+  }, []);
+
   const [title, setTitle] = useState('');
   const [visible, setVisible] = useState(false);
   const classPlan = new ClassPlanService();
@@ -30,6 +34,12 @@ const ClassPlans = () => {
     observations: '',
     userId: id,
   };
+  const [plans, setPlans] = useState([data]);
+
+  async function loadPlans() {
+    const response = await classPlan.get('/');
+    setPlans(response.data);
+  }
 
   const addClassPlan = () => {
     setVisible(true);
@@ -82,7 +92,6 @@ const ClassPlans = () => {
   };
 
   useEffect(() => {
-    console.log(id);
     if (id != '') {
       classPlan
         .getManyById(id as string)
@@ -94,7 +103,7 @@ const ClassPlans = () => {
         });
     }
   }, [classPlan, id]);
-
+  console.log(classPlans);
   return (
     <>
       <ToastContainer
@@ -121,7 +130,11 @@ const ClassPlans = () => {
                     >
                       <h1 className="clickableTitle">{a['title']}</h1>
                     </Link>
-                    <button
+                    <Icon
+                      icon="mdi:trash"
+                      color="white"
+                      width="20"
+                      key={a['id']}
                       style={{
                         position: 'absolute',
                         bottom: '0',
@@ -132,16 +145,8 @@ const ClassPlans = () => {
                         setDeletedItemTitle(a['title']);
                         setDeletedItem(a['id']);
                         openDeletePanel();
-                      }} >
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="20" 
-                        height="20" 
-                        viewBox="0 0 24 24"
-                        key={a['id']}>
-                        <path fill="white" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"/>
-                      </svg>
-                    </button>
+                      }}
+                    />
                   </div>
                 );
               })}
@@ -151,13 +156,13 @@ const ClassPlans = () => {
           <div className="panelHandleItem">
             <div className="upContainer">
               <h1>Criar Plano de Aula</h1>
-              <button
+              <Icon
                 onClick={closeNewItemPanel}
-                >
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
-                  <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12" className="clickableIcon"/>
-                </svg>
-              </button>
+                icon="tabler:x"
+                className="clickableIcon"
+                color="white"
+                width="30"
+              />
             </div>
             <input
               placeholder="Título"
@@ -191,12 +196,13 @@ const ClassPlans = () => {
             style={{ padding: '3px 0px 10px 0px' }}
           >
             <div className="upContainer" style={{ justifyContent: 'flex-end' }}>
-              <button
-                onClick={closeDeleteItemPanel}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
-                    <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12" className="clickableIcon"/>
-                  </svg>
-              </button>
+              <Icon
+                onClick={closeDeleteItemPanel}
+                icon="tabler:x"
+                className="clickableIcon"
+                color="white"
+                width="30"
+              />
             </div>
             <h1 style={{ textAlign: 'center' }}>
               Tem certeza que deseja excluir "{deletedItemTitle}"?

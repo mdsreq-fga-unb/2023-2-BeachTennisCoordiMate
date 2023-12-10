@@ -51,6 +51,7 @@ const [title, setTitle] = useState('');
     title: titleDrill,
     description: '',
     observations: '',
+    image: '',
     classPlanId: id,
   };
 
@@ -162,8 +163,7 @@ const [title, setTitle] = useState('');
           userId: planUpdated.userId,
         };
         setTitleNotEdited(true);
-        setTitleAux('');
-        await classPlan.updateById(planUpdated.id, data);
+        await classPlan.updateById(id as string, data);
         toast.success('Título atualizado com sucesso');
       }
     } catch (error) {

@@ -93,13 +93,14 @@ export default class drillController {
   deleteById = async (req: Request, res: Response) => {
     try {
       const id = req.params.id
-      const deletedDrill = await prisma.drill.delete({
+      const deletedDrill = await prisma.drill.deleteMany({
         where: {
           id,
         },
       })
       res.status(204).json(deletedDrill)
     } catch (err) {
+      console.log(err)
       res.status(500).json({ error: "Internal Server Error" })
     }
   }
