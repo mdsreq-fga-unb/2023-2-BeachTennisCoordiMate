@@ -8,6 +8,7 @@ drillRouters.post("/", drill.create)
 drillRouters.get("/:classPlanId", drill.getManyByClassPlanId)
 drillRouters.get("/drill/:id", drill.show)
 drillRouters.put("/:id", drill.updateById)
+drillRouters.put("/image/:id", drill.updateImage)
 drillRouters.delete("/:id", drill.deleteById)
 
 export default drillRouters

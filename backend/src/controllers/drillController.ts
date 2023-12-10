@@ -71,6 +71,24 @@ export default class drillController {
     }
   }
 
+  updateImage = async (req: Request, res: Response) => {
+    try {
+      const id = req.params.id
+      const image = req.body.image
+      const updatedDrill = await prisma.drill.update({
+        where: {
+          id,
+        },
+        data: {
+          image,
+        },
+      })
+      res.status(204).json(updatedDrill)
+    } catch (err) {
+      res.status(500).json({ error: "Internal Server Error" })
+    }
+  }
+
   deleteById = async (req: Request, res: Response) => {
     try {
       const id = req.params.id

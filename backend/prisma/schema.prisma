@@ -31,6 +31,7 @@ model Drill {
   title        String
   description  String
   observations String
+  image        String
   classPlanId  String
   classPlan    ClassPlan     @relation(fields: [classPlanId], references: [id])
   drillElements DrillElement[]
