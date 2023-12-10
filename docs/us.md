@@ -22,8 +22,8 @@ Eu, como usuário-coordenador, desejo criar minha conta para administrar a arena
 - A senha e a confirmação de senha devem coincidir
 - O email deve estar no formato "nome@email.com"
 - Todos os campos devem ser obrigatórios
-- A senha deve ter tamanho entre 8 e 20 caracteres
-- O nome deve ter no mínimo 3 caracteres
+- A senha deve ter no mínimo 6 caracteres
+- O nome deve ter no mínimo 4 caracteres
 
 ## US002 - Fazer login como administrador
 
