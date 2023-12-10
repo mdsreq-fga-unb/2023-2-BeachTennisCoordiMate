@@ -71,8 +71,7 @@ Eu, como usuário-coordenador, desejo poder excluir um plano de aula, para apaga
 
 **Critérios de Aceitação**
 
-- Ao selecionar a opção de exclusão, o sistema deve solicitar uma confirmação antes
-  de apagar o plano de aula.
+- Ao selecionar a opção de exclusão, o sistema deve solicitar uma confirmação antes de apagar o plano de aula.
 - O sistema deve retornar uma mensagem ao usuário confirmando a realização da ação
 
 ## US052 - Editar plano de aula
