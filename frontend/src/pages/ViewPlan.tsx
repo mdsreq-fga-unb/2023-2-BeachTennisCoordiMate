@@ -262,6 +262,7 @@ const ViewPlan = () => {
   
       // Adicionar os dados do plano de aula ao HTML
       const planDiv = document.createElement('div');
+      planDiv.style.margin = '50px'
       planDiv.innerHTML = `
         <center><h1 style="color: black; font-size: 2em; margin-top: 1em;">${planUpdated.title}</h1></center>
         <br></br>
@@ -290,13 +291,14 @@ const ViewPlan = () => {
           <p style="color: black;">${drillData.observations}</p>
           <br></br>
           <img src="${drillData.image}" style="width: 100%; max-width: 500px; height: auto; display: block; margin-left: auto; margin-right: auto;"/>
-        `;
+          
+          `;
         container.appendChild(drillDiv);
       });
   
       // Configurar as opções do html2pdf
       const options = {
-        margin: 10,
+  
         filename: 'plano_de_aula_com_drills.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
