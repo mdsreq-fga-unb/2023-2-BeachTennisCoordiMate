@@ -25,6 +25,23 @@ class ClassPlanService extends Apiservice {
     return this.put('/' + id, data);
   }
 
+  async getManyByTitleOrDate(
+    userId: string,
+    title: string,
+    startDate: string,
+    finalDate: string,
+  ) {
+    return this.get(
+      '/pesquisa-data-titulo/' +
+        userId +
+        '/' +
+        title +
+        '/' +
+        startDate +
+        '/' +
+        finalDate,
+    );
+  }
 }
 
 export default ClassPlanService;

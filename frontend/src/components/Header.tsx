@@ -1,6 +1,9 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
 
-const Header = (props: { hasReturnArrow: boolean, changeScreenFunction: () => void }) => {
+const Header = (props: {
+  hasReturnArrow: boolean;
+  changeScreenFunction: () => void;
+}) => {
   const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -14,8 +17,7 @@ const Header = (props: { hasReturnArrow: boolean, changeScreenFunction: () => vo
     >
       <div className="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
         {props.hasReturnArrow ? (
-          <button 
-            onClick={props.changeScreenFunction}>
+          <button onClick={props.changeScreenFunction}>
             <Icon
               icon="ep:arrow-left-bold"
               color="white"

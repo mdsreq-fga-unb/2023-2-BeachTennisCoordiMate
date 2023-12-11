@@ -29,17 +29,18 @@ const SignIn = () => {
           console.log(data.data);
           const data_user = JSON.stringify(data.data);
           localStorage.setItem('user', data_user);
-          try{
+          try {
             const user_id = String(JSON.parse(data_user).id);
             let userClassPlans = await classPlan.getManyById(user_id as string);
-            localStorage.setItem('userClassPlans', JSON.stringify(userClassPlans.data));
+            localStorage.setItem(
+              'userClassPlans',
+              JSON.stringify(userClassPlans.data),
+            );
             toast.success('Login realizado com sucesso!');
             setTimeout(() => {
               window.location.href = '/';
             }, 3000);
-          } catch (error){
-
-          }
+          } catch (error) {}
         }
         return;
       }

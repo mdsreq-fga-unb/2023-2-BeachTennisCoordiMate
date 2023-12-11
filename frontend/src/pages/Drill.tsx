@@ -6,19 +6,19 @@ import DrillService from '../service/drillService';
 import html2canvas from 'html2canvas';
 import Header from '../components/Header';
 import DrillElement from '../components/DrillElement';
-import arco from "../images/drillElements/arco.png";
-import avatar_x_neg from "../images/drillElements/avatar_x-.png";
-import avatar_x_pos from "../images/drillElements/avatar_x+.png";
-import avatar_y_neg from "../images/drillElements/avatar_y-.png";
-import avatar_y_pos from "../images/drillElements/avatar_y+.png";
-import bola_tenis from "../images/drillElements/bola_tenis.png";
-import cano_alt_x from "../images/drillElements/cano_alt_x.png";
-import cano_alt_y from "../images/drillElements/cano_alt_y.png";
-import cone from "../images/drillElements/cone.png";
-import seta_x_neg from "../images/drillElements/seta_x-.png";
-import seta_x_pos from "../images/drillElements/seta_x+.png";
-import seta_y_neg from "../images/drillElements/seta_y-.png";
-import seta_y_pos from "../images/drillElements/seta_y+.png";
+import arco from '../images/drillElements/arco.png';
+import avatar_x_neg from '../images/drillElements/avatar_x-.png';
+import avatar_x_pos from '../images/drillElements/avatar_x+.png';
+import avatar_y_neg from '../images/drillElements/avatar_y-.png';
+import avatar_y_pos from '../images/drillElements/avatar_y+.png';
+import bola_tenis from '../images/drillElements/bola_tenis.png';
+import cano_alt_x from '../images/drillElements/cano_alt_x.png';
+import cano_alt_y from '../images/drillElements/cano_alt_y.png';
+import cone from '../images/drillElements/cone.png';
+import seta_x_neg from '../images/drillElements/seta_x-.png';
+import seta_x_pos from '../images/drillElements/seta_x+.png';
+import seta_y_neg from '../images/drillElements/seta_y-.png';
+import seta_y_pos from '../images/drillElements/seta_y+.png';
 import DrillElementService from '../service/drillElementService';
 import ClassPlanService from '../service/classPlanService';
 
@@ -36,7 +36,7 @@ const Drill = () => {
     seta_x_neg,
     seta_x_pos,
     seta_y_neg,
-    seta_y_pos
+    seta_y_pos,
   ];
   const listButtons = [
     [0, 50, arco, 35],
@@ -51,12 +51,18 @@ const Drill = () => {
     [9, 30, seta_x_neg, 25],
     [10, 30, seta_x_pos, 25],
     [11, 30, seta_y_neg, 25],
-    [12, 30, seta_y_pos, 25]
-  ]
+    [12, 30, seta_y_pos, 25],
+  ];
   const stringSelectedDrill = localStorage.getItem('selectedDrill');
-  const selectedDrill = JSON.parse(stringSelectedDrill ? stringSelectedDrill : '');
-  const stringDrillSelectedElements = localStorage.getItem('drillSelectedElements');
-  const drillSelectedElements = JSON.parse(stringDrillSelectedElements ? stringDrillSelectedElements : '');
+  const selectedDrill = JSON.parse(
+    stringSelectedDrill ? stringSelectedDrill : '',
+  );
+  const stringDrillSelectedElements = localStorage.getItem(
+    'drillSelectedElements',
+  );
+  const drillSelectedElements = JSON.parse(
+    stringDrillSelectedElements ? stringDrillSelectedElements : '',
+  );
   const [title, setTitle] = useState(selectedDrill.title);
   const [imagemBase64, setimagemBase64] = useState('');
   const [titleAux, setTitleAux] = useState('');
@@ -73,86 +79,87 @@ const Drill = () => {
   const [savedItems, setSavedItems] = useState(drillSelectedElements);
   const [deletedSavedIds, setDeletedSavedIds] = useState<string[]>([]);
   const [count, setCount] = useState(0);
-  
 
   const updateImagen = () => {
-    const captureElement = document.querySelector('#drillGraphicContainer')
-    if(captureElement != null){
-      html2canvas(captureElement as HTMLElement).then(canvas => {
-      const imgData = canvas.toDataURL('image/png');
-      setimagemBase64(imgData)
-    });
-  }
-  }
-  
-  const addDrillElement = (typeImage : number, width: number) => {
+    const captureElement = document.querySelector('#drillGraphicContainer');
+    if (captureElement != null) {
+      html2canvas(captureElement as HTMLElement).then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        setimagemBase64(imgData);
+      });
+    }
+  };
+
+  const addDrillElement = (typeImage: number, width: number) => {
     setNewItems([...newItems, [String(count), typeImage, width]]);
     setCount(count + 1);
-  }
+  };
 
-  const deleteNewItem = (idDeleted : string) => { 
-    setNewItems((prevItems) => prevItems.filter((id) => id[0] !== idDeleted));   
-  }
+  const deleteNewItem = (idDeleted: string) => {
+    setNewItems((prevItems) => prevItems.filter((id) => id[0] !== idDeleted));
+  };
 
   const deleteSavedItem = (idDeleted: string) => {
-    setSavedItems((prevItems) => prevItems.filter((item) => item.id !== idDeleted)); 
+    setSavedItems((prevItems) =>
+      prevItems.filter((item) => item.id !== idDeleted),
+    );
     setDeletedSavedIds((prevArray) => [...prevArray, idDeleted]);
-  }
-  
-  async function saveDrillState(){
+  };
+
+  async function saveDrillState() {
     updateImagen();
-        // let data = {
-        //   id: selectedDrill.id,
-        //   title: titleAux,
-        //   image: imagemBase64,
-        //   description: selectedDrill.description,
-        //   observations: selectedDrill.observations,
-        //   classPlanId: selectedDrill.classPlanId,
-        // };
-        // console.log(data)
-        // await drill.updateById(id as string, data);
-    for(const [idNewItem, indexNewItem] of newItems){
-      try{
+    // let data = {
+    //   id: selectedDrill.id,
+    //   title: titleAux,
+    //   image: imagemBase64,
+    //   description: selectedDrill.description,
+    //   observations: selectedDrill.observations,
+    //   classPlanId: selectedDrill.classPlanId,
+    // };
+    // console.log(data)
+    // await drill.updateById(id as string, data);
+    for (const [idNewItem, indexNewItem] of newItems) {
+      try {
         const element = document.getElementById(idNewItem);
-        if(element != null){
+        if (element != null) {
           let data = {
             index: indexNewItem,
             top: parseInt(element.style.top.slice(0, -2)),
             left: parseInt(element.style.left.slice(0, -2)),
-            drillId: selectedDrill.id
+            drillId: selectedDrill.id,
           };
           await drillElement.save(data);
         }
       } catch (error) {
         toast.error('Erro ao salvar elementos');
         return;
-      }   
+      }
     }
-    for(const savedItem of savedItems){
-      try{
+    for (const savedItem of savedItems) {
+      try {
         const element = document.getElementById(savedItem.id);
-        if(element != null){
+        if (element != null) {
           let data = {
             id: savedItem.id,
             index: savedItem.index,
             top: parseInt(element.style.top.slice(0, -2)),
             left: parseInt(element.style.left.slice(0, -2)),
-            drillId: selectedDrill.id
+            drillId: selectedDrill.id,
           };
           await drillElement.updateById(savedItem.id, data);
         }
       } catch (error) {
         toast.error('Erro ao salvar elementos');
         return;
-      }   
+      }
     }
-    for(const deletedSavedId of deletedSavedIds){
-      try{
+    for (const deletedSavedId of deletedSavedIds) {
+      try {
         await drillElement.deleteById(deletedSavedId);
       } catch (error) {
         toast.error('Erro ao salvar elementos');
         return;
-      }   
+      }
     }
     toast.success('Atualizações no desenho do drill salvas com sucesso');
     const trash = document.getElementById('apagar');
@@ -180,7 +187,7 @@ const Drill = () => {
       else if (titleAux.length < 5)
         toast.warning('O título deve ter no mínimo 5 caracteres');
       else {
-        updateImagen()
+        updateImagen();
         let data = {
           id: selectedDrill.id,
           title: titleAux,
@@ -203,7 +210,7 @@ const Drill = () => {
 
   const finishEditingDescription = async () => {
     try {
-      updateImagen()
+      updateImagen();
       let data = {
         id: selectedDrill.id,
         title: title,
@@ -213,7 +220,7 @@ const Drill = () => {
         classPlanId: selectedDrill.classPlanId,
       };
       await drill.updateById(selectedDrill.id, data);
-      setDescription(descriptionAux)
+      setDescription(descriptionAux);
       toast.success('Descrição atualizada com sucesso');
     } catch (error) {
       toast.error('Erro ao atualizar drill');
@@ -226,7 +233,7 @@ const Drill = () => {
   const finishEditingObservations = async () => {
     try {
       setObservationsAux('');
-      updateImagen()
+      updateImagen();
       let data = {
         id: selectedDrill.id,
         title: title,
@@ -248,20 +255,25 @@ const Drill = () => {
 
   const redirectToViewPlan = async () => {
     try {
-      console.log("Aqui 1");
+      console.log('Aqui 1');
       const classPlan = new ClassPlanService();
       const response = await classPlan.getById(selectedDrill.classPlanId);
       localStorage.setItem('selectedClassPlan', JSON.stringify(response.data));
-      const drillsClassPlan = await drill.getManyByClassPlanId(selectedDrill.classPlanId);
+      const drillsClassPlan = await drill.getManyByClassPlanId(
+        selectedDrill.classPlanId,
+      );
       const drillData = drillsClassPlan.data;
-      localStorage.setItem('drillsSelectedClassPlan', JSON.stringify(drillData));
+      localStorage.setItem(
+        'drillsSelectedClassPlan',
+        JSON.stringify(drillData),
+      );
       setTimeout(() => {
         window.location.href = `/plano-aula/${selectedDrill.classPlanId}`;
       }, 3000);
-    } catch(error){
+    } catch (error) {
       toast.error('Erro ao buscar informações do plano');
     }
-  }
+  };
 
   return (
     <>
@@ -276,10 +288,7 @@ const Drill = () => {
           />
         }
       />
-      <Header
-        hasReturnArrow={true}
-        changeScreenFunction={redirectToViewPlan}
-      />
+      <Header hasReturnArrow={true} changeScreenFunction={redirectToViewPlan} />
       <div className="pageDrill">
         {titleNotEdited ? (
           <div className="titleLayout" style={{ justifyContent: 'center' }}>
@@ -296,7 +305,6 @@ const Drill = () => {
           </div>
         ) : (
           <div className="titleLayout" style={{ justifyContent: 'center' }}>
-            
             <input
               className="inputsDrill w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
               id="inputTitle"
@@ -314,10 +322,10 @@ const Drill = () => {
             />
           </div>
         )}
-        <div className='contentDrill'>
+        <div className="contentDrill">
           <div className="textDrill" id="descObsContainer">
             <div className="titleLayout">
-              <h1 style={{paddingRight: '10px'}}>Descrição</h1>
+              <h1 style={{ paddingRight: '10px' }}>Descrição</h1>
               {descriptionNotEdited ? (
                 <Icon
                   icon="ph:pencil"
@@ -379,27 +387,79 @@ const Drill = () => {
               />
             )}
           </div>
-          <div className='textDrill'>
-            <button 
-              style={{backgroundColor: "#1B74E4", boxSizing: "content-box", padding: "5px 10px", borderRadius: "10px", border: "1px solid white"}} 
+          <div className="textDrill" id="img_drill">
+            <button
+              style={{
+                backgroundColor: '#1B74E4',
+                boxSizing: 'content-box',
+                padding: '5px 10px',
+                borderRadius: '10px',
+                border: '1px solid white',
+              }}
               onClick={saveDrillState}
-              >Salvar</button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{visibility: "hidden", cursor: "pointer"}} id='apagar'>
-              <path fill="white" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"/>
+            >
+              Salvar
+            </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              style={{ visibility: 'hidden', cursor: 'pointer' }}
+              id="apagar"
+            >
+              <path
+                fill="white"
+                d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"
+              />
             </svg>
             <div id="drillGraphicContainer">
               {newItems.map(([id, typeImage, width]) => {
-                return <DrillElement id={id} key={id} deleteItem={deleteNewItem} image={listImages[typeImage]} elementWidth={width} top={0} left={0}/>
+                return (
+                  <DrillElement
+                    id={id}
+                    key={id}
+                    deleteItem={deleteNewItem}
+                    image={listImages[typeImage]}
+                    elementWidth={width}
+                    top={0}
+                    left={0}
+                  />
+                );
               })}
-              {savedItems.length > 0 && savedItems.map((a) => {
-                return <DrillElement id={a.id} key={a.id} deleteItem={deleteSavedItem} image={listImages[a.index]} elementWidth={listButtons[a.index][1]} top={a.top} left={a.left}/>
-              })}
+              {savedItems.length > 0 &&
+                savedItems.map((a) => {
+                  return (
+                    <DrillElement
+                      id={a.id}
+                      key={a.id}
+                      deleteItem={deleteSavedItem}
+                      image={listImages[a.index]}
+                      elementWidth={listButtons[a.index][1]}
+                      top={a.top}
+                      left={a.left}
+                    />
+                  );
+                })}
             </div>
-            <div className='drillButtonsPanel'>
+            <div className="drillButtonsPanel">
               {listButtons.map(([index, width, source, elementWidth]) => {
-                return <button className='buttonAddElementDrill' onClick={() => {addDrillElement(index, width)}}>
-                  <img src={source} style={{width: `${elementWidth}px`, boxSizing: "content-box"}}></img>
-                </button>
+                return (
+                  <button
+                    className="buttonAddElementDrill"
+                    onClick={() => {
+                      addDrillElement(index, width);
+                    }}
+                  >
+                    <img
+                      src={source}
+                      style={{
+                        width: `${elementWidth}px`,
+                        boxSizing: 'content-box',
+                      }}
+                    ></img>
+                  </button>
+                );
               })}
             </div>
           </div>

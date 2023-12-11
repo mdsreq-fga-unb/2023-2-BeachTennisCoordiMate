@@ -71,6 +71,62 @@ export default class classPlanController {
     }
   }
 
+  searchByCreatedAtOrTitle = async (req: Request, res: Response) => {
+    try {
+      const { userId, title, startDate, finalDate } = req.params
+      if (startDate == "_") {
+        const classPlan = await prisma.classPlan.findMany({
+          where: {
+            userId: userId,
+            title: { contains: title },
+          },
+          select: {
+            id: true,
+            title: true,
+          },
+        })
+        res.status(200).json(classPlan)
+      } else if (title == "_") {
+        const start = new Date(startDate)
+        const final = new Date(finalDate)
+        const classPlan = await prisma.classPlan.findMany({
+          where: {
+            userId: userId,
+            createdAt: {
+              lte: final,
+              gte: start,
+            },
+          },
+          select: {
+            id: true,
+            title: true,
+          },
+        })
+        res.status(200).json(classPlan)
+      } else {
+        const start = new Date(startDate)
+        const final = new Date(finalDate)
+        const classPlan = await prisma.classPlan.findMany({
+          where: {
+            userId: userId,
+            createdAt: {
+              lte: final,
+              gte: start,
+            },
+            title: { contains: title },
+          },
+          select: {
+            id: true,
+            title: true,
+          },
+        })
+        res.status(200).json(classPlan)
+      }
+    } catch (err) {
+      res.status(500).json({ error: "Internal Server Error" })
+    }
+  }
+
   delete = async (req: Request, res: Response) => {
     try {
       const { id } = req.params

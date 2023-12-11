@@ -8,6 +8,7 @@ import Loader from './common/Loader';
 import routes from './routes';
 import ViewPlan from './pages/ViewPlan';
 import Drill from './pages/Drill';
+import FilteredClassPlans from './pages/FilteredClassPlans';
 
 const DefaultLayout = lazy(() => import('./layout/DefaultLayout'));
 
@@ -39,6 +40,7 @@ function App() {
             </Suspense>
           }
         />
+        <Route path="/pesquisa" element={<FilteredClassPlans />} />
         <Route path="/" element={<ClassPlans />} />
         <Route path="/drill/:id" element={<Drill />}>
           {/* <Route index element={<ClassPlans />} /> */}
