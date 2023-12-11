@@ -263,15 +263,15 @@ const ViewPlan = () => {
       // Adicionar os dados do plano de aula ao HTML
       const planDiv = document.createElement('div');
       planDiv.innerHTML = `
-        <center><h1>${planUpdated.title}</h1></center>
+        <center><h1 style="color: black; font-size: 2em; margin-top: 1em;">${planUpdated.title}</h1></center>
         <br></br>
-        <h2>Objetivos</h2>
-        <p>${planUpdated.goals}</p>
+        <h2 style="color: blue; font-size: 2em;">Objetivos</h2>
+        <p style="color: black;">${planUpdated.goals}</p>
         <br></br>
-        <h2>Observações</h2>
-        <p>${planUpdated.observations}</p>
+        <h2 style="color: blue; font-size: 2em;">Observações</h2>
+        <p style="color: black;">${planUpdated.observations}</p>
         <br></br>
-        <center><h1>Drills</h1></center>
+        <h1 style="color: blue; font-size: 2em">Drills</h1>
       `;
       container.appendChild(planDiv);
   
@@ -281,13 +281,13 @@ const ViewPlan = () => {
         const drillDiv = document.createElement('div');
         drillDiv.innerHTML = `
           <br></br>
-          <h1>${drillData.title}</h2>
+          <center><h1 style="color: black; font-size: 2em">${drillData.title}</h2></center>
           <br></br>
-          <h1>Descrição</h1>
-          <p>${drillData.description}</p>
+          <h1 style="color: blue; font-size: 2em">Descrição</h1>
+          <p style="color: black;">${drillData.description}</p>
           <br></br>
-          <h1>Observações</h2>
-          <p>${drillData.observations}</p>
+          <h1 style="color: blue; font-size: 2em">Observações</h2>
+          <p style="color: black;">${drillData.observations}</p>
           <br></br>
           <img src="${drillData.image}" style="width: 100%; max-width: 500px; height: auto; display: block; margin-left: auto; margin-right: auto;"/>
         `;
@@ -349,7 +349,7 @@ const ViewPlan = () => {
               onClick={startEditingTitle}
               className="clickableIcon"
             />{' '}
-            <button onClick={downloadPlan} className="downloadButton">
+            <button onClick={downloadPlan} className="downloadButton" style={{marginTop: '1em'}}>
               <Icon icon="bi:download" color="white" width="20" />
             </button>
 
@@ -374,7 +374,7 @@ const ViewPlan = () => {
             />{' '}
           </div>
         )}
-        <div className="contentDrill" id="descObsContainer">
+        <div className="contentPlan" id="descObsContainer">
           <div className="titleLayout">
               <p style={{marginLeft: '3em', fontSize: '3em' }}>Objetivos</p>
               {goalsNotEdited ? (
@@ -404,7 +404,7 @@ const ViewPlan = () => {
                   marginRight: '5em',
                   borderRadius: '1em',
                   marginTop: '5em',
-                  color: 'white'
+                  color: 'white',
                 }}>
             {goalsNotEdited ? (
               <p style={{ fontSize: '2em' }}>
