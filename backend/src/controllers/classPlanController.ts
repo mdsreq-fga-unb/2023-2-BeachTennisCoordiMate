@@ -81,12 +81,48 @@ export default class classPlanController {
   delete = async (req: Request, res: Response) => {
     try {
       const { id } = req.params
-
-      const classPlan = await prisma.classPlan.deleteMany({
-        where: { id },
+      const data = await prisma.classPlan.findMany({
+        where: {
+          id,
+        },
+        select: {
+          id: true,
+          drills: {
+            select: {
+              id: true,
+              drillElements: {
+                select: {
+                  id: true,
+                },
+              },
+            },
+          },
+        },
       })
 
-      res.status(200).json(classPlan)
+      data.map(async (item) => {
+        item.drills.map(async (drill) => {
+          drill.drillElements.map(async (drillElement) => {
+            await prisma.drillElement.delete({
+              where: {
+                id: drillElement.id,
+              },
+            })
+          })
+          await prisma.drill.delete({
+            where: {
+              id: drill.id,
+            },
+          })
+        })
+      })
+
+      const plan = await prisma.classPlan.delete({
+        where: {
+          id,
+        },
+      })
+      res.status(204).json(plan)
     } catch (err) {
       err as Prisma.PrismaClientKnownRequestError
       res.status(500).json({ errors: { server: "Server error" } })

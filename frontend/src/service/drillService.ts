@@ -17,6 +17,10 @@ class DrillService extends Apiservice {
     return this.put('/' + id, data);
   }
 
+  async updateImage(id: string, data: any) {
+    return this.put('/image/' + id, data);
+  }
+
   async deleteById(id: string) {
     return this.delete('/' + id);
   }

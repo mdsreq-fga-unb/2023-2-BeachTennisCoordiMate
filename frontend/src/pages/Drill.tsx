@@ -117,15 +117,9 @@ const Drill = () => {
   async function saveDrillState(){
     updateImagen()
         let data = {
-          id: drillUpdated.id,
-          title: titleAux,
           image: imagemBase64,
-          description: drillUpdated.description,
-          observations: drillUpdated.observations,
-          classPlanId: drillUpdated.classPlanId,
         };
-        console.log(data)
-        await drill.updateById(id as string, data);
+        await drill.updateImage(id as string, data);
     for(const [idNewItem, indexNewItem] of newItems){
       try{
         const element = document.getElementById(idNewItem);
@@ -181,7 +175,7 @@ const Drill = () => {
       setDrillUpdated(response.data);
     }
   }
-  console.log("id: " + id) 
+
   useEffect(() => {
     loadData();
     setTitle(drillUpdated.title);
