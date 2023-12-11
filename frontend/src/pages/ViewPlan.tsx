@@ -248,13 +248,13 @@ const ViewPlan = () => {
       const planDiv = document.createElement('div');
       planDiv.style.margin = '50px'
       planDiv.innerHTML = `
-        <center><h1 style="color: black; font-size: 2em; margin-top: 1em;">${planUpdated.title}</h1></center>
+        <center><h1 style="color: black; font-size: 2em; margin-top: 1em;">${title}</h1></center>
         <br></br>
         <h2 style="color: blue; font-size: 2em;">Objetivos</h2>
-        <p style="color: black;">${planUpdated.goals}</p>
+        <p style="color: black;">${goals}</p>
         <br></br>
         <h2 style="color: blue; font-size: 2em;">Observações</h2>
-        <p style="color: black;">${planUpdated.observations}</p>
+        <p style="color: black;">${observations}</p>
         <br></br>
         <h1 style="color: blue; font-size: 2em">Drills</h1>
       `;
@@ -268,10 +268,10 @@ const ViewPlan = () => {
           <br></br>
           <center><h1 style="color: black; font-size: 2em">${drillData.title}</h2></center>
           <br></br>
-          <h1 style="color: blue; font-size: 2em">Descrição</h1>
+          <h2 style="color: blue; font-size: 2em">Descrição</h1>
           <p style="color: black;">${drillData.description}</p>
           <br></br>
-          <h1 style="color: blue; font-size: 2em">Observações</h2>
+          <h2 style="color: blue; font-size: 2em">Observações</h2>
           <p style="color: black;">${drillData.observations}</p>
           <br></br>
           <img src="${drillData.image}" style="width: 100%; max-width: 500px; height: auto; display: block; margin-left: auto; margin-right: auto;"/>
@@ -336,7 +336,7 @@ const ViewPlan = () => {
               onClick={startEditingTitle}
               className="clickableIcon"
             />
-            <button onClick={() => {}}
+            <button onClick={downloadPlan}
               style={{paddingLeft: "10px"}}>
               <Icon icon="bi:download" color="white" width="20" />
             </button>
