@@ -3,8 +3,9 @@ import '../index.css';
 import { Icon } from '@iconify/react';
 import { toast, ToastContainer } from 'react-toastify';
 import ClassPlanService from '../service/classPlanService';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Header from '../components/Header';
+import html2pdf from 'html2pdf.js';
 
 const ClassPlans = () => {
   const [classPlans, setClassPlans] = useState([]);
@@ -12,6 +13,7 @@ const ClassPlans = () => {
   const [deletedItem, setDeletedItem] = useState('');
   const [deletedItemTitle, setDeletedItemTitle] = useState('');
   const [visibleDel, setVisibleDel] = useState(false);
+
   let id: String;
   if (userString !== null) {
     const user = JSON.parse(userString);
@@ -104,6 +106,52 @@ const ClassPlans = () => {
     }
   }, [classPlan, id]);
   console.log(classPlans);
+
+
+
+  const downloadPlan = async (planData: any) => {
+    try {
+      // Carregar todos os drills relacionados ao plano de aula
+      const { title, goals, observations } = planData;  
+  
+      // Criar um elemento HTML para representar o plano de aula e os drills
+      const container = document.createElement('div');
+  
+      // Adicionar os dados do plano de aula ao HTML
+      const planDiv = document.createElement('div');
+      planDiv.innerHTML = `
+          <center><h1 style="color: black; font-size: 2em; margin-top: 1em;">${title}</h1></center>
+          <br></br>
+          <h2 key={id} style="color: blue; font-size: 2em;">Objetivos</h2>
+          <p style="color: black;">${goals}</p>
+          <br></br>
+          <h2 style="color: blue; font-size: 2em;">Observações</h2>
+          <p style="color: black;">${observations}</p>
+          <br></br>
+          <h1 style="color: blue; font-size: 2em">Drills</h1>
+         `;
+      container.appendChild(planDiv);
+  
+      // Adicionar os dados dos drills ao HTML
+     
+      // Configurar as opções do html2pdf
+      const options = {
+        margin: 10,
+        filename: 'plano_de_aula_com_drills.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      };
+  
+      // Converter o HTML para PDF usando html2pdf
+      html2pdf(container, options);
+  
+    } catch (error) {
+      console.error('Erro ao criar o arquivo PDF:', error);
+      // Lide com o erro conforme necessário
+    }
+  };
+
   return (
     <>
       <ToastContainer
@@ -147,6 +195,15 @@ const ClassPlans = () => {
                         openDeletePanel();
                       }}
                     />
+                    
+                    <button
+                        onClick={() => downloadPlan(a)}
+                        className="downloadButton"
+                        style={{ marginTop: '1em' }}
+                      >
+                        <Icon icon="bi:download" color="white" width="20" />
+                      </button>
+                    
                   </div>
                 );
               })}
