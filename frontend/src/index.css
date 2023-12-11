@@ -288,7 +288,7 @@
 }
 
 .buttonsPanel {
-  width: 100vw;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 330px));
   grid-gap: 20px;
@@ -342,13 +342,39 @@
   padding-right: 10px;
 }
 
-.contentDrill {
+.titleLayoutClassPLan {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 90%;
+}
+
+.titleLayoutClassPLan {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 90%;
+}
+
+.contentDrill{
   display: flex;
   justify-content: space-between;
   padding: 0px 15px;
 }
 
-#drillGraphicContainer {
+.contentClassPlan{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contentClassPlan{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#drillGraphicContainer{
   margin-top: 5px;
   height: 406px;
   width: 800px;
@@ -377,15 +403,19 @@
   background-color: #494949;
   padding: 15px;
   border-radius: 20px;
-  height: 300px;
+  min-height: 300px;
   width: 350px;
+  box-sizing: content-box;
+  height: fit-content;
 }
 
-.pClassPlan {
-  color: white;
+.pClassPlan{
+  margin: 10px auto;
   background-color: #494949;
   padding: 15px;
   border-radius: 20px;
+  min-height: 300px;
+  box-sizing: content-box;
   height: fit-content;
   width: 90%;
 }
@@ -410,14 +440,30 @@
   border: '1px solid black';
 }
 
-.textAreaDrill {
+/* .textAreaDrill {
   background-color: #494949;
   border-radius: 20px;
   height: 300px;
-  width: 250px;
-  height: 300px;
   width: 350px;
   padding: 15px;
+} */
+
+.drillButtonsPanel {
+  width: 100%;
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 40px));
+  grid-gap: 2px;
+  justify-content: center;
+}
+
+.buttonAddElementDrill{
+  background-color: gray;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 45px;
 }
 
 @media (max-width: 910px) {

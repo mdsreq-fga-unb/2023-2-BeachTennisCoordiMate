@@ -1,33 +1,36 @@
 import '../index.css';
 import Header from '../components/Header';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import ClassPlanService from '../service/classPlanService';
-import { Link, useParams } from 'react-router-dom';
 import DrillService from '../service/drillService';
 import { toast, ToastContainer} from 'react-toastify';
 import { Icon } from '@iconify/react/dist/iconify.js';
+import DrillElementService from '../service/drillElementService';
 
 const ViewPlan = () => {
-  const { id } = useParams();
-const [title, setTitle] = useState('');
+  const stringSelectedClassPlan = localStorage.getItem('selectedClassPlan');
+  const selectedClassPlan = JSON.parse(stringSelectedClassPlan ? stringSelectedClassPlan : '');
+  const stringDrillsSelectedClassPlan = localStorage.getItem('drillsSelectedClassPlan');
+  const [title, setTitle] = useState(selectedClassPlan.title);
   const [titleAux, setTitleAux] = useState('');
-  const [goals, setGoals] = useState('');
+  const [goals, setGoals] = useState(selectedClassPlan.goals);
   const [goalsAux, setGoalsAux] = useState('');
-  const [observations, setObservations] = useState('');
+  const [observations, setObservations] = useState(selectedClassPlan.observations);
   const [observationsAux, setObservationsAux] = useState('');
   const [titleNotEdited, setTitleNotEdited] = useState(true);
   const [goalsNotEdited, setGoalsNotEdited] = useState(true);
   const [observationsNotEdited, setObservationsNotEdited] = useState(true);
   
   const classPlan = new ClassPlanService();
-  
-  const [planUpdated, setplanUpdated] = useState({
-    id: '',
-    title: '',
-    goals: '',
-    observations: '',
-    userId: '',
-  });
+
+  const [titleDrill, setTitleDrill] = useState('');
+  const [visibleCreateDrill, setVisibleCreateDrill] = useState(false);
+  const [visibleDeleteDrill, setVisibleDeleteDrill] = useState(false);
+  const [deletedItem, setDeletedItem] = useState('');
+  const [deletedItemTitle, setDeletedItemTitle] = useState('');
+  const [drills, setDrills] = useState(JSON.parse(stringDrillsSelectedClassPlan ? stringDrillsSelectedClassPlan : ''));
+  const drill = new DrillService();
+
   const userString = localStorage.getItem('user');
 
   let userId: string;
@@ -37,30 +40,6 @@ const [title, setTitle] = useState('');
     userId = user.id;
   } else {
     userId = '';
-  }
-
-  const [titleDrill, setTitleDrill] = useState('');
-  const [visibleCreateDrill, setVisibleCreateDrill] = useState(false);
-  const [visibleDeleteDrill, setVisibleDeleteDrill] = useState(false);
-  const [deletedItem, setDeletedItem] = useState('');
-  const [deletedItemTitle, setDeletedItemTitle] = useState('');
-  const [drills, setDrills] = useState([]);
-  const drill = new DrillService();
-
-  let data = {
-    title: titleDrill,
-    description: '',
-    observations: '',
-    image: '',
-    classPlanId: id,
-  };
-
-  
-  async function loadData() {
-    if (id != null) {
-      const response = await classPlan.getById(id);
-      setplanUpdated(response.data);
-    }
   }
 
   const openNewItemPanel = () => {
@@ -90,7 +69,15 @@ const [title, setTitle] = useState('');
       else if (titleDrill.length < 5)
         toast.warning('O título deve ter no mínimo 5 caracteres');
       else {
-        await drill.save(data);
+        let data = {
+          title: titleDrill,
+          description: '',
+          observations: '',
+          image: '',
+          classPlanId: selectedClassPlan.id,
+        };
+        let newDrillData = await drill.save(data);
+        setDrills((prevArray) => [...prevArray, newDrillData.data]);
         toast.success('Drill cadastrado com sucesso');
         closeNewItemPanel();
         setTitleDrill('');
@@ -104,6 +91,7 @@ const [title, setTitle] = useState('');
   const handleDeleteDrill = async () => {
     try {
       await drill.deleteById(deletedItem);
+      setDrills((prevItems) => prevItems.filter((item) =>  item.id != deletedItem));
       toast.success('Drill excluído com sucesso');
       closeDeleteItemPanel();
       setDeletedItem('');
@@ -113,39 +101,18 @@ const [title, setTitle] = useState('');
     return;
   };
 
-  useEffect(() => {
-    loadData();
-    if (id != null) {
-      drill
-        .getManyByClassPlanId(id)
-        .then((response) => {
-          setDrills(response.data);
-        })
-        .catch(() => {
-          setDrills([]);
-        });
-    }
-  }, [id, drill]);
-
-  useEffect(() => {
-    loadData();
-    setTitle(planUpdated.title);
-    setGoals(planUpdated.goals);
-    setObservations(planUpdated.observations);
-  }, [planUpdated]);
-
   const startEditingTitle = () => {
-    setTitleAux(planUpdated.title);
+    setTitleAux(title);
     setTitleNotEdited(false);
   };
 
-  const startEditingDescription = () => {
-    setGoalsAux(planUpdated.goals);
+  const startEditingGoals = () => {
+    setGoalsAux(goals);
     setGoalsNotEdited(false);
   };
 
   const startEditingObservations = () => {
-    setObservationsAux(planUpdated.observations);
+    setObservationsAux(observations);
     setObservationsNotEdited(false);
   };
 
@@ -156,17 +123,20 @@ const [title, setTitle] = useState('');
         toast.warning('O título deve ter no mínimo 5 caracteres');
       else {
         let data = {
-          id: planUpdated.id,
+          id: selectedClassPlan.id,
           title: titleAux,
-          goals: planUpdated.goals,
-          observations: planUpdated.observations,
-          userId: planUpdated.userId,
+          goals: goals,
+          observations: observations,
+          userId: userId,
         };
+        console.log(data);
         setTitleNotEdited(true);
-        await classPlan.updateById(id as string, data);
+        await classPlan.updateById(selectedClassPlan.id, data);
+        setTitle(titleAux);
         toast.success('Título atualizado com sucesso');
       }
     } catch (error) {
+      console.log();
       toast.error('Erro ao atualizar drill');
       setTitleNotEdited(true);
       setTitleAux('');
@@ -174,16 +144,17 @@ const [title, setTitle] = useState('');
     return;
   };
 
-  const finishEditingDescription = async () => {
+  const finishEditingGoals = async () => {
     try {
       let data = {
-        id: planUpdated.id,
-        title: planUpdated.title,
+        id: selectedClassPlan.id,
+        title: title,
         goals: goalsAux,
-        observations: planUpdated.observations,
-        userId: planUpdated.userId,
+        observations: observations,
+        userId: userId,
       };
-      await classPlan.updateById(planUpdated.id, data);
+      await classPlan.updateById(selectedClassPlan.id, data);
+      setGoals(goalsAux);
       toast.success('Descrição atualizada com sucesso');
     } catch (error) {
       toast.error('Erro ao atualizar drill');
@@ -198,13 +169,14 @@ const [title, setTitle] = useState('');
     try {
       setObservationsAux('');
       let data = {
-        id: planUpdated.id,
-        title: planUpdated.title,
-        goals: planUpdated.goals,
+        id: selectedClassPlan.id,
+        title: title,
+        goals: goals,
         observations: observationsAux,
-        userId: planUpdated.userId,
+        userId: userId,
       };
-      await classPlan.updateById(planUpdated.id, data);
+      await classPlan.updateById(selectedClassPlan.id, data);
+      setObservations(observationsAux);
       toast.success('Observações atualizadas com sucesso');
     } catch (error) {
       toast.error('Erro ao atualizar drill');
@@ -215,9 +187,36 @@ const [title, setTitle] = useState('');
     return;
   };
 
+  const redirectToDrill = async (selectedId : string) => {
+    try {
+      const response = await drill.getById(selectedId);
+      localStorage.setItem('selectedDrill', JSON.stringify(response.data));
+      const drillElement = new DrillElementService();
+      const drillSelectedElements = await drillElement.getManyByDrillId(selectedId);
+      localStorage.setItem('drillSelectedElements', JSON.stringify(drillSelectedElements.data))
+      setTimeout(() => {
+        window.location.href = `/drill/${selectedId}`;
+      }, 3000);
+    } catch(error){
+      toast.error('Erro ao buscar informações do drill');
+    }
+  }
+
+  const redirectToClassPlans = async () => {
+    try{
+      let userClassPlans = await classPlan.getManyById(selectedClassPlan.userId);
+      localStorage.setItem('userClassPlans', JSON.stringify(userClassPlans.data));
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 3000);
+    } catch (error){
+
+    }
+  }
+
   return (
     <>
-<ToastContainer
+      <ToastContainer
         toastStyle={{ backgroundColor: '#272727', color: 'white' }}
         closeButton={
           <Icon
@@ -228,34 +227,28 @@ const [title, setTitle] = useState('');
           />
         }
        />
-      <Header path={''} hasReturnArrow={true} />
-      <div style={{ backgroundColor: '#272727'}}>
+      <Header  changeScreenFunction={redirectToClassPlans} hasReturnArrow={true} />
+      <div style={{ backgroundColor: '#272727', color: 'white'}}>
       {titleNotEdited ? (
-          <div className="titleLayout" style={{ justifyContent: 'center' }}>
-            {' '}
-            <div className="plan" key={planUpdated.id}>
-          <h1
-            style={{
-              fontSize: '50px',
-              padding: '10px 0',
-              textAlign: 'center',
-              overflow: 'hidden'
-            }}
-          >
-            {title}
-          </h1>{' '}
-        </div>
-        <Icon
-              icon="ph:pencil"
-              color="white"
-              width="25px"
-              onClick={startEditingTitle}
-              className="clickableIcon"
-            />{' '}
+          <div className="titleLayout" style={{ justifyContent: 'center', width: "100%" }}>
+            <h1
+              style={{
+                paddingRight: '10px', 
+                overflow: 'hidden'
+              }}
+            >
+              {title}
+            </h1>
+            <Icon
+                  icon="ph:pencil"
+                  color="white"
+                  width="25px"
+                  onClick={startEditingTitle}
+                  className="clickableIcon"
+                />
           </div>
           ) : (
-          <div className="titleLayout" style={{ justifyContent: 'center' }}>
-            {' '}
+          <div className="titleLayout" style={{ justifyContent: 'center', width: "100%" }}>
             <input
               className="inputsDrill w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
               id="inputTitle"
@@ -273,55 +266,49 @@ const [title, setTitle] = useState('');
             />{' '}
           </div>
           )}
-        <div className="contentDrill" id="descObsContainer">
-          <div className="titleLayout">
-              <p style={{marginLeft: '3em', fontSize: '3em' }}>Objetivos</p>
+        <div className="contentClassPlan">
+          <div className="titleLayoutClassPLan">
+              <h1
+              style={{
+                paddingRight: '10px', 
+                overflow: 'hidden'
+              }}> Objetivos </h1>
               {goalsNotEdited ? (
                 <Icon
                   icon="ph:pencil"
                   color="white"
                   width="25px"
                   className="clickableIcon"
-                  onClick={startEditingDescription}
+                  onClick={startEditingGoals}
                 />
               ) : (
                 <Icon
                   icon="iconamoon:check-fill" 
                   color="white"
                   width="25px"
-                  onClick={finishEditingDescription}
+                  onClick={finishEditingGoals}
                   className="clickableIcon"
                   />
                   )}
-        </div>
-        <div
-                className="card space-y-4"
-                style={{
-                  backgroundColor: 'gray',
-                  padding: '5em',
-                  marginLeft: '5em',
-                  marginRight: '5em',
-                  borderRadius: '1em',
-                  marginTop: '5em',
-                  color: 'white'
-                }}>
-            {goalsNotEdited ? (
-              <p style={{ fontSize: '2em' }}>
-                {goals}
-              </p>
-            ) : (
-              <textarea
-                className="card space-y-4 w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                onChange={(e) => setGoalsAux(e.target.value)}
-                maxLength={500}
-                value={goalsAux}
-              />
-            )}
-            </div>
+          </div>
+          {goalsNotEdited ? (
+            <p className='pClassPlan'>{goals}</p>
+          ) : (
+            <textarea
+              className="pClassPlan card space-y-4 w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+              onChange={(e) => setGoalsAux(e.target.value)}
+              maxLength={500}
+              value={goalsAux}
+            />
+          )}
         </div>        
-          <div className="contentPlan" id="descObsContainer">
-            <div className="titleLayout" style={{marginTop: "3em"}}>
-                <p style={{ marginLeft: '3em', fontSize: '3em' }}>Observações</p>
+          <div className="contentClassPlan">
+            <div className="titleLayoutClassPLan">
+                <h1
+                style={{
+                  paddingRight: '10px', 
+                  overflow: 'hidden'
+                }}> Observações</h1>
                 {observationsNotEdited ? (
                   <Icon
                     icon="ph:pencil"
@@ -340,71 +327,54 @@ const [title, setTitle] = useState('');
                     />
                     )}
             </div>
-              <div
-                className="card space-y-4"
-                style={{
-                  backgroundColor: 'gray',
-                  padding: '5em',
-                  marginLeft: '5em',
-                  marginRight: '5em',
-                  borderRadius: '1em',
-                  marginTop: '5em',
-                  color: 'white'
-                }}>
             {observationsNotEdited ? (
-              <p style={{ fontSize: '2em' }}>
-                {observations}
-              </p>
+              <p className='pClassPlan'>{observations}</p>
             ) : (
               <textarea
-                className="card space-y-4 w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                className="pClassPlan card space-y-4 w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                 onChange={(e) => setObservationsAux(e.target.value)}
                 maxLength={500}
                 value={observationsAux}
               />
             )}
+          </div>
+          <div className='containerVisibleComp'>
+            <h1 style={{ fontSize: '30px', color: 'white', padding: '10px 0' }}>
+              Drills
+            </h1>
+            <div className="buttonsPanel">
+              <button className="addButton" onClick={openNewItemPanel}>
+                <Icon icon="simple-line-icons:plus" color="white" width="40" />
+              </button>
+              {drills &&
+                drills.map((a) => {
+                  return (
+                    <div id={a.id} key={a.id} className="itemButton">
+                      <button onClick={() => {redirectToDrill(a.id)}}>
+                        <h1 className="clickableTitle">{a.title}</h1>
+                      </button>
+                      <Icon
+                        icon="mdi:trash"
+                        color="white"
+                        width="20"
+                        key={a.id}
+                        style={{
+                          position: 'absolute',
+                          bottom: '0',
+                          right: '20px',
+                          cursor: 'pointer',
+                        }}
+                        onClick={() => {
+                          setDeletedItemTitle(a.title);
+                          setDeletedItem(a.id);
+                          openDeletePanel();
+                        }}
+                      />
+                    </div>
+                  );
+                })}
             </div>
-          </div>
-
-
-
-
-          <h1 style={{ fontSize: '30px', color: 'white', padding: '10px 0',  marginTop: '2em',  marginBottom: '1em'}}>
-            Drills
-          </h1>
-          <div className="buttonsPanel">
-            <button className="addButton" onClick={openNewItemPanel}>
-              <Icon icon="simple-line-icons:plus" color="white" width="40" />
-            </button>
-            <br></br>
-            {drills.length > 0 &&
-              drills.map((a) => {
-                return (
-                  <div id={a['id']} key={a['id']} className="itemButton">
-                    <Link to={`/drill/${a['id']}`}>
-                      <h1 className="clickableTitle">{a['title']}</h1>
-                    </Link>
-                    <Icon
-                      icon="mdi:trash"
-                      color="white"
-                      width="20"
-                      key={a['id']}
-                      style={{
-                        position: 'absolute',
-                        bottom: '0',
-                        right: '20px',
-                        cursor: 'pointer',
-                      }}
-                      onClick={() => {
-                        setDeletedItemTitle(a['title']);
-                        setDeletedItem(a['id']);
-                        openDeletePanel();
-                      }}
-                    />
-                  </div>
-                );
-              })}
-          </div>
+          </div> 
         </div>
         {visibleCreateDrill && (
           <div className="panelHandleItem" style={{ zIndex: 5 }}>

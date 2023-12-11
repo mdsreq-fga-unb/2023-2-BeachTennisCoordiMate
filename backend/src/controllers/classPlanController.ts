@@ -40,14 +40,9 @@ export default class classPlanController {
         where: {
           userId: userId,
         },
-        include: {
-          user: {
-            select: {
-              id: true,
-              email: true,
-              name: true,
-            },
-          },
+        select: {
+          id: true,
+          title: true,
         },
       })
       res.status(200).json(classPlan)
@@ -62,14 +57,12 @@ export default class classPlanController {
         where: {
           id: id,
         },
-        include: {
-          user: {
-            select: {
-              id: true,
-              email: true,
-              name: true,
-            },
-          },
+        select: {
+          id: true,
+          title: true,
+          goals: true,
+          observations: true,
+          userId: true,
         },
       })
       res.status(200).json(classPlan)
@@ -82,7 +75,7 @@ export default class classPlanController {
     try {
       const { id } = req.params
 
-      const classPlan = await prisma.classPlan.deleteMany({
+      const classPlan = await prisma.classPlan.delete({
         where: { id },
       })
 
@@ -92,6 +85,7 @@ export default class classPlanController {
       res.status(500).json({ errors: { server: "Server error" } })
     }
   }
+
   updateById = async (req: Request, res: Response) => {
     try {
       const id = req.params.id

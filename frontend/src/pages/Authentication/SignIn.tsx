@@ -7,10 +7,12 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import '../../index.css';
 import Logo from '../../images/logoBeachTennisCoordimate.png';
 import { Link } from 'react-router-dom';
+import ClassPlanService from '../../service/classPlanService';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const classPlan = new ClassPlanService();
 
   const handleSignIn = async () => {
     try {
@@ -25,11 +27,19 @@ const SignIn = () => {
         if (data.status === 200) {
           localStorage.setItem('token', data.data.token);
           console.log(data.data);
-          localStorage.setItem('user', JSON.stringify(data.data));
-          toast.success('Login realizado com sucesso!');
-          setTimeout(() => {
-            window.location.href = '/';
-          }, 3000);
+          const data_user = JSON.stringify(data.data);
+          localStorage.setItem('user', data_user);
+          try{
+            const user_id = String(JSON.parse(data_user).id);
+            let userClassPlans = await classPlan.getManyById(user_id as string);
+            localStorage.setItem('userClassPlans', JSON.stringify(userClassPlans.data));
+            toast.success('Login realizado com sucesso!');
+            setTimeout(() => {
+              window.location.href = '/';
+            }, 3000);
+          } catch (error){
+
+          }
         }
         return;
       }

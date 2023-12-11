@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react/dist/iconify.js';
 
-const Header = (props: { path: string; hasReturnArrow: boolean }) => {
+const Header = (props: { hasReturnArrow: boolean, changeScreenFunction: () => void }) => {
   const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -15,14 +14,15 @@ const Header = (props: { path: string; hasReturnArrow: boolean }) => {
     >
       <div className="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
         {props.hasReturnArrow ? (
-          <Link to={`/${props.path}`}>
+          <button 
+            onClick={props.changeScreenFunction}>
             <Icon
               icon="ep:arrow-left-bold"
               color="white"
               width="25px"
               className="clickableIcon"
             />
-          </Link>
+          </button>
         ) : (
           <div></div>
         )}

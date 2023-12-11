@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '../index.css';
 import { Icon } from '@iconify/react';
 import { toast, ToastContainer } from 'react-toastify';
 import ClassPlanService from '../service/classPlanService';
-import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import DrillService from '../service/drillService';
 
 const ClassPlans = () => {
-  const [classPlans, setClassPlans] = useState([]);
+  const userClassPlans = localStorage.getItem('userClassPlans');
+  const [classPlans, setClassPlans] = useState(JSON.parse(userClassPlans ? userClassPlans : ''));
   const userString = localStorage.getItem('user');
   const [deletedItem, setDeletedItem] = useState('');
   const [deletedItemTitle, setDeletedItemTitle] = useState('');
@@ -20,13 +21,11 @@ const ClassPlans = () => {
     id = '';
   }
 
-  useEffect(() => {
-    loadPlans();
-  }, []);
-
   const [title, setTitle] = useState('');
   const [visible, setVisible] = useState(false);
   const classPlan = new ClassPlanService();
+  const drill = new DrillService();
+
   let data = {
     id: '',
     title: title,
@@ -34,12 +33,6 @@ const ClassPlans = () => {
     observations: '',
     userId: id,
   };
-  const [plans, setPlans] = useState([data]);
-
-  async function loadPlans() {
-    const response = await classPlan.get('/');
-    setPlans(response.data);
-  }
 
   const addClassPlan = () => {
     setVisible(true);
@@ -58,7 +51,8 @@ const ClassPlans = () => {
       else if (title.length < 5)
         toast.warning('O título deve ter no mínimo 5 caracteres');
       else {
-        await classPlan.save(data);
+        let newClassPlanData = await classPlan.save(data);
+        setClassPlans((prevArray) => [...prevArray, newClassPlanData.data]);
         toast.success('Plano de aula cadastrado com sucesso');
         closeNewItemPanel();
         setTitle('');
@@ -82,6 +76,7 @@ const ClassPlans = () => {
   const handleDeleteClassPlan = async () => {
     try {
       await classPlan.remove(deletedItem);
+      setClassPlans((prevItems) => prevItems.filter((item) =>  item.id != deletedItem));
       toast.success('Plano de aula excluído com sucesso');
       closeDeleteItemPanel();
       setDeletedItem('');
@@ -91,26 +86,28 @@ const ClassPlans = () => {
     return;
   };
 
-  useEffect(() => {
-    if (id != '') {
-      classPlan
-        .getManyById(id as string)
-        .then((response) => {
-          setClassPlans(response.data);
-        })
-        .catch(() => {
-          setClassPlans([]);
-        });
+  const redirectToViewPlan = async (selectedId : string) => {
+    try {
+      const response = await classPlan.getById(selectedId);
+      localStorage.setItem('selectedClassPlan', JSON.stringify(response.data));
+      const drillsClassPlan = await drill.getManyByClassPlanId(selectedId);
+      const drillData = drillsClassPlan.data;
+      localStorage.setItem('drillsSelectedClassPlan', JSON.stringify(drillData));
+      setTimeout(() => {
+        window.location.href = `/plano-aula/${selectedId}`;
+      }, 3000);
+    } catch(error){
+      toast.error('Erro ao buscar informações do plano');
     }
-  }, [classPlan, id]);
-  console.log(classPlans);
-  return (
+  }
+
+  return(
     <>
       <ToastContainer
         toastStyle={{ backgroundColor: '#272727', color: 'white' }}
         closeButton={<Icon icon="tabler:x" color="white" width="15px" />}
       />
-      <Header path="" hasReturnArrow={false}></Header>
+      <Header changeScreenFunction={() => {}} hasReturnArrow={false}></Header>
       <div className="buttonsPagesClassPlans">
         <div className="containerVisibleComp">
           <h1 style={{ fontSize: '30px', color: 'white', padding: '10px 0' }}>
@@ -124,12 +121,11 @@ const ClassPlans = () => {
               classPlans.map((a) => {
                 return (
                   <div id={a['id']} key={a['id']} className="itemButton">
-                    <Link
-                      to={`/plano-aula/${a['id']}`}
-                      state={{ drillInfo: a }}
+                    <button
+                      onClick={() => {redirectToViewPlan(a['id'])}}
                     >
                       <h1 className="clickableTitle">{a['title']}</h1>
-                    </Link>
+                    </button>
                     <Icon
                       icon="mdi:trash"
                       color="white"
