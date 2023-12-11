@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
+import { useEffect, useState } from 'react';
 
 const Header = (props: {
   hasReturnArrow: boolean;
@@ -9,6 +10,14 @@ const Header = (props: {
     localStorage.removeItem('user');
     window.location.href = '/login';
   };
+
+  useEffect(() => {
+    console.log("Aqui");
+    const user  = localStorage.getItem('user');
+    if(!user){
+      logout();
+    }
+  }, []);
 
   return (
     <header
