@@ -55,11 +55,11 @@ const ViewPlan = () => {
   
   const [drillUpdated, setDrillUpdated] = useState({
     id: '',
-    title: titleDrill,
+    title: '',
     description: '',
     observations: '',
     image: '',
-    classPlanId: id,
+    classPlanId: '',
   });
   
 
@@ -104,6 +104,7 @@ const ViewPlan = () => {
         title: titleDrill,
         description: descriptionDrill,
         observations: observationsDrill,
+        image: '',
         classPlanId: id,
       };
       if (!titleDrill) toast.warning('Preencha o campo do título');
@@ -287,6 +288,8 @@ const ViewPlan = () => {
           <br></br>
           <h1>Observações</h2>
           <p>${drillData.observations}</p>
+          <br></br>
+          <img src="${drillData.image}" style="width: 100%; max-width: 500px; height: auto; display: block; margin-left: auto; margin-right: auto;"/>
         `;
         container.appendChild(drillDiv);
       });
@@ -348,7 +351,6 @@ const ViewPlan = () => {
             />{' '}
             <button onClick={downloadPlan} className="downloadButton">
               <Icon icon="bi:download" color="white" width="20" />
-              Baixar Plano de Aula
             </button>
 
           </div>
