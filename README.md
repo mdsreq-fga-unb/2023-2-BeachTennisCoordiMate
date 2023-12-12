@@ -2,6 +2,14 @@
 
 Repositório de projeto da disciplina de REQ-T3.
 
+## 📚 Documentação
+
+https://mdsreq-fga-unb.github.io/2023-2-BeachTennisCoordiMate/
+
+## 🌐 Site do aplicativo
+
+https://beachtenniscoordimate.netlify.app/login
+
 ## ❗ Requisitos
 
 - Docker

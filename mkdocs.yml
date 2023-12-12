@@ -50,10 +50,16 @@ nav:
           - Sprint 1 - Definição do produto: sprints/pre-planejamento/sprint1.md
           - Sprint 2 - Definição do projeto e alinhamento do produto: sprints/pre-planejamento/sprint2.md
           - Sprint 3 - Finalizar Visão do Produto e Projeto: sprints/pre-planejamento/sprint3.md
+          - Sprint 4 - Definição dos Requisitos do Produto: sprints/pre-planejamento/sprint4.md
+          - Sprint 5 - Definição do Backlog SAFE do Produto: sprints/pre-planejamento/sprint5.md
           - Sprint 6 - Priorização dos requisitos e MPV: sprints/pre-planejamento/sprint6.md
+          - Sprints 7 e 8 - Validação do Backlog SAFE + Refatoração e validação do MVP: sprints/pre-planejamento/sprint7e8.md
           - Sprint 9 - Definição dos critérios de aceitação das histórias: sprints/pre-planejamento/sprint9.md
       - Scrum:
-          - Sprint 10 - Definição dos critérios de DOR e DOD: sprints/scrum/sprint10.md
+        - Sprint 10 - Definição dos critérios de DOR e DOD: sprints/scrum/sprint10.md
+        - Sprint 11 - US01, US02, US49, US50: sprints/scrum/sprint11.md
+        - Sprint 12 - US51, US52, US54, US57, US58: sprints/scrum/sprint12.md
+        - Sprint 13 - US60, US61, US53, US55, US56: sprints/scrum/sprint13.md
 
   - Entregas:
       - Unidade 1: entregas/1.entrega-unidade1.md
