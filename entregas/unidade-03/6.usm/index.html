@@ -1,0 +1,1835 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../5.bdd/">
+      
+      
+        <link rel="next" href="../7.dor_dod/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>USM - Beach Tennis CoordiMate</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-story-mapping" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="Beach Tennis CoordiMate" class="md-header__button md-logo" aria-label="Beach Tennis CoordiMate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Beach Tennis CoordiMate
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              USM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para o modo claro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para o modo claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para o modo escuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para o modo escuro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeachTennisCoordiMate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Beach Tennis CoordiMate" class="md-nav__button md-logo" aria-label="Beach Tennis CoordiMate" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Beach Tennis CoordiMate
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mdsreq-fga-unb/2023-2-BeachTennisCoordiMate" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeachTennisCoordiMate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Início
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gamificacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gamificação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentação
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentação
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visão do produto e projeto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Visão do produto e projeto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-visao/1.visao-produto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão do Produto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-visao/2.requisitos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Requisitos Funcionais e Não Funcionais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-visao/2.visao-projeto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão do Projeto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-visao/3.processo-dev/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processo de Desenvolvimento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-visao/4.processo-requisitos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processo de Engenharia de Requisitos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-visao/5.licoes-aprendidas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lições Aprendidas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backlog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backlog SAFE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mvp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MPV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dor_dod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DoR & DoD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../us/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Stories - MPV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reuniões
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Reuniões
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pré-planejamento
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Pré-planejamento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/pre-planejamento/sprint0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 0 - Definição do problema e solução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/pre-planejamento/sprint1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 1 - Definição do produto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/pre-planejamento/sprint2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 2 - Definição do projeto e alinhamento do produto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/pre-planejamento/sprint3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 3 - Finalizar Visão do Produto e Projeto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/pre-planejamento/sprint4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 4 - Definição dos Requisitos do Produto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/pre-planejamento/sprint5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 5 - Definição do Backlog SAFE do Produto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/pre-planejamento/sprint6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 6 - Priorização dos requisitos e MPV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/pre-planejamento/sprint7e8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprints 7 e 8 - Validação do Backlog SAFE + Refatoração e validação do MVP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/pre-planejamento/sprint9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 9 - Definição dos critérios de aceitação das histórias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scrum
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Scrum
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/scrum/sprint10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 10 - Definição dos critérios de DOR e DOD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/scrum/sprint11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 11 - US01, US02, US49, US50
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/scrum/sprint12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 12 - US51, US52, US54, US57, US58
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sprints/scrum/sprint13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 13 - US60, US61, US53, US55, US56
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Entregas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Entregas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.entrega-unidade1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.entrega-unidade2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unidade 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unidade 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Unidade 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.entrega-unidade3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.pbb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PBB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.pbb-revisao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ver&Val PBB - Facção GBL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.criterios-revisao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ver&Val Critérios de aceitação - Facção GBL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.bdd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BDD - Facção GBL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    USM
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    USM
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-a-comuneventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é a ComunEventos?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-a-serem-resolvidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemas a serem resolvidos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beneficios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefícios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-quem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para quem?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usm-construido" class="md-nav__link">
+    <span class="md-ellipsis">
+      USM construído
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.dor_dod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ver&Val DoR & DoD - Facção GBL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unidade 4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Unidade 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade-04/1.entrega-unidade4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentação e Validação do Cliente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade-04/2.especificacao-caso-de-uso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Especificação de Casos de Uso
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade-04/3.ver%26valUCs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ver & Val do Diagrama dos Casos de Uso do Grupo GBL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-a-comuneventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é a ComunEventos?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-a-serem-resolvidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemas a serem resolvidos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beneficios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefícios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-quem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para quem?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usm-construido" class="md-nav__link">
+    <span class="md-ellipsis">
+      USM construído
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="user-story-mapping">User Story Mapping</h1>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th><strong>Data</strong></th>
+<th><strong>Versão</strong></th>
+<th><strong>Descrição</strong></th>
+<th><strong>Autor</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20/11/2023</td>
+<td>0.1</td>
+<td>Criação do documento</td>
+<td>Artur, João e Victório</td>
+</tr>
+<tr>
+<td>22/11/2023</td>
+<td>0.2</td>
+<td>Atualização da USM</td>
+<td>Victório</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Neste tópico será apresentado o User Story Mappping da ComunEventos.</p>
+<h2 id="o-que-e-a-comuneventos">O que é a ComunEventos?</h2>
+<p>A ComunEventos é uma empresa que possui como missão desenvolver uma plataforma online para otimizar a organização e promoção de eventos comunitários, permitindo que seus membros se reúnam em eventos que visem os interesses de ambos.</p>
+<h2 id="problemas-a-serem-resolvidos">Problemas a serem resolvidos</h2>
+<p>O intuito da plataforma é resolver problemas organizacionais de eventos comunitários, sendo os principais:</p>
+<ul>
+<li>Utilização de múltiplas ferramentas, nem sempre projetadas para eventos, o que dificulta a organização e sobrecarrega os membros, que precisam criar e divulgar o evento e comunicar com os participantes.</li>
+<li>Orçamento baixo para contratação de plataformas especializadas para eventos.</li>
+<li>Falta de uma plataforma simplificada e unificada para a realização de todas as etapas da inscrição dos participantes em um único lugar.</li>
+<li>Dificuldades no processo de colaboração com os membros que acontece de forma física ou por canais de comunicação, nem sempre padronizados, prejudicando os organizadores que nem sempre conseguem acessar todas as solicitações recebidas.</li>
+</ul>
+<h2 id="beneficios">Benefícios</h2>
+<p>A implementação dessa plataforma acarreta em inúmeros benefícios, como:</p>
+<ul>
+<li>Integração das ferramentas utilizadas pela ComunEventos em uma única plataforma</li>
+<li>Diminuição dos custos de contratação de plataformas de eventos, uma vez que elas serão dispensadas</li>
+<li>Melhoria no engajamento com os participantes</li>
+<li>Incentivo a colaboração local, com parcerias e voluntários, devido a facilitação do processo</li>
+<li>Incentivo a realização de eventos que atendam as diversas necessidades</li>
+</ul>
+<h2 id="para-quem">Para quem?</h2>
+<p>Os beneficiados por essa plataforma seriam:</p>
+<ul>
+<li>Organizadores</li>
+<li>Participantes</li>
+<li>Fornecedores locais</li>
+<li>Patrocinadores</li>
+<li>Voluntários</li>
+</ul>
+<h2 id="usm-construido">USM construído</h2>
+<p>Abaixo, está apresentado o USM proposto para a resolução do problema. As fotos em melhor qualidade podem ser acessadas clicando em <a href="../../../assets/USMComunEventos.jpg">USM - Parte 1</a> e <a href="../../../assets/USMComunEventos2.jpg">USM - Parte 2</a></p>
+<p><img alt="USM - Parte 1" src="../../../assets/USMComunEventos.jpg" />
+<img alt="USM - Parte 2" src="../../../assets/USMComunEventos2.jpg" /></p>
+<p>As histórias de usuário extraídas do USM estão registradas na tabela a seguir:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th><strong>US</strong></th>
+<th><strong>Enunciado</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US01</td>
+<td>Eu, como Organizador, desejo cadastrar um evento para ter um registro dos eventos que eu organizo</td>
+</tr>
+<tr>
+<td>US02</td>
+<td>Eu, como Organizador, desejo adicionar um organizador a um evento que os outros organizadores do evento possam participar da gerência desse evento pelo sistema</td>
+</tr>
+<tr>
+<td>US03</td>
+<td>Eu, como Organizador, desejo criar lista de contato para um evento para registrar os possíveis contatos que podem ter interesse em ajudar o evento</td>
+</tr>
+<tr>
+<td>US04</td>
+<td>Eu, como Organizador, desejo enviar e-mail de divulgação de um evento para lista de contatos para divulgar o evento aos que podem querer ajudá-lo</td>
+</tr>
+<tr>
+<td>US05</td>
+<td>Eu, como Organizador, desejo cadastrar tarefa para um evento para ter um registro de todas as tarefas que precisam ser feitas antes e durante a realização do evento</td>
+</tr>
+<tr>
+<td>US06</td>
+<td>Eu, como Organizador, desejo cadastrar sessão de treinamento para ter um registro das sessões de treinamento necessárias para realização de certas tarefas um evento</td>
+</tr>
+<tr>
+<td>US07</td>
+<td>Eu, como Organizador, desejo associar uma sessão de treinamento a uma tarefa para categorizar cada sessão de treinamento pela tarefa que ela capacita o voluntário a realizar</td>
+</tr>
+<tr>
+<td>US08</td>
+<td>Eu, como Organizador, desejo cadastrar fornecedor para ter um registro dos fornecedores de um evento que pode fornecer para meus eventos</td>
+</tr>
+<tr>
+<td>US09</td>
+<td>Eu, como Organizador, desejo cadastrar patrocinador para ter um registro de um patrocinador que pode patrocinar meus eventos</td>
+</tr>
+<tr>
+<td>US10</td>
+<td>Eu, como Organizador, desejo assinalar voluntário a um evento para distribuir de forma organizada as pessoas aprovadas para serem voluntários entre meus eventos</td>
+</tr>
+<tr>
+<td>US11</td>
+<td>Eu, como Organizador, desejo assinalar fornecedor a um evento para fazer o registro de um fornecedor confirmado do meu evento</td>
+</tr>
+<tr>
+<td>US12</td>
+<td>Eu, como Organizador, desejo assinalar patrocinador a um evento para fazer o registro de um patrocinador confirmado do meu evento</td>
+</tr>
+<tr>
+<td>US13</td>
+<td>Eu, como Organizador, desejo enviar e-mail a patrocinador de um evento para conseguir enviar alinhamentos sobre o evento na mesma plataforma que gerencio o evento</td>
+</tr>
+<tr>
+<td>US14</td>
+<td>Eu, como Organizador, desejo enviar e-mail a fornecedor de um evento para conseguir enviar alinhamentos sobre o evento na mesma plataforma que gerencio o evento</td>
+</tr>
+<tr>
+<td>US15</td>
+<td>Eu, como Organizador, desejo enviar mensagem a voluntário para fazer alinhamentos específicos com um certo voluntário</td>
+</tr>
+<tr>
+<td>US16</td>
+<td>Eu, como Organizador, desejo enviar uma mensagem para todos os voluntários de um evento para fazer comunicados gerais para todos os voluntários de um evento facilmente</td>
+</tr>
+<tr>
+<td>US17</td>
+<td>Eu, como Organizador, desejo enviar mensagem a participante para fazer alinhamentos específicos com um certo participante</td>
+</tr>
+<tr>
+<td>US18</td>
+<td>Eu, como Organizador, desejo enviar uma mensagem para todos os participantes de um evento para fazer comunicados gerais para todos os participantes de um evento facilmente</td>
+</tr>
+<tr>
+<td>US19</td>
+<td>Eu, como Organizador, desejo visualizar lista de pessoas inscritas como participantes de um evento para monitorar a quantidade de participantes inscritos de um evento</td>
+</tr>
+<tr>
+<td>US20</td>
+<td>Eu, como Organizador, desejo visualizar lista de pessoas inscritas para concorrer a vaga de voluntário de um evento para monitorar a quantidade de pessoas com interesse em se voluntariar a um evento</td>
+</tr>
+<tr>
+<td>US21</td>
+<td>Eu, como Participante-Voluntário, desejo visualizar lista com os próximos eventos para verificar se existe algum evento que eu tenha interesse de participar como Participante ou Voluntário</td>
+</tr>
+<tr>
+<td>US22</td>
+<td>Eu, como Participante-Voluntário, desejo visualizar detalhes de um evento para ter acesso a mais detalhes de um evento pelo qual eu tenho interesse</td>
+</tr>
+<tr>
+<td>US23</td>
+<td>Eu, como Participante-Voluntário, desejo enviar mensagem para o organizador do evento para tirar dúvidas sobre o evento</td>
+</tr>
+<tr>
+<td>US24</td>
+<td>Eu, como Participante-Voluntário-Organizador, desejo compartilhar post do evento nas redes sociais para divulgar o evento ou compartilhar minha experiência no evento</td>
+</tr>
+<tr>
+<td>US25</td>
+<td>Eu, como Organizador, desejo registrar um investimento em um evento para monitorar a entrada de dinheiro no evento</td>
+</tr>
+<tr>
+<td>US26</td>
+<td>Eu, como Organizador, desejo registrar uma despesa de um evento para monitorar os gastos do evento</td>
+</tr>
+<tr>
+<td>US27</td>
+<td>Eu, como Organizador, desejo visualizar fluxo de caixa de um evento para monitorar a situação financeira do meu evento</td>
+</tr>
+<tr>
+<td>US28</td>
+<td>Eu, como Organizador, desejo visualizar resultados dos formulários de feedbacks dos participantes para conseguir visualizar o nível de satisfação dos participantes com o evento e ver o que pode melhorar</td>
+</tr>
+<tr>
+<td>US29</td>
+<td>Eu, como Organizador, desejo visualizar quantidade de dinheiro arrecado das inscrições dos participantes que foram pagas para monitorar o dinheiro arrecadado com as inscrições de participantes</td>
+</tr>
+<tr>
+<td>US30</td>
+<td>Eu, como Participante, desejo pagar inscrição em de um evento para confirmar minha inscrição nos eventos que exigem pagamentos</td>
+</tr>
+<tr>
+<td>US31</td>
+<td>Eu, como Participante, desejo preencher formulário de feedback para poder informar diretamente aos organizadores do evento meus elogios e críticas ao evento</td>
+</tr>
+<tr>
+<td>US32</td>
+<td>Eu, como Voluntário, desejo visualizar as tarefas disponíveis no evento para poder escolher qual delas eu desejo realizar</td>
+</tr>
+<tr>
+<td>US33</td>
+<td>Eu, como Voluntário, desejo escolher uma tarefas disponível no evento para que eu possa assumir a responsabilidade por uma tarefa que quero realizar antes ou durante o evento</td>
+</tr>
+<tr>
+<td>US34</td>
+<td>Eu, como Voluntário, desejo visualizar os horários de treinamento para que possa planejar meu tempo de acordo com os treinos que devo realizar para me capacitar para uma tarefa</td>
+</tr>
+<tr>
+<td>US35</td>
+<td>Eu, como Voluntário, desejo baixar certificado de treinamento para que eu possa ter um certificado da minha capacitação para determinada tarefa</td>
+</tr>
+<tr>
+<td>US36</td>
+<td>Eu, como Participante-Voluntário, desejo filtrar lista dos próximos eventos para que eu possa encontrar eventos que me interessam facilmente</td>
+</tr>
+<tr>
+<td>US37</td>
+<td>Eu, como Participante-Voluntário, desejo preencher formulário de inscrição de um evento para que possa comprar um ingresso para um evento que desejo ser participante ou fornecer informações para os organizadores avaliarem se vão me chamar para um evento que desejo me voluntariar</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
+    
+  </body>
+</html>
