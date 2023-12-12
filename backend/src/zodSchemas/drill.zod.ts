@@ -9,7 +9,6 @@ const drillSchema = z.object({
     .string()
     .max(500, "Observações deve ter no máximo 500 caracteres"),
   classPlanId: z.string().uuid("Id do plano de aula inválido"),
-  image: z.string(),
 })
 
 export { drillSchema }

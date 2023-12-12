@@ -26,6 +26,12 @@ class DrillService extends Apiservice {
     });
   }
 
+  async updateImage(id: string, data: any) {
+    return this.put('/image/' + id, data, {
+      headers: { Authorization: `Bearer ${this.token}` },
+    });
+  }
+
   async deleteById(id: string) {
     return this.delete('/' + id, {
       headers: { Authorization: `Bearer ${this.token}` },

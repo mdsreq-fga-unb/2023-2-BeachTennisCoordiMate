@@ -108,16 +108,11 @@ const Drill = () => {
 
   async function saveDrillState() {
     updateImagen();
-    // let data = {
-    //   id: selectedDrill.id,
-    //   title: titleAux,
-    //   image: imagemBase64,
-    //   description: selectedDrill.description,
-    //   observations: selectedDrill.observations,
-    //   classPlanId: selectedDrill.classPlanId,
-    // };
-    // console.log(data)
-    // await drill.updateById(id as string, data);
+    let data = {
+      image: imagemBase64
+    };
+    console.log(data.image)
+    await drill.updateImage(selectedDrill.id, data);
     for (const [idNewItem, indexNewItem] of newItems) {
       try {
         const element = document.getElementById(idNewItem);

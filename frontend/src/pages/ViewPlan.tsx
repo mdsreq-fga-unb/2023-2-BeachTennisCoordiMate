@@ -84,7 +84,6 @@ const ViewPlan = () => {
           title: titleDrill,
           description: '',
           observations: '',
-          image: '',
           classPlanId: selectedClassPlan.id,
         };
         let newDrillData = await drill.save(data);
@@ -282,8 +281,7 @@ const ViewPlan = () => {
   
       // Configurar as opções do html2pdf
       const options = {
-  
-        filename: 'plano_de_aula_com_drills.pdf',
+        filename: `${title}.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },

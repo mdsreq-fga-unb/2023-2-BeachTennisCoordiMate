@@ -84,6 +84,7 @@ export default class drillController {
           image,
         },
       })
+      console.log("Foi")
       res.status(204).json(updatedDrill)
     } catch (err) {
       res.status(500).json({ error: "Internal Server Error" })
