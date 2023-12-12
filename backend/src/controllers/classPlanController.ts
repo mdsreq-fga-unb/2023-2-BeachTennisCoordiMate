@@ -40,14 +40,9 @@ export default class classPlanController {
         where: {
           userId: userId,
         },
-        include: {
-          user: {
-            select: {
-              id: true,
-              email: true,
-              name: true,
-            },
-          },
+        select: {
+          id: true,
+          title: true,
         },
       })
       res.status(200).json(classPlan)
@@ -62,14 +57,12 @@ export default class classPlanController {
         where: {
           id: id,
         },
-        include: {
-          user: {
-            select: {
-              id: true,
-              email: true,
-              name: true,
-            },
-          },
+        select: {
+          id: true,
+          title: true,
+          goals: true,
+          observations: true,
+          userId: true,
         },
       })
       res.status(200).json(classPlan)
@@ -78,20 +71,113 @@ export default class classPlanController {
     }
   }
 
+  searchByCreatedAtOrTitle = async (req: Request, res: Response) => {
+    try {
+      const { userId, title, startDate, finalDate } = req.params
+      if (startDate == "_") {
+        const classPlan = await prisma.classPlan.findMany({
+          where: {
+            userId: userId,
+            title: { contains: title },
+          },
+          select: {
+            id: true,
+            title: true,
+          },
+        })
+        res.status(200).json(classPlan)
+      } else if (title == "_") {
+        const start = new Date(startDate)
+        const final = new Date(finalDate)
+        const classPlan = await prisma.classPlan.findMany({
+          where: {
+            userId: userId,
+            createdAt: {
+              lte: final,
+              gte: start,
+            },
+          },
+          select: {
+            id: true,
+            title: true,
+          },
+        })
+        res.status(200).json(classPlan)
+      } else {
+        const start = new Date(startDate)
+        const final = new Date(finalDate)
+        const classPlan = await prisma.classPlan.findMany({
+          where: {
+            userId: userId,
+            createdAt: {
+              lte: final,
+              gte: start,
+            },
+            title: { contains: title },
+          },
+          select: {
+            id: true,
+            title: true,
+          },
+        })
+        res.status(200).json(classPlan)
+      }
+    } catch (err) {
+      res.status(500).json({ error: "Internal Server Error" })
+    }
+  }
+
   delete = async (req: Request, res: Response) => {
     try {
       const { id } = req.params
-
-      const classPlan = await prisma.classPlan.deleteMany({
-        where: { id },
+      const data = await prisma.classPlan.findMany({
+        where: {
+          id,
+        },
+        select: {
+          id: true,
+          drills: {
+            select: {
+              id: true,
+              drillElements: {
+                select: {
+                  id: true,
+                },
+              },
+            },
+          },
+        },
       })
 
-      res.status(200).json(classPlan)
+      data.map(async (item) => {
+        item.drills.map(async (drill) => {
+          drill.drillElements.map(async (drillElement) => {
+            await prisma.drillElement.delete({
+              where: {
+                id: drillElement.id,
+              },
+            })
+          })
+          await prisma.drill.delete({
+            where: {
+              id: drill.id,
+            },
+          })
+        })
+      })
+
+      const plan = await prisma.classPlan.delete({
+        where: {
+          id,
+        },
+      })
+      res.status(200).json(plan)
     } catch (err) {
       err as Prisma.PrismaClientKnownRequestError
       res.status(500).json({ errors: { server: "Server error" } })
     }
   }
+
   updateById = async (req: Request, res: Response) => {
     try {
       const id = req.params.id
