@@ -66,3 +66,7 @@ nav:
           - BDD - Facção GBL: entregas/unidade-03/5.bdd.md
           - USM: entregas/unidade-03/6.usm.md
           - Ver&Val DoR & DoD - Facção GBL: entregas/unidade-03/7.dor_dod.md
+      - Unidade 4:
+          - Apresentação e Validação do Cliente: entregas/unidade-04/1.entrega-unidade4.md 
+          - Especificação de Casos de Uso: entregas/unidade-04/2.especificacao-caso-de-uso.md
+          - Ver & Val do Diagrama dos Casos de Uso do Grupo GBL: entregas/unidade-04/3.ver&valUCs.md
